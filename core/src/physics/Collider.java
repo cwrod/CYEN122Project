@@ -30,15 +30,75 @@ public class Collider
 	}
 	public boolean willCollide(Collider c, int xShift, int yShift)
 	{
-		if(c.getX()+c.getxSize()+xShift>x&&c.getX()+xShift<x+xSize){
-			if(c.getY()+c.getySize()+yShift>y&&c.getY()+yShift<y+ySize)
+		if(xShift!=0)
+		{
+			if(willCollideX(c,xShift))
+				return true;
+		}
+		if(yShift!=0)
+		{
+			if(willCollideY(c,yShift))
 			{
 				return true;
 			}
 		}
 		return false;
+		
 	}
 
+
+
+	private boolean willCollideX(Collider c, int xShift) 
+	{
+		if(xShift>0)
+		{
+			if(x+xSize+xShift>c.getX()&&x+xSize<=c.getX())
+			{
+				if(c.getY()+c.getySize()>y&&c.getY()<y+ySize)
+				{	
+					return true;
+				}
+			}
+			return false;
+	
+		}
+		else
+		{
+			if(x+xShift<c.getX()+c.getxSize()&&x>=c.getX()+c.getxSize()){
+				if(c.getY()+c.getySize()>y&&c.getY()<y+ySize)
+				{	
+					return true;
+				}
+			}
+			return false;
+		}
+	}
+	
+	private boolean willCollideY(Collider c, int yShift) {
+		if(yShift>0)
+		{
+			
+			if(y+ySize+yShift>c.getY()&&y+ySize<=c.getY())
+			{
+				if(c.getX()+c.getxSize()>x&&c.getX()<x+xSize)
+				{	
+					return true;
+				}
+			}
+			return false;
+	
+		}
+		else
+		{
+			if(y+yShift<c.getY()+c.getySize()&&y>=c.getY()+c.getySize()){
+				if(c.getX()+c.getxSize()>x&&c.getX()<x+xSize)
+				{	
+					return true;
+				}
+			}
+			return false;
+		}
+	}
 	public void setPos(int xin, int yin)
 	{
 		x=xin;

@@ -2,6 +2,7 @@ package gameObjects;
 
 import graphics.Camera;
 import graphics.GraphicComponent;
+import physics.ColliderHandler;
 
 public class MobileGameObject extends GameObject
 {
@@ -23,35 +24,40 @@ public class MobileGameObject extends GameObject
 	public void moveHorizontally(double dx)
 	{
 
-		
+		int changeX = 0;
 		if(dx*movementX<0){
 			movementX=0;
 		}
 		movementX+=dx;
 		if(movementX>1.0 || movementX<-1.0)
 		{
-		x+=movementX-(movementX%1);
+		changeX+=movementX-(movementX%1);
 
 		movementX-=movementX-(movementX%1);
 
 		}
-		gc.setPos(x, y);
+		if(!ColliderHandler.getColliderHandler().checkForCollisions(c, changeX, 0)){
+		setPos(x+changeX,y);
+		}
 	}
 	
 	public void moveVertically(double dy)
 	{
-		
+		int changeY = 0;
 		if(dy*movementY<0){
 			movementY=0;
 		}
 		movementY+=dy;
 		if(movementY>1.0 || movementY<-1.0)
 		{
-		y+=movementY-(movementY%1);
+		changeY+=movementY-(movementY%1);
 		movementY-=movementY-(movementY%1);
 		}
-		
-		gc.setPos(x, y);
+		if(!ColliderHandler.getColliderHandler().checkForCollisions(c,0, changeY)){
+		setPos(x,y+changeY);
+		}else{
+			movementY=0;
+		}
 	}
 	
 	public void setRotation(float newRot)

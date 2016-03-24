@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ai.EnemyHandler;
 import gameObjects.CharacterObject;
+import gameObjects.GameObject;
 import gameObjects.Goblin;
 import graphics.Canvas;
 import graphics.ImageLibrary;
@@ -32,7 +33,7 @@ public class MainGame extends ApplicationAdapter {
     	Canvas.getCanvas();
     	CharacterObject.getCharacterObject();
     	Map m = new Map(50,50);
-    	EnemyHandler.getEnemyHandler().spawnEnemies(new Goblin(300, 0, 25, 25));
+    	EnemyHandler.getEnemyHandler().spawnEnemies(new Goblin(50, 100, 25, 25));
 	}
 
 	@Override

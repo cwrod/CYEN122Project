@@ -28,7 +28,6 @@ public class CharacterObject extends MobileGameObject{
 		super(400,400,25,25,"person",2,true);
 		Camera.getCamera().setPos(x, y);
 		speed = 80;
-		ColliderHandler.getColliderHandler().addCollider(this);
 	}
 	public void moveLeft()
 	{

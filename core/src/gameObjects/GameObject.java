@@ -27,7 +27,6 @@ public class GameObject {
 		this.xSize = xSize;
 		this.ySize = ySize;
 		this.rotation = 0;
-		
 		gc = new GraphicComponent(x,y,xSize,ySize,texture,layer);
 		if(shouldCollide)
 		{
@@ -37,6 +36,7 @@ public class GameObject {
 		hittable = false;
 		c = null;
 		}
+
 	}
 	
 
@@ -57,6 +57,8 @@ public class GameObject {
 		y=yin;
 		gc.setPos(xin, yin);
 		c.setPos(xin, yin);
+		
+
 	}
 
 

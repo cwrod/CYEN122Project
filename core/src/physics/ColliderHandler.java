@@ -41,6 +41,7 @@ public class ColliderHandler
 	
 	public boolean checkForCollisions(Collider c, int xShift, int yShift)
 	{
+
 		
 		
 		for(Collider potentialCollider : colliders)
@@ -49,7 +50,6 @@ public class ColliderHandler
 			{
 				if(c.willCollide(potentialCollider,xShift,yShift))
 				{
-					System.out.println(potentialCollider.getX()+" "+c.getX());
 					return true;
 				}
 			}

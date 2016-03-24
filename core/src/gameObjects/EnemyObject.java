@@ -13,7 +13,6 @@ public abstract class EnemyObject extends MobileGameObject
 
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, int layer) {
 		super(xin, yin, xSize, ySize, texture, layer,true);
-		ColliderHandler.getColliderHandler().addCollider(this);
 	}
 	public void update()
 	{
