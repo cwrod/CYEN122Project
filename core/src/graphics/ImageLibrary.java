@@ -1,29 +1,58 @@
 package graphics;
 
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.HashMap;
 
-import javax.imageio.ImageIO;
-
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+
+/*
+ * Collection class which loads all our images and animations.
+ */
 public class ImageLibrary {
-	private static HashMap<String,Texture> images;
+
+	private static ImageLibrary imageLibrarySingleton;
 	
-	public static void loadImages()
+	public static ImageLibrary getImageLibrary()
 	{
-		images = new HashMap<String,Texture>();
+		if(imageLibrarySingleton==null)
+		{
+			imageLibrarySingleton = new ImageLibrary();
+		}
+		return imageLibrarySingleton;
+	}
+	
+	
+	private HashMap<String, TextureRegion> images;
+	private HashMap<String, Animation> animations;
+	private HashMap<String, HashMap<String,Animation>> animationSet;
+
+	public ImageLibrary()
+	{
+		loadImages();
+	}
+	
+	public void loadImages()
+	{
+		
+		
+		
         try {
-           images.put("example",new Texture("res/myTex.png"));
-           images.put("person", new Texture("res/Person.png"));
-           images.put("grass", new Texture("res/grass.png"));
-           images.put("dirt1", new Texture("res/dirt1.png"));
-           images.put("dirt2", new Texture("res/dirt2.png"));
-           images.put("goblin", new Texture("res/goblin.png"));
-           
-           
+	        images = new HashMap<String,TextureRegion>();
+			images.put("example",new TextureRegion(new Texture("res/myTex.png"), 0, 0, 1.0f, 1.0f));
+			images.put("animError",new TextureRegion(new Texture("res/myTex.png"), 0, 0, 1.0f, 1.0f));
+			images.put("person", new TextureRegion(new Texture("res/Person.png"), 0, 0, 1.0f, 1.0f));
+			images.put("grass", new TextureRegion(new Texture("res/grass.png"), 0, 0, 1.0f, 1.0f));
+			images.put("dirt1", new TextureRegion(new Texture("res/dirt1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("dirt2", new TextureRegion(new Texture("res/dirt2.png"), 0, 0, 1.0f, 1.0f));
+			images.put("goblin", new TextureRegion(new Texture("res/goblin.png"), 0, 0, 1.0f, 1.0f));
+			
+			animationSet = new HashMap<String, HashMap<String,Animation>>();
+			animations = new HashMap<String,Animation>();
+			animations.put("playerWalking", new Animation("res/exampleAnim.png", 50, 10,true));
+			animations.put("attacking", new Animation("res/attackAnim.png", 10, 10,false));
+			
+			animationSet.put("player", animations);
            
            
            
@@ -33,8 +62,12 @@ public class ImageLibrary {
         }
 	}
 
-	public static Texture find(String key) {
+	public TextureRegion find(String key) 
+	{
 		return images.get(key);
 	}
-
+	public HashMap<String, Animation> findAnim(String key) 
+	{
+		return animationSet.get(key);
+	}
 }

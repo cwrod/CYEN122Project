@@ -32,14 +32,16 @@ public class ColliderHandler
 		colliders.add(c);
 	}
 	
-	public Collider addCollider(GameObject go)
+	public Collider addCollider(GameObject go, boolean shouldCollide)
 	{
-		Collider c = new Collider(go.getX(), go.getY(), go.getxSize(), go.getySize());
+		Collider c = new Collider(go.getX(), go.getY(), go.getxSize(), go.getySize(), shouldCollide, go);
 		colliders.add(c);
 		return c;
 	}
 	
-	public boolean checkForCollisions(Collider c, int xShift, int yShift)
+
+	
+	public Collider willHitObject(Collider c, int xShift, int yShift)
 	{
 
 		
@@ -50,11 +52,25 @@ public class ColliderHandler
 			{
 				if(c.willCollide(potentialCollider,xShift,yShift))
 				{
-					return true;
+					return potentialCollider;
 				}
 			}
 		}
-		return false;
+		return null;
+	}
+
+
+	public ArrayList<GameObject> checkAllCollisons(int x, int y, Class<?> classToCheck) {
+		
+		ArrayList<GameObject> c = new ArrayList<GameObject>();
+		for(Collider potentialCollider : colliders)
+		{
+			if(potentialCollider.willCollide(x, y))
+			{
+			c.add(potentialCollider.getGameObject());	
+			}
+		}
+		return c;
 	}
 	
 }

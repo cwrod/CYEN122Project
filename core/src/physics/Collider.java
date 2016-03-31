@@ -1,27 +1,39 @@
 package physics;
 
+import gameObjects.GameObject;
+
 public class Collider
 {
 	private int x;
 	private int y;
 	private int xSize;
 	private int ySize;
-
+	
+	private boolean hittable;
+	
+	private GameObject owner;
 	
 	
-	public Collider(int x, int y, int xSize, int ySize)
+	public Collider(int x, int y, int xSize, int ySize, boolean shouldCollide, GameObject owner)
 	{
 		this.x = x;
 		this.y = y;
 		this.xSize = xSize;
 		this.ySize = ySize;
-		
+		this.hittable = shouldCollide;
+		this.owner = owner;
 	}
 
+	public boolean isHittable()
+	{
+		return hittable;
+	}
+	
 	public boolean willCollide(int xin, int yin)
 	{
-		if(xin>x&&xin<x+xSize){
-			if(yin>y&&yin<y+ySize)
+
+		if(xin>=x&&xin<=x+xSize){
+			if(yin>=y&&yin<=y+ySize)
 			{
 				return true;
 			}
@@ -123,6 +135,11 @@ public class Collider
 	public int getySize()
 	{
 		return ySize;
+	}
+
+	public GameObject getGameObject() 
+	{
+		return owner;
 	}
 	
 	

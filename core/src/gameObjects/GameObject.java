@@ -1,9 +1,15 @@
 package gameObjects;
 
+import graphics.AnimationComponent;
 import graphics.GraphicComponent;
 import physics.Collider;
 import physics.ColliderHandler;
 
+/*
+ * If there is an object you can physically see in the game, it probably should come from this.
+ * Note that this is class is not abstract. Maybe it would be better as an abstract class, but for now, I
+ * can kinda view a chest or fountain or some random scenery just straight being a GameObject.
+ */
 public class GameObject {
 	
 	protected int x;
@@ -14,29 +20,26 @@ public class GameObject {
 	
 	protected float rotation;
 	
-	protected boolean hittable;
-	
 	protected GraphicComponent gc;
 	protected Collider c;
 
 
-	public GameObject(int x, int y, int xSize, int ySize,String texture, int layer, boolean shouldCollide) 
+	public GameObject(int x, int y, int xSize, int ySize,String texture, int layer, boolean shouldCollide, boolean animated) 
 	{
 		this.x = x;
 		this.y = y;
 		this.xSize = xSize;
 		this.ySize = ySize;
 		this.rotation = 0;
-		gc = new GraphicComponent(x,y,xSize,ySize,texture,layer);
-		if(shouldCollide)
+		if(animated)
 		{
-		hittable = true;
-		c = ColliderHandler.getColliderHandler().addCollider(this);
-		}else{
-		hittable = false;
-		c = null;
+			gc = new AnimationComponent(x, y, xSize, ySize, texture, layer);
 		}
-
+		else
+		{
+			gc = new GraphicComponent(x,y,xSize,ySize,texture,layer);	
+		}
+		c = ColliderHandler.getColliderHandler().addCollider(this,shouldCollide);
 	}
 	
 
@@ -60,6 +63,12 @@ public class GameObject {
 		
 
 	}
+	
+	public void setRotation(int newRot)
+	{
+		rotation = newRot;
+		gc.setRot(newRot);
+	}
 
 
 	public int getxSize() {
@@ -82,9 +91,16 @@ public class GameObject {
 		return rotation;
 	}
 
-	public void setRotation(float rotation) {
-		this.rotation = rotation;
+	/*
+	 * Stub. Maybe gameObject will end up actually using this, but this is mostly for something like
+	 * traps inheriting from this class.
+	 */
+	public void onHit(GameObject gameObject) 
+	{
+		
+		
 	}
+
 
 	
 

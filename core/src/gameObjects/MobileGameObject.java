@@ -1,9 +1,12 @@
 package gameObjects;
 
-import graphics.Camera;
-import graphics.GraphicComponent;
+import physics.Collider;
 import physics.ColliderHandler;
+import toolbox.Functions;
 
+/*
+ * GameObjects that can move and hit each other
+ */
 public class MobileGameObject extends GameObject
 {
 
@@ -12,17 +15,29 @@ public class MobileGameObject extends GameObject
 	private double movementX;
 	private double movementY;
 	
-	public MobileGameObject(int xin, int yin,int xSize, int ySize,String texture, int layer, boolean hittable)
+	private boolean shouldRotate;
+	
+	public MobileGameObject(int xin, int yin,int xSize, int ySize,String texture, int layer, boolean shouldRotate, boolean animated)
 	{
-		super(xin, yin, xSize, ySize, texture, layer, hittable);
+		super(xin, yin, xSize, ySize, texture, layer, true, animated);
 
 		movementX = movementY = 0;
+		this.shouldRotate=shouldRotate;
+		
 	}
 	
 
-
-	public void moveHorizontally(double dx)
+	/*
+	 * Moves the gameObject unless there is an object that it is about to collide with.
+	 */
+	public void move(double dx,double dy)
 	{
+		
+		if(shouldRotate)
+		{
+			setRotation((int)Functions.angleMeasure(dx,dy));
+		}
+		
 
 		int changeX = 0;
 		if(dx*movementX<0){
@@ -36,13 +51,19 @@ public class MobileGameObject extends GameObject
 		movementX-=movementX-(movementX%1);
 
 		}
-		if(!ColliderHandler.getColliderHandler().checkForCollisions(c, changeX, 0)){
+		Collider hit = ColliderHandler.getColliderHandler().willHitObject(c, changeX, 0);
+		if(hit==null){
 		setPos(x+changeX,y);
 		}
-	}
+		else
+		{
+			movementX = 0;
+			if(hit.getGameObject()!=null)
+			{
+				hit.getGameObject().onHit(this);
+			}
+		}
 	
-	public void moveVertically(double dy)
-	{
 		int changeY = 0;
 		if(dy*movementY<0){
 			movementY=0;
@@ -53,15 +74,28 @@ public class MobileGameObject extends GameObject
 		changeY+=movementY-(movementY%1);
 		movementY-=movementY-(movementY%1);
 		}
-		if(!ColliderHandler.getColliderHandler().checkForCollisions(c,0, changeY)){
+		Collider hit2 = ColliderHandler.getColliderHandler().willHitObject(c, 0,changeY);
+		if(hit2==null){
 		setPos(x,y+changeY);
-		}else{
-			movementY=0;
+		}
+		else
+		{
+			movementY = 0;
+			if(hit2.getGameObject()!=null)
+			{
+				hit2.getGameObject().onHit(this);
+			}
 		}
 	}
 	
-	public void setRotation(float newRot)
+	/*
+	 * A simple moveToPoint script that will be pretty useful for most mobile game objects.
+	 */
+	public void moveToPoint(double tarX, double tarY, double magnitude)
 	{
-		rotation = newRot;
+		double [] sideRatios = Functions.sideRatios(tarX, tarY, x, y);
+		
+		move(magnitude*sideRatios[0],magnitude*sideRatios[1]);	
 	}
+
 }
