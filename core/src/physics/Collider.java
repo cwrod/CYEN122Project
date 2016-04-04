@@ -165,4 +165,9 @@ public class Collider
 		return owner;
 	}
 
+	public void setHittable(boolean hittable)
+	{
+		this.hittable = hittable;
+	}
+
 }

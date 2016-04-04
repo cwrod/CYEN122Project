@@ -1,8 +1,11 @@
 package gameObjects;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 
 import ai.EnemyHandler;
+import graphics.GraphicComponent;
 import toolbox.Functions;
 
 /*
@@ -21,6 +24,8 @@ public abstract class EnemyObject extends MobileGameObject
 	protected float alertDistance;
 
 	protected int health;
+	
+	protected ArrayList<GraphicComponent> healthSigns;
 
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
 			float attackMaxRangeIn, float alertDistanceIn, int healthIn)
@@ -91,17 +96,39 @@ public abstract class EnemyObject extends MobileGameObject
 			PlayerObject.getPlayerObject().takeDamage(damage);
 		}
 	}
+	
+	
+	@Override
+	public void setPos(int x, int y)
+	{
+		super.setPos(x,y);
+		if(healthSigns.size()>0)
+		{
+			for(GraphicComponent gc : healthSigns)
+			{
+				gc.setPos(x, y);
+			}
+		}
+		
+	}
 
 	/*
 	 * When the character hits the enemy, this is called
 	 */
 	public void takeDamage(int dam)
 	{
+		makeHealthSigns();
+		
 		health -= dam;
 		if (health <= 0)
 		{
 			die();
 		}
+	}
+	
+	private void makeHealthSigns()
+	{
+		
 	}
 
 	/*
@@ -111,6 +138,7 @@ public abstract class EnemyObject extends MobileGameObject
 	public void die()
 	{
 		EnemyHandler.getEnemyHandler().remove(this);
+		c.setHittable(false);
 	}
 
 }
