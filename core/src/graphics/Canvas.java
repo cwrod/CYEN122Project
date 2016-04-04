@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-
 /*
  * The main handler for drawing. Delegates actual drawing to layers.
  */
 public class Canvas
 {
-	
-	//Basic header for a singleton
+
+	// Basic header for a singleton
 
 	private static Canvas canvasSingleton;
 
@@ -25,8 +24,10 @@ public class Canvas
 		return canvasSingleton;
 	}
 
-	public static final int WIDTH = 500; // Changing this variable does not change width
-	public static final int HEIGHT = 500; // Changing this variable does not change height
+	public static final int WIDTH = 500; // Changing this variable does not
+											// change width
+	public static final int HEIGHT = 500; // Changing this variable does not
+											// change height
 
 	private ArrayList<Layer> layers;
 
@@ -35,12 +36,13 @@ public class Canvas
 
 		layers = new ArrayList<Layer>();
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 5; i++)
 		{
 			layers.add(new Layer());
 		}
 
 	}
+
 	/*
 	 * Adds the GraphicComponent to the specified layer so it can be rendered
 	 */
@@ -49,7 +51,6 @@ public class Canvas
 		layers.get(i).addGraphicsComponent(gc);
 	}
 
-	
 	/*
 	 * Called by main to paint the screen
 	 */

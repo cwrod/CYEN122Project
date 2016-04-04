@@ -1,5 +1,6 @@
 package items;
 
-public abstract class OffHand {
+public abstract class OffHand
+{
 
 }

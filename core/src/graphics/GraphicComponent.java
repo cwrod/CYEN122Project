@@ -76,6 +76,15 @@ public class GraphicComponent
 	public void updateTexture(String key)
 	{
 		this.texture = ImageLibrary.getImageLibrary().find(key);
+	}
+
+	public boolean isDone(String track)
+	{
+		return true;
+	}
+
+	public void updateSet(String key)
+	{
 
 	}
 

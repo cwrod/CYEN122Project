@@ -7,12 +7,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ai.EnemyHandler;
-import gameObjects.Goblin;
 import gameObjects.PlayerObject;
 import graphics.Canvas;
 import graphics.ImageLibrary;
 import map.Map;
-import toolbox.Time;
 import userInterface.InputHandler;
 
 /*
@@ -20,50 +18,49 @@ import userInterface.InputHandler;
  * sets up the actual game screen. All loading of game assets should go here. Progressing 
  * through the game and loading new levels will probably also end up here.
  */
-public class MainGame extends ApplicationAdapter {
+public class MainGame extends ApplicationAdapter
+{
 	SpriteBatch batch;
 	Texture img;
-	
+
 	InputHandler ih;
-	
-	
+
 	/*
-	 * A method from ApplicationAdaptor that gets called when the game screen is made.
+	 * A method from ApplicationAdaptor that gets called when the game screen is
+	 * made.
 	 */
 	@Override
-	public void create () 
+	public void create()
 	{
 		batch = new SpriteBatch();
 		load();
-    }
-	
-	
+	}
+
 	/*
 	 * Calls singletons, loads map, and processes images for the game
 	 */
-    public void load()
-    {
-    	ImageLibrary.getImageLibrary();
-    	Canvas.getCanvas();	
-    	PlayerObject.getPlayerObject();
-    	new Map(50,50);
+	public void load()
+	{
+		ImageLibrary.getImageLibrary();
+		Canvas.getCanvas();
+		PlayerObject.getPlayerObject();
+		Map.initSpawnTypes();
+		Map.generate(80, "level1");
+		ih = new InputHandler();
 
-    	ih = new InputHandler();
-    	Gdx.input.setInputProcessor(ih);
-    	EnemyHandler.getEnemyHandler().spawnEnemies(new Goblin(20, 20, 25, 25));;
-    	Time.getTime();
-    	
 	}
 
-    /*
-     * Another method from libgdx. Gets called every frame. All updates should be called from here.
-     */
+	/*
+	 * Another method from libgdx. Gets called every frame. All updates should
+	 * be called from here.
+	 */
 	@Override
-	public void render () {
-	    Time.getTime().tick();
+	public void render()
+	{
 		ih.update();
 		EnemyHandler.getEnemyHandler().update();
-		
+		PlayerObject.getPlayerObject().update();
+
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();

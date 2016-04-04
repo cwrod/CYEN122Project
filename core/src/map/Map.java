@@ -1,42 +1,61 @@
 package map;
 
+import java.util.HashMap;
 import java.util.Random;
 
-public class Map {
-	private int mapSize; //in tiles
-	
-	private int tileSize; //in pixels
-	
-	private Tile[][] map;
-	
-	public Map(int mapSize,int tileSize)
+import gameObjects.Goblin;
+import graphics.GraphicComponent;
+import graphics.ImageLibrary;
+import items.LegendarySword;
+
+public class Map
+{
+
+	public static final int TILE_SIZE = 50; // in pixels
+
+	// WARNING: EXTREMELY VOLATILE WAY TO DO THIS!
+	private static HashMap<String, Class<?>> spawnTypes;
+
+	public static void initSpawnTypes()
 	{
-		this.mapSize=mapSize;
-		this.tileSize=tileSize;
-		
-		map = new Tile[mapSize][mapSize];
-		for(int i = 0; i < map.length; i++)
+		spawnTypes = new HashMap<String, Class<?>>();
+
+		spawnTypes.put("goblin", Goblin.class);
+		spawnTypes.put("legendarySword", LegendarySword.class);
+
+	}
+
+	public static void generate(int mapSize, String level)
+	{
+		for (int i = 0; i < mapSize; i++)
 		{
-			for(int j = 0; j < map[i].length; j++)
+			for (int j = 0; j < mapSize; j++)
 			{
-				Tile t = randomGen();
-				t.setPos(i*tileSize, j*tileSize);
-				map[i][j] = t;
+				new GraphicComponent(i * TILE_SIZE, j * TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE, randomStyle(level), 0);
+
 			}
 		}
-		
+
+		Building.generate(100, 500, "stone");
+
 	}
-	
-	public Tile randomGen()
+
+	private static String randomStyle(String level)
 	{
 		Random r = new Random();
-		if(r.nextBoolean())
+		return level + "-" + (r.nextInt(ImageLibrary.getImageLibrary().lengthOfSet(level)) + 1);
+	}
+
+	public static void spawnElement(String key, int elementX, int elementY)
+	{
+		try
 		{
-			return new TileDirt(tileSize);
-		}else{
-			return new TileGrass(tileSize);
+			Class<?>[] args = { int.class, int.class };
+			spawnTypes.get(key).getDeclaredConstructor(args).newInstance(elementX, elementY);
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
 		}
 	}
-	
-	
 }

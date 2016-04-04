@@ -1,10 +1,17 @@
 package items;
 
-public class RustySword extends OnHand{
+public class RustySword extends OnHand
+{
 
-	public RustySword() {
-		super(5, .3f, 20);
-		
+	public RustySword(int x, int y)
+	{
+		super(5, 20, "rustySword", x, y);
+
 	}
-	
+
+	public RustySword()
+	{
+		super(5, 20, "rustySword");
+	}
+
 }
