@@ -97,7 +97,7 @@ public abstract class EnemyObject extends MobileGameObject
 		}
 	}
 	
-	
+	/*
 	@Override
 	public void setPos(int x, int y)
 	{
@@ -111,14 +111,13 @@ public abstract class EnemyObject extends MobileGameObject
 		}
 		
 	}
-
+	 */
 	/*
 	 * When the character hits the enemy, this is called
 	 */
 	public void takeDamage(int dam)
 	{
 		makeHealthSigns();
-		
 		health -= dam;
 		if (health <= 0)
 		{
