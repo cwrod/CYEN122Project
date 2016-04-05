@@ -73,7 +73,7 @@ public class Collider
 	public boolean overlaps(Collider c)
 	{
 		if (c.getX() + c.getxSize() > x && c.getX() < x + xSize)
-			if (c.getY() + c.getySize() > x && c.getY() < y + ySize)
+			if (c.getY() + c.getySize() > y && c.getY() < y + ySize)
 				return true;
 		return false;
 
