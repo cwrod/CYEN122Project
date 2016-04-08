@@ -109,6 +109,7 @@ public class PlayerObject extends MobileGameObject
 					{
 						OnHand temp = onHandWeapon;
 						onHandWeapon = ((PhysicalItem) go).getAssociatedItem();
+						gc.updateSet(onHandWeapon.getAnimName());
 						((PhysicalItem) go).replace(temp);
 					}
 				}
