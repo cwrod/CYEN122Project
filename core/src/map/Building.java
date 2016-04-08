@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import physics.Collider;
 
@@ -38,7 +39,7 @@ public class Building
 			int patternID = (new Random()).nextInt(length) + 1;
 			int size = (int) (Float.parseFloat(br.readLine()) * Map.TILE_SIZE);
 
-			new GraphicComponent(x, y, size, size, type + ":" + patternID, 1);
+			new GraphicComponent(x, y, size, size, type + ":" + patternID, LayerType.BUILDINGS);
 
 			String strLine;
 

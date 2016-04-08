@@ -44,19 +44,22 @@ public class ImageLibrary
 			images.put("animError", new TextureRegion(new Texture("res/myTex.png"), 0, 0, 1.0f, 1.0f));
 			images.put("person", new TextureRegion(new Texture("res/Person.png"), 0, 0, 1.0f, 1.0f));
 
-			setLengths = new HashMap<String, Integer>();
-			images.put("level1-1", new TextureRegion(new Texture("res/grass.png"), 0, 0, 1.0f, 1.0f));
-			images.put("level1-2", new TextureRegion(new Texture("res/dirt1.png"), 0, 0, 1.0f, 1.0f));
-			images.put("level1-3", new TextureRegion(new Texture("res/dirt2.png"), 0, 0, 1.0f, 1.0f));
-
-			setLengths.put("level1", 3);
-
 			images.put("goblin", new TextureRegion(new Texture("res/goblinStatic.png"), 0, 0, 1.0f, 1.0f));
 			images.put("rustySword", new TextureRegion(new Texture("res/rustySword.png"), 0, 0, 1.0f, 1.0f));
 			images.put("legendarySword", new TextureRegion(new Texture("res/legendarySword.png"), 0, 0, 1.0f, 1.0f));
 
 			images.put("stone:1",
 					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern1.png"), 0, 0, 1.0f, 1.0f));
+
+			images.put("healthBar", new TextureRegion(new Texture("res/healthFull.png"), 0, 0, 1.0f, 1.0f));
+			images.put("healthLostBar", new TextureRegion(new Texture("res/healthLost.png"), 0, 0, 1.0f, 1.0f));
+
+			setLengths = new HashMap<String, Integer>();
+			images.put("level1-1", new TextureRegion(new Texture("res/grass.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1-2", new TextureRegion(new Texture("res/dirt1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1-3", new TextureRegion(new Texture("res/dirt2.png"), 0, 0, 1.0f, 1.0f));
+
+			setLengths.put("level1", 3);
 
 			animationSet = new HashMap<String, HashMap<String, Animation>>();
 

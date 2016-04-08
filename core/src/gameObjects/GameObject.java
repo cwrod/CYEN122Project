@@ -1,6 +1,9 @@
 package gameObjects;
 
+import java.util.ArrayList;
+
 import graphics.AnimationComponent;
+import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import physics.Collider;
 import physics.ColliderHandler;
@@ -25,7 +28,9 @@ public abstract class GameObject
 	protected GraphicComponent gc;
 	protected Collider c;
 
-	public GameObject(int x, int y, int xSize, int ySize, String texture, int layer, boolean shouldCollide,
+	protected ArrayList<GraphicComponent> labelList;
+
+	public GameObject(int x, int y, int xSize, int ySize, String texture, LayerType layer, boolean shouldCollide,
 			boolean animated)
 	{
 		this.x = x;
@@ -42,6 +47,7 @@ public abstract class GameObject
 			gc = new GraphicComponent(x, y, xSize, ySize, texture, layer);
 		}
 		c = ColliderHandler.getColliderHandler().addCollider(this, shouldCollide);
+		labelList = new ArrayList<GraphicComponent>();
 	}
 
 	public int getX()
@@ -60,6 +66,10 @@ public abstract class GameObject
 		y = yin;
 		gc.setPos(xin, yin);
 		c.setPos(xin, yin);
+		for (GraphicComponent label : labelList)
+		{
+			label.setPos(xin, yin);
+		}
 
 	}
 
@@ -104,6 +114,11 @@ public abstract class GameObject
 		int newRot = (int) Functions.angleMeasure(x, y, xin, yin);
 		setRotation(newRot);
 
+	}
+
+	public void addLabel(GraphicComponent label)
+	{
+		labelList.add(label);
 	}
 
 	/*

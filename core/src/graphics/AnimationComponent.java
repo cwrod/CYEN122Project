@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import graphics.Canvas.LayerType;
+
 /*
  * A graphic component that uses animations instead of still images.
  * 
@@ -16,7 +18,7 @@ public class AnimationComponent extends GraphicComponent
 	private String currentTrack;
 	private String defaultTrack;
 
-	public AnimationComponent(int x, int y, int xSize, int ySize, String key, int layer)
+	public AnimationComponent(int x, int y, int xSize, int ySize, String key, LayerType layer)
 	{
 		super(x, y, xSize, ySize, "animError", layer);
 		animations = ImageLibrary.getImageLibrary().findAnim(key);

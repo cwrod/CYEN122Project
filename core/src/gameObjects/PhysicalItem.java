@@ -1,5 +1,6 @@
 package gameObjects;
 
+import graphics.Canvas.LayerType;
 import items.OnHand;
 
 public class PhysicalItem extends GameObject
@@ -8,7 +9,7 @@ public class PhysicalItem extends GameObject
 
 	public PhysicalItem(int x, int y, String texture, OnHand oh)
 	{
-		super(x, y, 25, 25, texture, 2, false, false);
+		super(x, y, 25, 25, texture, LayerType.ITEMS, false, false);
 		associatedItem = oh;
 	}
 

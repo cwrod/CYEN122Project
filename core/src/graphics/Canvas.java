@@ -29,6 +29,11 @@ public class Canvas
 	public static final int HEIGHT = 500; // Changing this variable does not
 											// change height
 
+	public enum LayerType
+	{
+		BACKGROUND, BUILDINGS, ITEMS, ENEMIES, EFFECTS, PLAYER, GUI
+	}
+
 	private ArrayList<Layer> layers;
 
 	private Canvas()
@@ -36,7 +41,7 @@ public class Canvas
 
 		layers = new ArrayList<Layer>();
 
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < LayerType.values().length; i++)
 		{
 			layers.add(new Layer());
 		}
@@ -46,9 +51,15 @@ public class Canvas
 	/*
 	 * Adds the GraphicComponent to the specified layer so it can be rendered
 	 */
-	public void addToLayer(int i, GraphicComponent gc)
+	public void addToLayer(LayerType l, GraphicComponent gc)
 	{
-		layers.get(i).addGraphicsComponent(gc);
+		layers.get(l.ordinal()).addGraphicComponent(gc);
+	}
+
+	public void removeFromLayer(LayerType l, GraphicComponent gc)
+	{
+		layers.get(l.ordinal()).removeGraphicComonent(gc);
+
 	}
 
 	/*

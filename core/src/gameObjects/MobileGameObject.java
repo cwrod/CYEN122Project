@@ -1,5 +1,6 @@
 package gameObjects;
 
+import graphics.Canvas.LayerType;
 import physics.Collider;
 import physics.ColliderHandler;
 import toolbox.Functions;
@@ -15,8 +16,8 @@ public abstract class MobileGameObject extends GameObject
 
 	protected boolean shouldRotate;
 
-	public MobileGameObject(int xin, int yin, int xSize, int ySize, String texture, int layer, boolean shouldRotate,
-			boolean animated)
+	public MobileGameObject(int xin, int yin, int xSize, int ySize, String texture, LayerType layer,
+			boolean shouldRotate, boolean animated)
 	{
 		super(xin, yin, xSize, ySize, texture, layer, true, animated);
 

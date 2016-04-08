@@ -3,6 +3,9 @@ package graphics;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import graphics.Canvas.LayerType;
+import gui.GUIHandler;
+
 /*
  * This class describes the actual objects that should be shown on the screen.
  * 
@@ -17,16 +20,18 @@ public class GraphicComponent
 	protected int rotation;
 	protected TextureRegion texture;
 
-	public GraphicComponent(int x, int y, int xSize, int ySize, String key, int layer)
+	protected LayerType layer;
+
+	public GraphicComponent(int x, int y, int xSize, int ySize, String key, LayerType l)
 	{
 		this.x = x;
 		this.y = y;
 		this.xSize = xSize;
 		this.ySize = ySize;
 		this.texture = ImageLibrary.getImageLibrary().find(key);
-		Canvas.getCanvas().addToLayer(layer, this);
+		Canvas.getCanvas().addToLayer(l, this);
 		rotation = 0;
-
+		this.layer = l;
 	}
 
 	public void setPos(int xin, int yin)
@@ -67,9 +72,13 @@ public class GraphicComponent
 
 	public void paint(SpriteBatch sb)
 	{
-
-		sb.draw(getTexture(), (float) x - Camera.getCamera().getXShift(), (float) y - Camera.getCamera().getYShift(),
-				(float) xSize / 2, (float) ySize / 2, (float) xSize, (float) ySize, 1, 1, (float) rotation);
+		if (layer == LayerType.GUI)
+			sb.draw(getTexture(), (float) x, (float) y, (float) xSize / 2, (float) ySize / 2, (float) xSize,
+					(float) ySize, 1, 1, (float) rotation);
+		else
+			sb.draw(getTexture(), (float) x - Camera.getCamera().getXShift(),
+					(float) y - Camera.getCamera().getYShift(), (float) xSize / 2, (float) ySize / 2, (float) xSize,
+					(float) ySize, 1, 1, (float) rotation);
 
 	}
 
@@ -88,4 +97,14 @@ public class GraphicComponent
 
 	}
 
+	public void kill()
+	{
+		Canvas.getCanvas().removeFromLayer(layer, this);
+	}
+
+	public void setSize(int xSize, int ySize)
+	{
+		this.xSize = xSize;
+		this.ySize = ySize;
+	}
 }

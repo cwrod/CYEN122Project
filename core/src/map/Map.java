@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import gameObjects.Goblin;
+import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.ImageLibrary;
 import items.LegendarySword;
@@ -31,7 +32,8 @@ public class Map
 		{
 			for (int j = 0; j < mapSize; j++)
 			{
-				new GraphicComponent(i * TILE_SIZE, j * TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE, randomStyle(level), 0);
+				new GraphicComponent(i * TILE_SIZE, j * TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE, randomStyle(level),
+						LayerType.BACKGROUND);
 
 			}
 		}

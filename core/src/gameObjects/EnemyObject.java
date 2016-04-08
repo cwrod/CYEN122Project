@@ -6,6 +6,8 @@ import com.badlogic.gdx.Gdx;
 
 import ai.EnemyHandler;
 import graphics.GraphicComponent;
+import graphics.TempComponent;
+import graphics.Canvas.LayerType;
 import toolbox.Functions;
 
 /*
@@ -24,13 +26,13 @@ public abstract class EnemyObject extends MobileGameObject
 	protected float alertDistance;
 
 	protected int health;
-	
+
 	protected ArrayList<GraphicComponent> healthSigns;
 
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
 			float attackMaxRangeIn, float alertDistanceIn, int healthIn)
 	{
-		super(xin, yin, xSize, ySize, texture, 3, true, true);
+		super(xin, yin, xSize, ySize, texture, LayerType.ENEMIES, true, true);
 		speed = speedIn;
 		damage = damageIn;
 		attackMinRange = 30;
@@ -96,38 +98,37 @@ public abstract class EnemyObject extends MobileGameObject
 			PlayerObject.getPlayerObject().takeDamage(damage);
 		}
 	}
-	
+
 	/*
-	@Override
-	public void setPos(int x, int y)
-	{
-		super.setPos(x,y);
-		if(healthSigns.size()>0)
-		{
-			for(GraphicComponent gc : healthSigns)
-			{
-				gc.setPos(x, y);
-			}
-		}
-		
-	}
+	 * @Override public void setPos(int x, int y) { super.setPos(x,y);
+	 * if(healthSigns.size()>0) { for(GraphicComponent gc : healthSigns) {
+	 * gc.setPos(x, y); } }
+	 * 
+	 * }
 	 */
 	/*
 	 * When the character hits the enemy, this is called
 	 */
 	public void takeDamage(int dam)
 	{
-		makeHealthSigns();
 		health -= dam;
 		if (health <= 0)
 		{
 			die();
 		}
+		else
+		{
+			makeHealthSigns();
+		}
 	}
-	
+
 	private void makeHealthSigns()
 	{
-		
+
+		addLabel(new TempComponent(x, y, xSize, 5, 0, -10, 1.0f, "healthLostBar", LayerType.EFFECTS));
+		addLabel(new TempComponent(x, y, (int) ((health / 100f) * xSize), 5, 0, -10, 1.0f, "healthBar",
+				LayerType.EFFECTS));
+
 	}
 
 	/*

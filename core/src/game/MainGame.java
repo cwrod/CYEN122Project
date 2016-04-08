@@ -10,6 +10,7 @@ import ai.EnemyHandler;
 import gameObjects.PlayerObject;
 import graphics.Canvas;
 import graphics.ImageLibrary;
+import gui.GUIHandler;
 import map.Map;
 import userInterface.InputHandler;
 
@@ -47,7 +48,7 @@ public class MainGame extends ApplicationAdapter
 		Map.initSpawnTypes();
 		Map.generate(80, "level1");
 		ih = new InputHandler();
-
+		GUIHandler.getGUIHandler();
 	}
 
 	/*

@@ -8,10 +8,13 @@ public class Layer
 {
 
 	ArrayList<GraphicComponent> graphicComponents;
+	ArrayList<GraphicComponent> killList;
 
 	public Layer()
 	{
 		graphicComponents = new ArrayList<GraphicComponent>();
+		killList = new ArrayList<GraphicComponent>();
+
 	}
 
 	public void paint(SpriteBatch sb)
@@ -23,11 +26,18 @@ public class Layer
 				gc.paint(sb);
 			}
 		}
+		graphicComponents.removeAll(killList);
+		killList.clear();
 	}
 
-	public void addGraphicsComponent(GraphicComponent gc)
+	public void addGraphicComponent(GraphicComponent gc)
 	{
 		graphicComponents.add(gc);
+	}
+
+	public void removeGraphicComonent(GraphicComponent gc)
+	{
+		killList.add(gc);
 	}
 
 	private boolean shouldPaint(GraphicComponent gc)
@@ -42,4 +52,5 @@ public class Layer
 		return true;
 
 	}
+
 }

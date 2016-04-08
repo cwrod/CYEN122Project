@@ -7,6 +7,7 @@ import gameObjects.EnemyObject;
 import gameObjects.GameObject;
 import gameObjects.PhysicalItem;
 import gameObjects.PlayerObject;
+import graphics.Layer;
 import physics.ColliderHandler;
 
 public abstract class OnHand
@@ -38,7 +39,7 @@ public abstract class OnHand
 		int attackPointY = po.getY() + (po.getySize() / 2) + (int) (Math.sin(Math.toRadians(angle)) * attackRange);
 
 		ArrayList<GameObject> eo = ColliderHandler.getColliderHandler().checkAllCollisons(attackPointX, attackPointY,
-				EnemyHandler.class);
+				EnemyObject.class);
 		if (eo.size() > 0)
 			((EnemyObject) eo.get(0)).takeDamage(damage);
 

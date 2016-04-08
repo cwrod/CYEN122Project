@@ -6,6 +6,8 @@ import com.badlogic.gdx.Gdx;
 
 import graphics.Camera;
 import graphics.Canvas;
+import graphics.Canvas.LayerType;
+import gui.GUIHandler;
 import items.OnHand;
 import items.RustySword;
 import physics.ColliderHandler;
@@ -35,15 +37,17 @@ public class PlayerObject extends MobileGameObject
 
 	private float speed;
 	private int health;
+	private int maxHealth;
+
 	private OnHand onHandWeapon;
 	private boolean canAttack;
 
 	public PlayerObject()
 	{
-		super(400, 400, WIDTH, HEIGHT, "player", 4, true, true);
+		super(400, 400, WIDTH, HEIGHT, "player", LayerType.PLAYER, true, true);
 		Camera.getCamera().setPos(x, y);
 		speed = 80;
-		health = 100;
+		health = maxHealth = 100;
 		canAttack = true;
 		onHandWeapon = new RustySword();
 		gc.updateSet(onHandWeapon.getAnimName());
@@ -167,6 +171,9 @@ public class PlayerObject extends MobileGameObject
 	public void takeDamage(int dam)
 	{
 		health -= dam;
+
+		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
+
 		if (health <= 0)
 		{
 			die();

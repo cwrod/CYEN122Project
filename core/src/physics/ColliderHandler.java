@@ -74,7 +74,7 @@ public class ColliderHandler
 		ArrayList<GameObject> c = new ArrayList<GameObject>();
 		for (Collider potentialCollider : colliders)
 		{
-			if (potentialCollider.willCollide(x, y) && classToCheck.isInstance(potentialCollider))
+			if (classToCheck.isInstance(potentialCollider.getGameObject()) && potentialCollider.willCollide(x, y))
 			{
 				c.add(potentialCollider.getGameObject());
 			}
