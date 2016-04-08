@@ -12,5 +12,8 @@ public class DesktopLauncher {
 		config.width = 500;
 		new LwjglApplication(new MainGame(), config);
 		//This is a comment by Charles
+		/*
+		 * Let's see if this works
+		 */
 	}
 }
