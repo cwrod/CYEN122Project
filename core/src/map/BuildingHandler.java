@@ -4,16 +4,45 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
 
-import graphics.Canvas.LayerType;
-import graphics.GraphicComponent;
+import gameObjects.Building;
 import physics.Collider;
 
-public class Building
+public class BuildingHandler
 {
 
-	public static void generate(int x, int y, String type)
+	// Basic header for a singleton
+
+	private static BuildingHandler buildingHandlerSingleton;
+
+	public static BuildingHandler getBuildingHandler()
+	{
+		if (buildingHandlerSingleton == null)
+		{
+			buildingHandlerSingleton = new BuildingHandler();
+		}
+
+		return buildingHandlerSingleton;
+	}
+	
+	
+	private ArrayList<Building> buildings;
+	
+	public BuildingHandler()
+	{
+		buildings = new ArrayList<Building>();
+	}
+	
+	
+	public void generateLevel(String level)
+	{
+		generate(100,500,"stone");
+	}
+	
+	
+	private void generate(int x, int y, String type)
 	{
 		try
 		{
@@ -39,8 +68,8 @@ public class Building
 			int patternID = (new Random()).nextInt(length) + 1;
 			int size = (int) (Float.parseFloat(br.readLine()) * Map.TILE_SIZE);
 
-			new GraphicComponent(x, y, size, size, type + ":" + patternID, LayerType.BUILDINGS);
-
+			Building building = new Building(x, y, size, size, type + ":" + patternID);
+			
 			String strLine;
 
 			while (!(strLine = br.readLine()).equals("END"))
@@ -62,7 +91,7 @@ public class Building
 
 				int indexToSpawn = (new Random()).nextInt(stringParts.length - 2) + 2;
 
-				Map.spawnElement(stringParts[indexToSpawn], x + elementX, y + elementY);
+				Map.spawnElement(stringParts[indexToSpawn], x + elementX, y + elementY,building);
 			}
 
 			br.close();
@@ -70,6 +99,28 @@ public class Building
 		catch (Exception e)
 		{
 			System.out.println(e);
+		}	
+	}
+	
+	public void update()
+	{
+		for (Building b : buildings)
+		{
+			b.update();
 		}
+	}
+
+
+
+	public void add(Building b)
+	{
+		buildings.add(b);
+	}
+
+
+
+	public void remove(Building b)
+	{
+		buildings.remove(b);
 	}
 }

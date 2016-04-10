@@ -86,5 +86,23 @@ public class Functions
 		}
 		return spaces;
 	}
+
+	public static String camelCaseString(String id)
+	{
+		
+		id = (""+id.charAt(0)).toUpperCase() + id.substring(1);
+		
+		String[] words = id.split("(?=[A-Z])");
+		String phrase = "";
+		for(int i = 0; i < words.length; i++)
+		{
+			phrase = phrase.concat(words[i]);
+			if(i!=words.length-1)
+			{
+				phrase = phrase.concat(" ");
+			}	
+		}
+		return phrase;
+	}
 	
 }

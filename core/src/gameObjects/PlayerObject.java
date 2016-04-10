@@ -115,7 +115,8 @@ public class PlayerObject extends MobileGameObject
 			ArrayList<GameObject> goList = ColliderHandler.getColliderHandler().getObjectsOverlapping(c);
 			if (goList.size() > 0)
 			{
-				GameObject go = goList.get(0);
+				for(GameObject go : goList)
+				{
 					if (go instanceof PhysicalItem)
 					{
 						Item foundItem =  ((PhysicalItem) go).getAssociatedItem();
@@ -134,7 +135,9 @@ public class PlayerObject extends MobileGameObject
 							((PhysicalItem) go).replace(temp);
 							GUIHandler.getGUIHandler().updateRelic(currentRelic);
 						}
+						break;
 					}
+				}
 			}
 			lastPickup = System.currentTimeMillis();
 		}

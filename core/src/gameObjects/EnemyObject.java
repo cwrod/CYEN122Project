@@ -29,8 +29,10 @@ public abstract class EnemyObject extends MobileGameObject
 
 	protected ArrayList<GraphicComponent> healthSigns;
 
+	protected Building owner;
+	
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
-			float attackMaxRangeIn, float alertDistanceIn, int healthIn)
+			float attackMaxRangeIn, float alertDistanceIn, int healthIn, Building owner)
 	{
 		super(xin, yin, xSize, ySize, texture, LayerType.ENEMIES, true, true);
 		speed = speedIn;
@@ -41,7 +43,17 @@ public abstract class EnemyObject extends MobileGameObject
 		health = healthIn;
 
 		isAttacking = false;
-		EnemyHandler.getEnemyHandler().add(this);
+		
+
+		this.owner = owner;
+		if(owner == null)
+		{
+			EnemyHandler.getEnemyHandler().add(this);
+		}
+		else
+		{
+			owner.addEnemy(this);
+		}
 	}
 
 	/*
@@ -79,6 +91,14 @@ public abstract class EnemyObject extends MobileGameObject
 
 				}
 			}
+		}
+	}
+	
+	public void update(int x, int y)
+	{
+		if(this.x != x || this.y != y)
+		{
+		moveToPoint(x, y, speed * Gdx.graphics.getDeltaTime());
 		}
 	}
 
@@ -137,8 +157,14 @@ public abstract class EnemyObject extends MobileGameObject
 	 */
 	public void die()
 	{
-		EnemyHandler.getEnemyHandler().remove(this);
+		if(owner == null)
+		{
+			EnemyHandler.getEnemyHandler().remove(this);
+		}
+		else
+		{
+			owner.remove(this);
+		}
 		c.setHittable(false);
 	}
-
 }

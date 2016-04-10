@@ -3,6 +3,7 @@ package map;
 import java.util.HashMap;
 import java.util.Random;
 
+import gameObjects.Building;
 import gameObjects.Goblin;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
@@ -38,7 +39,7 @@ public class Map
 			}
 		}
 
-		Building.generate(100, 500, "stone");
+		BuildingHandler.getBuildingHandler().generateLevel(level);
 
 	}
 
@@ -48,12 +49,12 @@ public class Map
 		return level + "-" + (r.nextInt(ImageLibrary.getImageLibrary().lengthOfSet(level)) + 1);
 	}
 
-	public static void spawnElement(String key, int elementX, int elementY)
+	public static void spawnElement(String key, int elementX, int elementY,Building owner)
 	{
 		try
 		{
-			Class<?>[] args = { int.class, int.class };
-			spawnTypes.get(key).getDeclaredConstructor(args).newInstance(elementX, elementY);
+			Class<?>[] args = { int.class, int.class, Building.class};
+			spawnTypes.get(key).getDeclaredConstructor(args).newInstance(elementX, elementY, owner);
 		}
 		catch (Exception e)
 		{

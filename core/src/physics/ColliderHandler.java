@@ -67,6 +67,7 @@ public class ColliderHandler
 		}
 		return goSet;
 	}
+	
 
 	public ArrayList<GameObject> checkAllCollisons(int x, int y, Class<?> classToCheck)
 	{

@@ -8,6 +8,7 @@ public abstract class Item
 {
 	protected String id;
 	protected String flavorText;
+	private String name;
 	
 	public Item(int x, int y, String id,String flavorText)
 	{
@@ -18,6 +19,8 @@ public abstract class Item
 	{
 		this.id = id;
 		this.flavorText = Functions.formatString(flavorText,TextComponent.LINE_SIZE);
+		
+		name = Functions.camelCaseString(id);
 	}
 	public String getID()
 	{
@@ -26,5 +29,9 @@ public abstract class Item
 	public String getFlavorText()
 	{
 		return flavorText;
+	}
+	public String getName()
+	{
+		return name;
 	}
 }
