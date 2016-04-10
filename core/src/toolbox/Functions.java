@@ -1,5 +1,7 @@
 package toolbox;
 
+import java.util.ArrayList;
+
 import gameObjects.GameObject;
 
 public class Functions
@@ -35,4 +37,54 @@ public class Functions
 		return (float) Math.toDegrees(Math.atan2(dy, dx));
 	}
 
+	public static String formatString(String text, int lineSize)
+	{
+		String modText = text;
+		ArrayList<String> formatText = new ArrayList<String>();
+		String[] words = modText.split(" ");
+		ArrayList<String> line = new ArrayList<String>();
+		int counter = 0;
+		for(int i = 0; i < words.length; i++)
+		{
+			counter += words[i].length()+1;
+			if(counter>lineSize)
+			{
+				String temp = "";
+				for(String word : line)
+				{
+					temp = temp.concat(word+" ");
+				}
+				formatText.add(getSpaces((int)((float)(lineSize-temp.length())/*/2.0f*/)).concat(temp));
+				line = new ArrayList<String>();
+				counter = words[i].length()+1;
+			}
+			line.add(words[i]);
+		}
+		
+		String temp = "";
+		for(String word : line)
+		{
+			temp = temp.concat(word+" ");
+		}
+		formatText.add(getSpaces((int)((float)(lineSize-temp.length())/*/2.0f*/)).concat(temp));
+		line = new ArrayList<String>();
+		modText = "";
+		
+		for(String s : formatText)
+		{
+			modText = modText.concat(s).concat("\n");
+		}
+		return modText;
+	}
+	
+	public static String getSpaces(int count)
+	{
+		String spaces = "";
+		for(int i = 0; i<count;i++)
+		{
+			spaces = spaces.concat(" ");
+		}
+		return spaces;
+	}
+	
 }

@@ -2,6 +2,7 @@ package graphics;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /*
@@ -35,7 +36,7 @@ public class Canvas
 	}
 
 	private ArrayList<Layer> layers;
-
+	private BitmapFont f;
 	private Canvas()
 	{
 
@@ -45,7 +46,8 @@ public class Canvas
 		{
 			layers.add(new Layer());
 		}
-
+		f = new BitmapFont();
+		f.getData().setScale(1f);
 	}
 
 	/*
@@ -73,6 +75,11 @@ public class Canvas
 			layer.paint(sb);
 		}
 
+	}
+	
+	public BitmapFont getBitmapFont()
+	{
+		return f;
 	}
 
 }

@@ -1,5 +1,6 @@
 package graphics;
 
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
@@ -69,17 +70,21 @@ public class GraphicComponent
 	{
 		return texture;
 	}
-
+	
 	public void paint(SpriteBatch sb)
 	{
+		
 		if (layer == LayerType.GUI)
+		{
 			sb.draw(getTexture(), (float) x, (float) y, (float) xSize / 2, (float) ySize / 2, (float) xSize,
 					(float) ySize, 1, 1, (float) rotation);
+		}
 		else
+		{
 			sb.draw(getTexture(), (float) x - Camera.getCamera().getXShift(),
 					(float) y - Camera.getCamera().getYShift(), (float) xSize / 2, (float) ySize / 2, (float) xSize,
 					(float) ySize, 1, 1, (float) rotation);
-
+		}
 	}
 
 	public void updateTexture(String key)

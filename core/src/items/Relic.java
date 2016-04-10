@@ -10,35 +10,30 @@ import gameObjects.PlayerObject;
 import physics.ColliderHandler;
 
 
-public abstract class Relic 
+public abstract class Relic extends Item
 {
 	protected float defenseBarrier; // size of the defense 
 	protected int absorbance; //how much damage that can be absorbed 
-	private String relicName;
+	private String name;
 	
-	public Relic(int absorbance, float defenseBarrier, String relicName, int x, int y)
+	public Relic(int absorbance, float defenseBarrier, String name, String flavorText, int x, int y)
 	{
+		super(x,y,name,flavorText);
 		this.absorbance = absorbance;
 		this.defenseBarrier = defenseBarrier;
-		this.relicName = relicName;
-		new PhysicalItem(x, y, relicName, this)
+		
 		
 	}
 	
-	public Relic(int absorbance, float defenseBarrier, String relicName)
+	public Relic(int absorbance, float defenseBarrier, String name, String flavorText)
 	{
+		super(name,flavorText);
 		this.absorbance = absorbance;
 		this.defenseBarrier = defenseBarrier;
-		this.relicName = relicName;
 	}
 	
 	public void defend()
 	{
 		
-	}
-	
-	public String getRelicName()
-	{
-		return relicName;
 	}
 }

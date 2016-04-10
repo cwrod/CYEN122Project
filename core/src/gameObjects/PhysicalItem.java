@@ -1,27 +1,28 @@
 package gameObjects;
 
 import graphics.Canvas.LayerType;
+import items.Item;
 import items.OnHand;
 import items.Relic;
 
 public class PhysicalItem extends GameObject
 {
-	private OnHand associatedItem;
+	private Item associatedItem;
 
-	public PhysicalItem(int x, int y, String texture, OnHand oh)
+	public PhysicalItem(int x, int y, String texture, Item item)
 	{
 		super(x, y, 25, 25, texture, LayerType.ITEMS, false, false);
-		associatedItem = oh;
+		associatedItem = item;
 	}
 
-	public OnHand getAssociatedItem()
+	public Item getAssociatedItem()
 	{
 		return associatedItem;
 	}
 
-	public void replace(OnHand oh)
+	public void replace(Item item)
 	{
-		gc.updateTexture(oh.getAnimName());
-		associatedItem = oh;
+		gc.updateTexture(item.getID());
+		associatedItem = item;
 	}
 }

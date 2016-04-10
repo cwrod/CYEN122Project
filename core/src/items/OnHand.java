@@ -2,33 +2,30 @@ package items;
 
 import java.util.ArrayList;
 
-import ai.EnemyHandler;
 import gameObjects.EnemyObject;
 import gameObjects.GameObject;
 import gameObjects.PhysicalItem;
 import gameObjects.PlayerObject;
-import graphics.Layer;
 import physics.ColliderHandler;
 
-public abstract class OnHand
+public abstract class OnHand extends Item
 {
 	protected int damage;
 	protected float attackRange;
-	private String animName;
 
-	public OnHand(int damage, float attackRange, String animName, int x, int y)
-	{
+	public OnHand(int damage, float attackRange, String name,String flavorText, int x, int y)
+	{		
+		super(x,y,name,flavorText);
 		this.damage = damage;
 		this.attackRange = attackRange;
-		this.animName = animName;
-		new PhysicalItem(x, y, animName, this);
+
 	}
 
-	public OnHand(int damage, float attackRange, String animName)
+	public OnHand(int damage, float attackRange, String name, String flavorText)
 	{
+		super(name,flavorText);
 		this.damage = damage;
 		this.attackRange = attackRange;
-		this.animName = animName;
 	}
 
 	public void attack(float angle)
@@ -43,11 +40,6 @@ public abstract class OnHand
 		if (eo.size() > 0)
 			((EnemyObject) eo.get(0)).takeDamage(damage);
 
-	}
-
-	public String getAnimName()
-	{
-		return animName;
 	}
 
 }

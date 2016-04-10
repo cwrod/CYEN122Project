@@ -7,8 +7,13 @@ import com.badlogic.gdx.Gdx;
 import graphics.Camera;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
+import graphics.GraphicComponent;
+import gui.GUIComponent;
 import gui.GUIHandler;
+import items.HolyWater;
+import items.Item;
 import items.OnHand;
+import items.Relic;
 import items.RustySword;
 import physics.ColliderHandler;
 import toolbox.Functions;
@@ -40,6 +45,8 @@ public class PlayerObject extends MobileGameObject
 	private int maxHealth;
 
 	private OnHand onHandWeapon;
+	private Relic currentRelic;
+	
 	private boolean canAttack;
 
 	public PlayerObject()
@@ -50,7 +57,8 @@ public class PlayerObject extends MobileGameObject
 		health = maxHealth = 100;
 		canAttack = true;
 		onHandWeapon = new RustySword();
-		gc.updateSet(onHandWeapon.getAnimName());
+		currentRelic = new HolyWater();
+		gc.updateSet(onHandWeapon.getID());
 	}
 
 	public void update()
@@ -107,16 +115,26 @@ public class PlayerObject extends MobileGameObject
 			ArrayList<GameObject> goList = ColliderHandler.getColliderHandler().getObjectsOverlapping(c);
 			if (goList.size() > 0)
 			{
-				for (GameObject go : goList)
-				{
+				GameObject go = goList.get(0);
 					if (go instanceof PhysicalItem)
 					{
-						OnHand temp = onHandWeapon;
-						onHandWeapon = ((PhysicalItem) go).getAssociatedItem();
-						gc.updateSet(onHandWeapon.getAnimName());
-						((PhysicalItem) go).replace(temp);
+						Item foundItem =  ((PhysicalItem) go).getAssociatedItem();
+						if(foundItem instanceof OnHand)
+						{
+							OnHand temp = onHandWeapon;
+							onHandWeapon = (OnHand) foundItem;
+							gc.updateSet(onHandWeapon.getID());
+							((PhysicalItem) go).replace(temp);
+							GUIHandler.getGUIHandler().updateOnHand(onHandWeapon);
+						}
+						else if(foundItem instanceof Relic)
+						{
+							Relic temp = currentRelic;
+							currentRelic = (Relic) foundItem;
+							((PhysicalItem) go).replace(temp);
+							GUIHandler.getGUIHandler().updateRelic(currentRelic);
+						}
 					}
-				}
 			}
 			lastPickup = System.currentTimeMillis();
 		}
@@ -187,5 +205,15 @@ public class PlayerObject extends MobileGameObject
 	{
 		System.out.println("GameOver");
 	}
+
+	public OnHand getOnHand()
+	{
+		return onHandWeapon;
+	}
+	public Relic getRelic()
+	{
+		return currentRelic;
+	}
+	
 
 }

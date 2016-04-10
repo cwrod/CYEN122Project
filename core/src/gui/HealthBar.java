@@ -5,13 +5,14 @@ import graphics.GraphicComponent;
 
 public class HealthBar extends GUIComponent
 {
-
 	private GraphicComponent health;
 
 	public HealthBar(int x, int y, int xSize, int ySize)
 	{
-		super(x, y, xSize, ySize, "healthLostBar");
+		super(x,y,xSize,ySize);
+		new GraphicComponent(x, y, xSize, ySize, "healthLostBar", LayerType.GUI);	
 		health = new GraphicComponent(x, y, xSize, ySize, "healthBar", LayerType.GUI);
+
 	}
 
 	public void updateHealth(float healthPercent)
