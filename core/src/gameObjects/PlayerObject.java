@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
 
+import game.MainGame;
+import game.MainGame.Level;
 import graphics.Camera;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
@@ -37,6 +39,13 @@ public class PlayerObject extends MobileGameObject
 		}
 		return playerObjectSingleton;
 	}
+	
+	public void softReset()
+	{
+		playerObjectSingleton = new PlayerObject(onHandWeapon, currentRelic);
+		
+	}
+
 
 	private float speed;
 	private int health;
@@ -47,16 +56,20 @@ public class PlayerObject extends MobileGameObject
 
 	private boolean canAttack;
 
-	public PlayerObject()
+	public PlayerObject(OnHand startWeapon, Relic startRelic)
 	{
 		super(400, 400, WIDTH, HEIGHT, "player", LayerType.PLAYER, true, true);
 		Camera.getCamera().setPos(x, y);
 		speed = 80;
 		health = maxHealth = 100;
 		canAttack = true;
-		onHandWeapon = new RustySword();
-		currentRelic = new HolyWater();
+		onHandWeapon = startWeapon;
+		currentRelic = startRelic;
 		gc.updateSet(onHandWeapon.getID());
+	}
+	public PlayerObject()
+	{
+		this(new RustySword(), new HolyWater());
 	}
 
 	public void update()
@@ -187,9 +200,11 @@ public class PlayerObject extends MobileGameObject
 	 * inherit from an abstract character object class, but I guess this is fine
 	 * for now.
 	 */
-	public void takeDamage(int dam)
+	public void takeDamage(int dam, EnemyObject source)
 	{
-		health -= dam;
+		
+		int moddedDamage = currentRelic.defend(dam, source);
+		health -= moddedDamage;
 
 		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
 
@@ -204,7 +219,7 @@ public class PlayerObject extends MobileGameObject
 	 */
 	public void die()
 	{
-		System.out.println("GameOver");
+		MainGame.getMainGame().changeLevel(Level.GAME_LOST);
 	}
 
 	public OnHand getOnHand()
@@ -216,5 +231,6 @@ public class PlayerObject extends MobileGameObject
 	{
 		return currentRelic;
 	}
+
 
 }

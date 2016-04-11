@@ -19,6 +19,11 @@ public class GUIHandler
 		}
 		return guiHandlerSingleton;
 	}
+	
+	public static void reset()
+	{
+		guiHandlerSingleton = new GUIHandler();	
+	}
 
 	public GUIHandler()
 	{
@@ -48,4 +53,6 @@ public class GUIHandler
 	{
 		inventory.updateRelic(newRelic);
 	}
+
+
 }

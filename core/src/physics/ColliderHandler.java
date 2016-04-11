@@ -16,6 +16,10 @@ public class ColliderHandler
 		}
 		return colliderHandlerSingleton;
 	}
+	public static void reset()
+	{
+		colliderHandlerSingleton = new ColliderHandler();
+	}
 
 	private ArrayList<Collider> colliders;
 
@@ -81,5 +85,6 @@ public class ColliderHandler
 		}
 		return c;
 	}
+
 
 }

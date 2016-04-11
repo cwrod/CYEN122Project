@@ -6,11 +6,21 @@ package gameObjects;
  */
 public class Goblin extends EnemyObject
 {
-
+	public static final int SIZE = 25;
+	public static final String TEXTURE = "goblin";
+	public static final double SPEED = 50;
+	public static final int DAMAGE = 5;
+	public static final int MAX_RANGE = 40;
+	public static final int MIN_RANGE = 30;
+	public static final int ALERT_DISTANCE = 400;
+	public static final int HEALTH = 100;
+	
+	
+	
+	
 	public Goblin(int xin, int yin, Building owner)
 	{
-		super(xin, yin, 25, 25, "goblin", 50, 2, 25, 400, 100, owner);
-
+		super(xin, yin, SIZE, SIZE, TEXTURE, SPEED, DAMAGE, MAX_RANGE,MIN_RANGE, ALERT_DISTANCE, HEALTH, owner);
 	}
 
 }

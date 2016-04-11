@@ -23,6 +23,11 @@ public class ImageLibrary
 		return imageLibrarySingleton;
 	}
 
+	public static void reset()
+	{
+		imageLibrarySingleton = new ImageLibrary();
+	}
+
 	private HashMap<String, TextureRegion> images;
 	private HashMap<String, Animation> animations;
 	private HashMap<String, HashMap<String, Animation>> animationSet;
@@ -41,6 +46,10 @@ public class ImageLibrary
 		{
 			images = new HashMap<String, TextureRegion>();
 			images.put("animError", new TextureRegion(new Texture("res/myTex.png"), 0, 0, 1.0f, 1.0f));
+			
+
+			images.put("gameOver", new TextureRegion(new Texture("res/cutscenes/gameOver.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWon", new TextureRegion(new Texture("res/cutscenes/gameWon.png"), 0, 0, 1.0f, 1.0f));
 
 			images.put("rustySword",
 					new TextureRegion(new Texture("res/items/weapons/rustySword.png"), 0, 0, 1.0f, 1.0f));
@@ -112,4 +121,5 @@ public class ImageLibrary
 	{
 		return setLengths.get(level);
 	}
+
 }

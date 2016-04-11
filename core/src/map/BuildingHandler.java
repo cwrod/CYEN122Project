@@ -27,6 +27,10 @@ public class BuildingHandler
 
 		return buildingHandlerSingleton;
 	}
+	public static void reset()
+	{
+		buildingHandlerSingleton = new BuildingHandler();
+	}
 
 	private ArrayList<Building> buildings;
 
@@ -133,4 +137,6 @@ public class BuildingHandler
 	{
 		buildings.remove(b);
 	}
+
+
 }

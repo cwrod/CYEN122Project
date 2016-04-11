@@ -1,28 +1,25 @@
 package items;
 
+import gameObjects.EnemyObject;
+
 public abstract class Relic extends Item
 {
-	protected float defenseBarrier; // size of the defense
-	protected int absorbance; // how much damage that can be absorbed
-	private String name;
 
-	public Relic(int absorbance, float defenseBarrier, String name, String flavorText, int x, int y)
+	public Relic(String ID, String flavorText, int x, int y)
 	{
-		super(x, y, name, flavorText);
-		this.absorbance = absorbance;
-		this.defenseBarrier = defenseBarrier;
+		super(x, y, ID, flavorText);
 
 	}
 
-	public Relic(int absorbance, float defenseBarrier, String name, String flavorText)
+	public Relic(String ID, String flavorText)
 	{
-		super(name, flavorText);
-		this.absorbance = absorbance;
-		this.defenseBarrier = defenseBarrier;
+		super(ID, flavorText);
 	}
 
-	public void defend()
+	public abstract int defend(int dam, EnemyObject source);
+	
+	protected int reduceDamage(int dam, float percentReduction)
 	{
-
+		return dam - (int)((float)dam*percentReduction);
 	}
 }

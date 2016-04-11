@@ -34,13 +34,13 @@ public abstract class EnemyObject extends MobileGameObject
 	protected boolean isActive;
 
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
-			float attackMaxRangeIn, float alertDistanceIn, int healthIn, Building owner)
+			int attackMaxRangeIn, int attackMinRangeIn, float alertDistanceIn, int healthIn, Building owner)
 	{
 		super(xin, yin, xSize, ySize, texture, LayerType.ENEMIES, true, true);
 		speed = speedIn;
 		damage = damageIn;
-		attackMinRange = 30;
 		attackMaxRange = attackMaxRangeIn;
+		attackMinRange = attackMinRangeIn;
 		alertDistance = alertDistanceIn;
 		health = healthIn;
 
@@ -123,7 +123,7 @@ public abstract class EnemyObject extends MobileGameObject
 
 		if (po.getCollider().willCollide(attackPointX, attackPointY))
 		{
-			PlayerObject.getPlayerObject().takeDamage(damage);
+			PlayerObject.getPlayerObject().takeDamage(damage, this);
 		}
 	}
 

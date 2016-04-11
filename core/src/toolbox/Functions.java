@@ -40,43 +40,54 @@ public class Functions
 	public static String formatString(String text, int lineSize)
 	{
 		String modText = text;
-		ArrayList<String> formatText = new ArrayList<String>();
-		String[] words = modText.split(" ");
-		ArrayList<String> line = new ArrayList<String>();
-		int counter = 0;
-		for (int i = 0; i < words.length; i++)
+
+		String[] paragraphs = text.split("\n");
+
+		for (int p = 0; p < paragraphs.length; p++)
 		{
-			counter += words[i].length() + 1;
-			if (counter > lineSize)
+			ArrayList<String> formatText = new ArrayList<String>();
+			String[] words = paragraphs[p].split(" ");
+			ArrayList<String> line = new ArrayList<String>();
+			int counter = 0;
+			for (int i = 0; i < words.length; i++)
 			{
-				String temp = "";
-				for (String word : line)
+				counter += words[i].length() + 1;
+				if (counter > lineSize)
 				{
-					temp = temp.concat(word + " ");
+					String temp = "";
+					for (String word : line)
+					{
+						temp = temp.concat(word + " ");
+					}
+					formatText.add(getSpaces(
+							(int) ((float) (lineSize - temp.length())/* /2.0f */)).concat(temp));
+					line = new ArrayList<String>();
+					counter = words[i].length() + 1;
 				}
-				formatText.add(getSpaces(
-						(int) ((float) (lineSize - temp.length())/* /2.0f */)).concat(temp));
-				line = new ArrayList<String>();
-				counter = words[i].length() + 1;
+				line.add(words[i]);
 			}
-			line.add(words[i]);
-		}
 
-		String temp = "";
-		for (String word : line)
-		{
-			temp = temp.concat(word + " ");
-		}
-		formatText.add(
-				getSpaces((int) ((float) (lineSize - temp.length())/* /2.0f */)).concat(temp));
-		line = new ArrayList<String>();
-		modText = "";
+			String temp = "";
+			for (String word : line)
+			{
+				temp = temp.concat(word + " ");
+			}
+			formatText.add(getSpaces(
+					(int) ((float) (lineSize - temp.length())/* /2.0f */)).concat(temp));
+			line = new ArrayList<String>();
+			paragraphs[p] = "";
 
-		for (String s : formatText)
-		{
-			modText = modText.concat(s).concat("\n");
+			for (String s : formatText)
+			{
+				paragraphs[p] = paragraphs[p].concat(s).concat("\n");
+			}
 		}
-		return modText;
+		String finalStr = "";
+		for(int i = 0; i < paragraphs.length; i++)
+		{
+			finalStr = finalStr.concat(paragraphs[i]);
+		}
+		return finalStr;
 	}
 
 	public static String getSpaces(int count)

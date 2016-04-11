@@ -9,24 +9,27 @@ import gameObjects.PlayerObject;
 public class InputHandler
 {
 
-	public void update()
+	public void update(boolean playableLevel)
 	{
-		PlayerObject charObj = PlayerObject.getPlayerObject();
-		if (Gdx.input.isKeyPressed(Keys.W))
-			charObj.moveUp();
-		if (Gdx.input.isKeyPressed(Keys.S))
-			charObj.moveDown();
-		if (Gdx.input.isKeyPressed(Keys.A))
-			charObj.moveLeft();
-		if (Gdx.input.isKeyPressed(Keys.D))
-			charObj.moveRight();
-		if (Gdx.input.isKeyPressed(Keys.F))
-			charObj.pickUp();
+		if (playableLevel)
+		{
+			PlayerObject charObj = PlayerObject.getPlayerObject();
+			if (Gdx.input.isKeyPressed(Keys.W))
+				charObj.moveUp();
+			if (Gdx.input.isKeyPressed(Keys.S))
+				charObj.moveDown();
+			if (Gdx.input.isKeyPressed(Keys.A))
+				charObj.moveLeft();
+			if (Gdx.input.isKeyPressed(Keys.D))
+				charObj.moveRight();
+			if (Gdx.input.isKeyPressed(Keys.F))
+				charObj.pickUp();
+			
 
-		if (Gdx.input.isButtonPressed(Buttons.LEFT))
-			PlayerObject.getPlayerObject().attackLoc(Gdx.input.getX(), Gdx.input.getY());
+			if (Gdx.input.isButtonPressed(Buttons.LEFT))
+				PlayerObject.getPlayerObject().attackLoc(Gdx.input.getX(), Gdx.input.getY());
 
-		charObj.inputDone();
-
+			charObj.inputDone();
+		}
 	}
 }

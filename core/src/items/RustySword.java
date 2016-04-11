@@ -13,7 +13,7 @@ public class RustySword extends OnHand
 
 	public RustySword()
 	{
-		super(5, 20, "rustySword", "The sword version of a Tyler Perry movie.");
+		super(500, 20, "rustySword", "The sword version of a Tyler Perry movie.");
 	}
 
 }

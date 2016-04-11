@@ -24,6 +24,11 @@ public class EnemyHandler
 		return enemyHandlerSingleton;
 	}
 
+	public static void reset()
+	{
+		enemyHandlerSingleton = new EnemyHandler();
+	}
+
 	private ArrayList<EnemyObject> enemies;
 
 	public EnemyHandler()
@@ -58,4 +63,5 @@ public class EnemyHandler
 	{
 		enemies.remove(enemyObject);
 	}
+
 }

@@ -2,6 +2,8 @@ package gameObjects;
 
 import java.util.ArrayList;
 
+import game.MainGame;
+import game.MainGame.Level;
 import graphics.Canvas.LayerType;
 import map.BuildingHandler;
 import quest.QuestHandler;
@@ -14,6 +16,8 @@ public class Building extends GameObject
 
 	private boolean isPlayerIn;
 	private boolean isActive;
+	
+	private boolean isBossLair;
 
 	public Building(int x, int y, int xSize, int ySize, String texture, boolean isActive)
 	{
@@ -23,6 +27,7 @@ public class Building extends GameObject
 		enemyOriginalXYCoords = new ArrayList<int[]>();
 		isPlayerIn = false;
 		this.isActive = isActive;
+		isBossLair = !isActive;
 
 		BuildingHandler.getBuildingHandler().add(this);
 	}
@@ -65,6 +70,10 @@ public class Building extends GameObject
 		enemies.remove(enemyObject);
 		if (enemies.size() == 0)
 		{
+			if(isBossLair)
+			{
+				MainGame.getMainGame().changeLevel(Level.GAME_WON);
+			}
 			QuestHandler.getQuestHandler().buildingCleared();
 			BuildingHandler.getBuildingHandler().remove(this);
 		}

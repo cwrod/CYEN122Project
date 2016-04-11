@@ -24,6 +24,10 @@ public class Canvas
 
 		return canvasSingleton;
 	}
+	public static void reset()
+	{
+		canvasSingleton = new Canvas();	
+	}
 
 	public static final int WIDTH = 500; // Changing this variable does not
 											// change width
@@ -82,5 +86,7 @@ public class Canvas
 	{
 		return f;
 	}
+
+
 
 }
