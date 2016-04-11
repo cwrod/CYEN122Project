@@ -7,8 +7,6 @@ import com.badlogic.gdx.Gdx;
 import graphics.Camera;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
-import graphics.GraphicComponent;
-import gui.GUIComponent;
 import gui.GUIHandler;
 import items.HolyWater;
 import items.Item;
@@ -46,7 +44,7 @@ public class PlayerObject extends MobileGameObject
 
 	private OnHand onHandWeapon;
 	private Relic currentRelic;
-	
+
 	private boolean canAttack;
 
 	public PlayerObject()
@@ -115,12 +113,12 @@ public class PlayerObject extends MobileGameObject
 			ArrayList<GameObject> goList = ColliderHandler.getColliderHandler().getObjectsOverlapping(c);
 			if (goList.size() > 0)
 			{
-				for(GameObject go : goList)
+				for (GameObject go : goList)
 				{
 					if (go instanceof PhysicalItem)
 					{
-						Item foundItem =  ((PhysicalItem) go).getAssociatedItem();
-						if(foundItem instanceof OnHand)
+						Item foundItem = ((PhysicalItem) go).getAssociatedItem();
+						if (foundItem instanceof OnHand)
 						{
 							OnHand temp = onHandWeapon;
 							onHandWeapon = (OnHand) foundItem;
@@ -128,7 +126,7 @@ public class PlayerObject extends MobileGameObject
 							((PhysicalItem) go).replace(temp);
 							GUIHandler.getGUIHandler().updateOnHand(onHandWeapon);
 						}
-						else if(foundItem instanceof Relic)
+						else if (foundItem instanceof Relic)
 						{
 							Relic temp = currentRelic;
 							currentRelic = (Relic) foundItem;
@@ -213,10 +211,10 @@ public class PlayerObject extends MobileGameObject
 	{
 		return onHandWeapon;
 	}
+
 	public Relic getRelic()
 	{
 		return currentRelic;
 	}
-	
 
 }

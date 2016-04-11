@@ -1,11 +1,9 @@
 package graphics;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import graphics.Canvas.LayerType;
-import gui.GUIHandler;
 
 /*
  * This class describes the actual objects that should be shown on the screen.
@@ -70,10 +68,10 @@ public class GraphicComponent
 	{
 		return texture;
 	}
-	
+
 	public void paint(SpriteBatch sb)
 	{
-		
+
 		if (layer == LayerType.GUI)
 		{
 			sb.draw(getTexture(), (float) x, (float) y, (float) xSize / 2, (float) ySize / 2, (float) xSize,

@@ -4,7 +4,6 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ai.EnemyHandler;
@@ -12,6 +11,7 @@ import gameObjects.PlayerObject;
 import graphics.Canvas;
 import graphics.ImageLibrary;
 import gui.GUIHandler;
+import map.BuildingHandler;
 import map.Map;
 import userInterface.InputHandler;
 
@@ -50,6 +50,7 @@ public class MainGame extends ApplicationAdapter
 		Map.generate(80, "level1");
 		ih = new InputHandler();
 		GUIHandler.getGUIHandler();
+		BuildingHandler.getBuildingHandler();
 	}
 
 	/*
@@ -62,6 +63,7 @@ public class MainGame extends ApplicationAdapter
 	{
 		ih.update();
 		EnemyHandler.getEnemyHandler().update();
+		BuildingHandler.getBuildingHandler().update();
 		PlayerObject.getPlayerObject().update();
 
 		Gdx.gl.glClearColor(1, 0, 0, 1);

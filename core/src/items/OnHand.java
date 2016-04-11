@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import gameObjects.EnemyObject;
 import gameObjects.GameObject;
-import gameObjects.PhysicalItem;
 import gameObjects.PlayerObject;
 import physics.ColliderHandler;
 
@@ -13,9 +12,9 @@ public abstract class OnHand extends Item
 	protected int damage;
 	protected float attackRange;
 
-	public OnHand(int damage, float attackRange, String name,String flavorText, int x, int y)
-	{		
-		super(x,y,name,flavorText);
+	public OnHand(int damage, float attackRange, String name, String flavorText, int x, int y)
+	{
+		super(x, y, name, flavorText);
 		this.damage = damage;
 		this.attackRange = attackRange;
 
@@ -23,7 +22,7 @@ public abstract class OnHand extends Item
 
 	public OnHand(int damage, float attackRange, String name, String flavorText)
 	{
-		super(name,flavorText);
+		super(name, flavorText);
 		this.damage = damage;
 		this.attackRange = attackRange;
 	}

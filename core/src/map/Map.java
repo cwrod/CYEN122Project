@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Random;
 
 import gameObjects.Building;
+import gameObjects.ClearDoor;
 import gameObjects.Goblin;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.ImageLibrary;
+import items.HolyWater;
 import items.LegendarySword;
 
 public class Map
@@ -24,6 +26,8 @@ public class Map
 
 		spawnTypes.put("goblin", Goblin.class);
 		spawnTypes.put("legendarySword", LegendarySword.class);
+		spawnTypes.put("holyWater", HolyWater.class);
+		spawnTypes.put("clearDoor", ClearDoor.class);
 
 	}
 
@@ -49,11 +53,11 @@ public class Map
 		return level + "-" + (r.nextInt(ImageLibrary.getImageLibrary().lengthOfSet(level)) + 1);
 	}
 
-	public static void spawnElement(String key, int elementX, int elementY,Building owner)
+	public static void spawnElement(String key, int elementX, int elementY, Building owner)
 	{
 		try
 		{
-			Class<?>[] args = { int.class, int.class, Building.class};
+			Class<?>[] args = { int.class, int.class, Building.class };
 			spawnTypes.get(key).getDeclaredConstructor(args).newInstance(elementX, elementY, owner);
 		}
 		catch (Exception e)

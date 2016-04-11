@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 
 import ai.EnemyHandler;
+import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.TempComponent;
-import graphics.Canvas.LayerType;
 import toolbox.Functions;
 
 /*
@@ -30,7 +30,9 @@ public abstract class EnemyObject extends MobileGameObject
 	protected ArrayList<GraphicComponent> healthSigns;
 
 	protected Building owner;
-	
+
+	protected boolean isActive;
+
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
 			float attackMaxRangeIn, float alertDistanceIn, int healthIn, Building owner)
 	{
@@ -43,17 +45,23 @@ public abstract class EnemyObject extends MobileGameObject
 		health = healthIn;
 
 		isAttacking = false;
-		
 
 		this.owner = owner;
-		if(owner == null)
+		if (owner == null)
 		{
 			EnemyHandler.getEnemyHandler().add(this);
+			isActive = true;
 		}
 		else
 		{
 			owner.addEnemy(this);
+			isActive = owner.isActive();
 		}
+	}
+
+	public void setActive(boolean isActive)
+	{
+		this.isActive = isActive;
 	}
 
 	/*
@@ -93,12 +101,12 @@ public abstract class EnemyObject extends MobileGameObject
 			}
 		}
 	}
-	
+
 	public void update(int x, int y)
 	{
-		if(this.x != x || this.y != y)
+		if (this.x != x || this.y != y)
 		{
-		moveToPoint(x, y, speed * Gdx.graphics.getDeltaTime());
+			moveToPoint(x, y, speed * Gdx.graphics.getDeltaTime());
 		}
 	}
 
@@ -131,14 +139,17 @@ public abstract class EnemyObject extends MobileGameObject
 	 */
 	public void takeDamage(int dam)
 	{
-		health -= dam;
-		if (health <= 0)
+		if (isActive)
 		{
-			die();
-		}
-		else
-		{
-			makeHealthSigns();
+			health -= dam;
+			if (health <= 0)
+			{
+				die();
+			}
+			else
+			{
+				makeHealthSigns();
+			}
 		}
 	}
 
@@ -157,7 +168,7 @@ public abstract class EnemyObject extends MobileGameObject
 	 */
 	public void die()
 	{
-		if(owner == null)
+		if (owner == null)
 		{
 			EnemyHandler.getEnemyHandler().remove(this);
 		}

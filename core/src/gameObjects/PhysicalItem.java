@@ -2,8 +2,6 @@ package gameObjects;
 
 import graphics.Canvas.LayerType;
 import items.Item;
-import items.OnHand;
-import items.Relic;
 
 public class PhysicalItem extends GameObject
 {

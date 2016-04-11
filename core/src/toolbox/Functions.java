@@ -44,43 +44,45 @@ public class Functions
 		String[] words = modText.split(" ");
 		ArrayList<String> line = new ArrayList<String>();
 		int counter = 0;
-		for(int i = 0; i < words.length; i++)
+		for (int i = 0; i < words.length; i++)
 		{
-			counter += words[i].length()+1;
-			if(counter>lineSize)
+			counter += words[i].length() + 1;
+			if (counter > lineSize)
 			{
 				String temp = "";
-				for(String word : line)
+				for (String word : line)
 				{
-					temp = temp.concat(word+" ");
+					temp = temp.concat(word + " ");
 				}
-				formatText.add(getSpaces((int)((float)(lineSize-temp.length())/*/2.0f*/)).concat(temp));
+				formatText.add(getSpaces(
+						(int) ((float) (lineSize - temp.length())/* /2.0f */)).concat(temp));
 				line = new ArrayList<String>();
-				counter = words[i].length()+1;
+				counter = words[i].length() + 1;
 			}
 			line.add(words[i]);
 		}
-		
+
 		String temp = "";
-		for(String word : line)
+		for (String word : line)
 		{
-			temp = temp.concat(word+" ");
+			temp = temp.concat(word + " ");
 		}
-		formatText.add(getSpaces((int)((float)(lineSize-temp.length())/*/2.0f*/)).concat(temp));
+		formatText.add(
+				getSpaces((int) ((float) (lineSize - temp.length())/* /2.0f */)).concat(temp));
 		line = new ArrayList<String>();
 		modText = "";
-		
-		for(String s : formatText)
+
+		for (String s : formatText)
 		{
 			modText = modText.concat(s).concat("\n");
 		}
 		return modText;
 	}
-	
+
 	public static String getSpaces(int count)
 	{
 		String spaces = "";
-		for(int i = 0; i<count;i++)
+		for (int i = 0; i < count; i++)
 		{
 			spaces = spaces.concat(" ");
 		}
@@ -89,20 +91,20 @@ public class Functions
 
 	public static String camelCaseString(String id)
 	{
-		
-		id = (""+id.charAt(0)).toUpperCase() + id.substring(1);
-		
+
+		id = ("" + id.charAt(0)).toUpperCase() + id.substring(1);
+
 		String[] words = id.split("(?=[A-Z])");
 		String phrase = "";
-		for(int i = 0; i < words.length; i++)
+		for (int i = 0; i < words.length; i++)
 		{
 			phrase = phrase.concat(words[i]);
-			if(i!=words.length-1)
+			if (i != words.length - 1)
 			{
 				phrase = phrase.concat(" ");
-			}	
+			}
 		}
 		return phrase;
 	}
-	
+
 }

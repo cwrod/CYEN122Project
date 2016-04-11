@@ -9,6 +9,7 @@ import java.util.Random;
 
 import gameObjects.Building;
 import physics.Collider;
+import quest.QuestHandler;
 
 public class BuildingHandler
 {
@@ -26,50 +27,63 @@ public class BuildingHandler
 
 		return buildingHandlerSingleton;
 	}
-	
-	
+
 	private ArrayList<Building> buildings;
-	
+
 	public BuildingHandler()
 	{
 		buildings = new ArrayList<Building>();
 	}
-	
-	
+
 	public void generateLevel(String level)
 	{
-		generate(100,500,"stone");
+		generate(100, 500, "stone", false);
+		generate(1000, 100, "stone", true);
+
 	}
-	
-	
-	private void generate(int x, int y, String type)
+
+	private void generate(int x, int y, String type, boolean isBossLair)
 	{
 		try
 		{
-			File dir = new File("res/buildingGenPatterns/" + type);
-			File[] directoryListing = dir.listFiles();
-			int length = 0;
-			if (directoryListing != null)
+			String patternID;
+			if (!isBossLair)
 			{
-				for (File file : directoryListing)
+				File dir = new File("res/buildingGenPatterns/" + type);
+				File[] directoryListing = dir.listFiles();
+				int length = 0;
+				if (directoryListing != null)
 				{
-
-					if (Integer.parseInt(file.getName().substring(7, file.getName().indexOf('.'))) > length)
+					for (File file : directoryListing)
 					{
-						length = Integer.parseInt(file.getName().substring(7, file.getName().indexOf('.')));
+						try
+						{
+							if (Integer.parseInt(file.getName().substring(7, file.getName().indexOf('.'))) > length)
+							{
+								length = Integer.parseInt(file.getName().substring(7, file.getName().indexOf('.')));
+							}
+						}
+						catch (Exception e)
+						{
+						}
 					}
 				}
+				patternID = Integer.toString(((new Random()).nextInt(length) + 1));
 			}
-
+			else
+			{
+				patternID = "BOSS";
+			}
 			FileInputStream fstream = new FileInputStream(
-					"res/buildingGenPatterns/" + type + "/pattern" + length + ".txt");
+					"res/buildingGenPatterns/" + type + "/pattern" + patternID + ".txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
-			int patternID = (new Random()).nextInt(length) + 1;
 			int size = (int) (Float.parseFloat(br.readLine()) * Map.TILE_SIZE);
 
-			Building building = new Building(x, y, size, size, type + ":" + patternID);
-			
+			Building building = new Building(x, y, size, size, type + ":" + patternID, !isBossLair);
+			if (isBossLair)
+				QuestHandler.getQuestHandler().setBossLair(building);
+
 			String strLine;
 
 			while (!(strLine = br.readLine()).equals("END"))
@@ -91,7 +105,7 @@ public class BuildingHandler
 
 				int indexToSpawn = (new Random()).nextInt(stringParts.length - 2) + 2;
 
-				Map.spawnElement(stringParts[indexToSpawn], x + elementX, y + elementY,building);
+				Map.spawnElement(stringParts[indexToSpawn], x + elementX, y + elementY, building);
 			}
 
 			br.close();
@@ -99,9 +113,9 @@ public class BuildingHandler
 		catch (Exception e)
 		{
 			System.out.println(e);
-		}	
+		}
 	}
-	
+
 	public void update()
 	{
 		for (Building b : buildings)
@@ -110,14 +124,10 @@ public class BuildingHandler
 		}
 	}
 
-
-
 	public void add(Building b)
 	{
 		buildings.add(b);
 	}
-
-
 
 	public void remove(Building b)
 	{

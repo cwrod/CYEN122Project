@@ -37,6 +37,7 @@ public class Canvas
 
 	private ArrayList<Layer> layers;
 	private BitmapFont f;
+
 	private Canvas()
 	{
 
@@ -76,7 +77,7 @@ public class Canvas
 		}
 
 	}
-	
+
 	public BitmapFont getBitmapFont()
 	{
 		return f;

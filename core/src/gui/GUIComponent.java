@@ -1,10 +1,5 @@
 package gui;
 
-import java.util.ArrayList;
-
-import graphics.Canvas.LayerType;
-import graphics.GraphicComponent;
-
 public abstract class GUIComponent
 {
 
@@ -13,7 +8,6 @@ public abstract class GUIComponent
 	protected int xSize;
 	protected int ySize;
 
-	
 	public GUIComponent(int x, int y, int xSize, int ySize)
 	{
 		this.x = x;

@@ -9,8 +9,8 @@ public class HealthBar extends GUIComponent
 
 	public HealthBar(int x, int y, int xSize, int ySize)
 	{
-		super(x,y,xSize,ySize);
-		new GraphicComponent(x, y, xSize, ySize, "healthLostBar", LayerType.GUI);	
+		super(x, y, xSize, ySize);
+		new GraphicComponent(x, y, xSize, ySize, "healthLostBar", LayerType.GUI);
 		health = new GraphicComponent(x, y, xSize, ySize, "healthBar", LayerType.GUI);
 
 	}
