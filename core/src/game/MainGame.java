@@ -14,6 +14,7 @@ import gui.GUIHandler;
 import map.BuildingHandler;
 import map.Map;
 import physics.ColliderHandler;
+import quest.QuestHandler;
 import scene.SceneHandler;
 import userInterface.InputHandler;
 
@@ -37,10 +38,40 @@ public class MainGame extends ApplicationAdapter
 	
 	public enum Level
 	{
-		FAMINE,PLAGUE,WAR,DEATH,GAME_WON,GAME_LOST
+		FAMINE(true),
+		PLAGUE(true),
+		WAR(true),
+		DEATH(true),
+		GAME_WON(false),
+		GAME_LOST(false);
+		private boolean playable;
+		private Level nextLevel;
+		Level(boolean playable)
+		{
+			this.playable = playable;
+		}
+		public boolean isPlayable()
+		{
+			return playable;
+		}
+		public Level getNextLevel()
+		{
+			switch(this)
+			{
+			case FAMINE:
+				return PLAGUE;
+			default:
+				return null;
+				
+			}
+		}
 	}
 	
-	
+	public void incrementLevel()
+	{
+		changeLevel(currentLevel.getNextLevel());
+		
+	}	
 	public void changeLevel(Level newLevel)
 	{
 		currentLevel = newLevel;
@@ -73,6 +104,7 @@ public class MainGame extends ApplicationAdapter
 			ColliderHandler.reset();
 			ih = new InputHandler();
 			PlayerObject.getPlayerObject().softReset();
+			QuestHandler.reset();
 			GUIHandler.reset();
 			EnemyHandler.reset();
 			BuildingHandler.reset();
@@ -111,4 +143,8 @@ public class MainGame extends ApplicationAdapter
 		Canvas.getCanvas().paint(batch);
 		batch.end();
 	}
+
+
+
+
 }

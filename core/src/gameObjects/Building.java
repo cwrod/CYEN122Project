@@ -70,10 +70,6 @@ public class Building extends GameObject
 		enemies.remove(enemyObject);
 		if (enemies.size() == 0)
 		{
-			if(isBossLair)
-			{
-				MainGame.getMainGame().changeLevel(Level.GAME_WON);
-			}
 			QuestHandler.getQuestHandler().buildingCleared();
 			BuildingHandler.getBuildingHandler().remove(this);
 		}

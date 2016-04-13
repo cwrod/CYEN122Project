@@ -5,6 +5,7 @@ import java.util.Random;
 
 import gameObjects.Building;
 import gameObjects.ClearDoor;
+import gameObjects.FamineBoss;
 import gameObjects.Goblin;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
@@ -28,6 +29,8 @@ public class Map
 		spawnTypes.put("legendarySword", LegendarySword.class);
 		spawnTypes.put("holyWater", HolyWater.class);
 		spawnTypes.put("clearDoor", ClearDoor.class);
+		spawnTypes.put("famineBoss", FamineBoss.class);
+		
 
 	}
 
@@ -43,7 +46,7 @@ public class Map
 			}
 		}
 
-		BuildingHandler.getBuildingHandler().generateLevel(level);
+		BuildingHandler.getBuildingHandler().generateLevel(level,mapSize*TILE_SIZE);
 
 	}
 

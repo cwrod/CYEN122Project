@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import gameObjects.Building;
+import gameObjects.PlayerObject;
 import physics.Collider;
 import quest.QuestHandler;
 
 public class BuildingHandler
 {
+	
+	public static final int BUILDING_MAX_SIZE = 12;
 
 	// Basic header for a singleton
 
@@ -39,11 +42,57 @@ public class BuildingHandler
 		buildings = new ArrayList<Building>();
 	}
 
-	public void generateLevel(String level)
+	public void generateLevel(String level, int mapSize)
 	{
-		generate(100, 500, "stone", false);
-		generate(1000, 100, "stone", true);
-
+		if(level.equals("level1"))
+		{
+			generateField("stone",10,(int)(mapSize-(mapSize*0.1f)));
+		}
+	}
+	
+	private void generateField(String type, int number, int mapSize)
+	{
+		ArrayList<int[]> dimensions = new ArrayList<int[]>();
+		dimensions.add(new int[]{PlayerObject.getPlayerObject().getX(),PlayerObject.getPlayerObject().getY(),PlayerObject.getPlayerObject().getX()+PlayerObject.WIDTH,PlayerObject.getPlayerObject().getY()+PlayerObject.HEIGHT});
+		for(int i = 0; i < number; i++)
+		{
+			Random r = new Random();
+			boolean spaceOccupied = true;
+			int xLeft = 0;
+			int yBottom = 0;
+			int xRight = 0;
+			int yTop = 0;
+			int counter = 0;
+			while(spaceOccupied)
+			{
+				
+				//This is such a shitty way to do this. I am fucking ashamed with myself.
+				counter++;
+				if(counter > 200)
+				{
+					System.out.println("Only " + i + " buildings were made out of "+number);
+					return;
+				}
+				xLeft = r.nextInt(mapSize);
+				yBottom = r.nextInt(mapSize);
+				xRight = xLeft + (BUILDING_MAX_SIZE*Map.TILE_SIZE);
+				yTop = yBottom + (BUILDING_MAX_SIZE*Map.TILE_SIZE);
+				spaceOccupied = false;
+				for(int[] dimension : dimensions)
+				{
+					if ((dimension[0] >= xLeft && dimension[0] <= xRight) || (dimension[2] >= xLeft && dimension[2] <= xRight))
+					{
+						if ((dimension[1] >= yBottom && dimension[1] <= yTop)||(dimension[3] >= yBottom && dimension[3] <= yTop))
+						{
+							spaceOccupied = true;
+						}	
+					}
+				}
+			}
+			int [] newBuildingDimensions = {xLeft,yBottom,xRight,yTop};
+			dimensions.add(newBuildingDimensions);
+			generate(xLeft,yBottom,type,i == 0);
+		}
 	}
 
 	private void generate(int x, int y, String type, boolean isBossLair)

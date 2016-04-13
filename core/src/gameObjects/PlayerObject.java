@@ -9,6 +9,7 @@ import game.MainGame.Level;
 import graphics.Camera;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
+import graphics.GraphicComponent;
 import gui.GUIHandler;
 import items.HolyWater;
 import items.Item;
@@ -16,6 +17,7 @@ import items.OnHand;
 import items.Relic;
 import items.RustySword;
 import physics.ColliderHandler;
+import quest.QuestHandler;
 import toolbox.Functions;
 
 /*
@@ -55,14 +57,17 @@ public class PlayerObject extends MobileGameObject
 	private Relic currentRelic;
 
 	private boolean canAttack;
+	private GraphicComponent compass;
 
+	
 	public PlayerObject(OnHand startWeapon, Relic startRelic)
 	{
 		super(400, 400, WIDTH, HEIGHT, "player", LayerType.PLAYER, true, true);
 		Camera.getCamera().setPos(x, y);
-		speed = 80;
+		speed = 800;
 		health = maxHealth = 100;
 		canAttack = true;
+		compass = null;
 		onHandWeapon = startWeapon;
 		currentRelic = startRelic;
 		gc.updateSet(onHandWeapon.getID());
@@ -79,6 +84,11 @@ public class PlayerObject extends MobileGameObject
 			shouldRotate = true;
 			canAttack = true;
 		}
+		if(compass != null)
+		{
+			compass.setRot((int)Functions.angleMeasure(this,QuestHandler.getQuestHandler().getBoss()));
+		}
+		
 	}
 
 	/*
@@ -230,6 +240,11 @@ public class PlayerObject extends MobileGameObject
 	public Relic getRelic()
 	{
 		return currentRelic;
+	}
+
+	public void showCompass()
+	{
+		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
 	}
 
 

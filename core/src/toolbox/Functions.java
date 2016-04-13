@@ -2,6 +2,7 @@ package toolbox;
 
 import java.util.ArrayList;
 
+import gameObjects.EnemyObject;
 import gameObjects.GameObject;
 
 public class Functions
@@ -116,6 +117,11 @@ public class Functions
 			}
 		}
 		return phrase;
+	}
+
+	public static float angleMeasure(GameObject go1, GameObject go2)
+	{
+		return angleMeasure(go1.getX(),go1.getY(),go2.getX(),go2.getY());
 	}
 
 }

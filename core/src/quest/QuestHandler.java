@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import gameObjects.Building;
 import gameObjects.ClearDoor;
+import gameObjects.EnemyObject;
+import gameObjects.PlayerObject;
 
 public class QuestHandler
 {
@@ -20,6 +22,11 @@ public class QuestHandler
 
 		return questHandlerSingleton;
 	}
+	
+	public static void reset()
+	{
+		questHandlerSingleton = new QuestHandler();
+	}
 
 	private int goalNumber; // Number of buildings the player must clear
 	private int currentCleared;
@@ -27,6 +34,8 @@ public class QuestHandler
 	private ArrayList<ClearDoor> clearDoors;
 
 	private Building bossLair;
+
+	private EnemyObject boss;
 
 	public QuestHandler()
 	{
@@ -49,6 +58,7 @@ public class QuestHandler
 			{
 				c.setUnlocked();
 				bossLair.setActive(true);
+				PlayerObject.getPlayerObject().showCompass();
 			}
 		}
 	}
@@ -61,5 +71,16 @@ public class QuestHandler
 	public void setBossLair(Building building)
 	{
 		bossLair = building;
+	}
+	
+	
+	public void setBoss(EnemyObject boss)
+	{
+		this.boss = boss;
+	}
+
+	public EnemyObject getBoss()
+	{
+		return boss;
 	}
 }

@@ -69,6 +69,8 @@ public class ImageLibrary
 			images.put("healthBar", new TextureRegion(new Texture("res/gui/healthFull.png"), 0, 0, 1.0f, 1.0f));
 			images.put("healthLostBar", new TextureRegion(new Texture("res/gui/healthLost.png"), 0, 0, 1.0f, 1.0f));
 			images.put("inventory", new TextureRegion(new Texture("res/gui/inventory.png"), 0, 0, 1.0f, 1.0f));
+			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
+			
 
 			setLengths = new HashMap<String, Integer>();
 			images.put("level1-1", new TextureRegion(new Texture("res/tiles/level1/grass.png"), 0, 0, 1.0f, 1.0f));
@@ -76,6 +78,10 @@ public class ImageLibrary
 			images.put("level1-3", new TextureRegion(new Texture("res/tiles/level1/dirt2.png"), 0, 0, 1.0f, 1.0f));
 
 			setLengths.put("level1", 3);
+			
+			images.put("level2-1", new TextureRegion(new Texture("res/tiles/level2/lava.png"), 0, 0, 1.0f, 1.0f));
+
+			setLengths.put("level2", 1);
 
 			animationSet = new HashMap<String, HashMap<String, Animation>>();
 
@@ -96,10 +102,15 @@ public class ImageLibrary
 
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/goblin/goblinIdleAnim.png", 50, 10, true));
-			animations.put("attacking", new Animation("res/enemy/goblin//goblinAttackAnim.png", 10, 10, false));
-
+			animations.put("attacking", new Animation("res/enemy/goblin/goblinAttackAnim.png", 10, 10, false));
 			animationSet.put("goblin", animations);
 
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/famineBoss/famineBossIdleAnim.png", 50, 10, true));
+			animations.put("attacking", new Animation("res/enemy/famineBoss/famineBossAttackAnim.png", 20, 10, false));
+			animationSet.put("famineBoss", animations);
+
+			
 		}
 		catch (Exception e)
 		{
