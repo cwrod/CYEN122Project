@@ -60,6 +60,12 @@ public class MainGame extends ApplicationAdapter
 			{
 			case FAMINE:
 				return PLAGUE;
+			case PLAGUE:
+				return WAR;
+			case WAR:
+				return DEATH;
+			case DEATH:
+				return GAME_WON;
 			default:
 				return null;
 				

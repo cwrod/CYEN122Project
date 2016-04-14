@@ -17,7 +17,6 @@ public class Building extends GameObject
 	private boolean isPlayerIn;
 	private boolean isActive;
 	
-	private boolean isBossLair;
 
 	public Building(int x, int y, int xSize, int ySize, String texture, boolean isActive)
 	{
@@ -27,7 +26,6 @@ public class Building extends GameObject
 		enemyOriginalXYCoords = new ArrayList<int[]>();
 		isPlayerIn = false;
 		this.isActive = isActive;
-		isBossLair = !isActive;
 
 		BuildingHandler.getBuildingHandler().add(this);
 	}
