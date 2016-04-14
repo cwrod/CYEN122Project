@@ -110,7 +110,10 @@ public class ImageLibrary
 			animations.put("attacking", new Animation("res/enemy/famineBoss/famineBossAttackAnim.png", 20, 10, false));
 			animationSet.put("famineBoss", animations);
 
-			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
+			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
+			animationSet.put("zombie", animations);
 		}
 		catch (Exception e)
 		{
