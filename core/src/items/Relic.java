@@ -1,6 +1,7 @@
 package items;
 
 import gameObjects.EnemyObject;
+import gameObjects.PlayerObject;
 
 public abstract class Relic extends Item
 {
@@ -16,10 +17,20 @@ public abstract class Relic extends Item
 		super(ID, flavorText);
 	}
 
-	public abstract int defend(int dam, EnemyObject source);
+	public int defend(int dam, EnemyObject source)
+	{
+		return dam;
+	}
 	
 	protected int reduceDamage(int dam, float percentReduction)
 	{
 		return dam - (int)((float)dam*percentReduction);
+	}
+	
+
+
+	public void update() 
+	{
+		
 	}
 }

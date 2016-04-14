@@ -79,6 +79,7 @@ public class PlayerObject extends MobileGameObject
 
 	public void update()
 	{
+		currentRelic.update();
 		if (gc.isDone("attacking"))
 		{
 			shouldRotate = true;
@@ -246,6 +247,4 @@ public class PlayerObject extends MobileGameObject
 	{
 		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
 	}
-
-
 }
