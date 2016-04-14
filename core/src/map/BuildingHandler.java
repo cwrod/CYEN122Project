@@ -46,7 +46,7 @@ public class BuildingHandler
 	{
 		if(level.equals("level1"))
 		{
-			generateField("stone",10,(int)(mapSize-(mapSize*0.1f)));
+			generateField("stone",10,(int)(mapSize-(mapSize*0.2f)));
 		}
 	}
 	
