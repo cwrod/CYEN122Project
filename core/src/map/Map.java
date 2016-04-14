@@ -7,6 +7,7 @@ import gameObjects.Building;
 import gameObjects.ClearDoor;
 import gameObjects.FamineBoss;
 import gameObjects.Goblin;
+import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.ImageLibrary;
@@ -26,6 +27,7 @@ public class Map
 		spawnTypes = new HashMap<String, Class<?>>();
 
 		spawnTypes.put("goblin", Goblin.class);
+		spawnTypes.put("zombie", Zombie.class);
 		spawnTypes.put("legendarySword", LegendarySword.class);
 		spawnTypes.put("holyWater", HolyWater.class);
 		spawnTypes.put("clearDoor", ClearDoor.class);

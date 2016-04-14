@@ -158,6 +158,11 @@ public class PlayerObject extends MobileGameObject
 							GUIHandler.getGUIHandler().updateRelic(currentRelic);
 						}
 						break;
+					} 
+					if (go instanceof Consumable) 
+					{ 
+						Consumable c = (Consumable) go; 
+						c.useItem();
 					}
 				}
 			}
@@ -247,4 +252,24 @@ public class PlayerObject extends MobileGameObject
 	{
 		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
 	}
+<<<<<<< HEAD
+=======
+
+	public int getHealth() 
+	{ 
+		return health; 
+	}
+
+	public void incrementHealth(int amountToHeal) 
+	{
+		health += amountToHeal; 
+		if (health > maxHealth) 
+		{ 
+			health = maxHealth;
+		}
+		
+	}
+	
+
+>>>>>>> origin/master
 }
