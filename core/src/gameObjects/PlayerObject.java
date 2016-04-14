@@ -252,8 +252,6 @@ public class PlayerObject extends MobileGameObject
 	{
 		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
 	}
-<<<<<<< HEAD
-=======
 
 	public int getHealth() 
 	{ 
@@ -269,7 +267,4 @@ public class PlayerObject extends MobileGameObject
 		}
 		
 	}
-	
-
->>>>>>> origin/master
 }
