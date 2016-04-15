@@ -2,6 +2,7 @@ package items;
 
 import gameObjects.Building;
 import gameObjects.EnemyObject;
+import gameObjects.PlayerObject;
 
 public class HolyWater extends Relic
 {
@@ -21,10 +22,15 @@ public class HolyWater extends Relic
 		super(ID,FLAVOR);
 	}
 
-	@Override
-	public int defend(int dam, EnemyObject source)
+	@Override 
+	public void equip()
 	{
-		return reduceDamage(dam,ABSORBTION);
+		PlayerObject.getPlayerObject().changeModDef(ABSORBTION);
+	}
+	
+	public void dequip()
+	{
+		PlayerObject.getPlayerObject().changeModAtt(ABSORBTION);		
 	}
 
 }

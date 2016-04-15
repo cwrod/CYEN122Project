@@ -47,6 +47,8 @@ public class PlayerObject extends MobileGameObject
 	public void softReset()
 	{
 		playerObjectSingleton = new PlayerObject(MainGame.getMainGame().getGameData().getLastWeapon(), MainGame.getMainGame().getGameData().getLastRelic());
+		onHandWeapon.equip();
+		currentRelic.equip();
 	}
 	
 	public void saveCharData()
@@ -66,6 +68,10 @@ public class PlayerObject extends MobileGameObject
 
 	private boolean canAttack;
 	private GraphicComponent compass;
+	
+	private float modDef;
+	private float modAtt;
+	
 
 	
 	public PlayerObject(OnHand startWeapon, Relic startRelic)
@@ -76,13 +82,18 @@ public class PlayerObject extends MobileGameObject
 		health = maxHealth = 100;
 		canAttack = true;
 		compass = null;
+		
+		modDef = 0.0f;
+		modAtt = 1.0f;
+		
 		onHandWeapon = startWeapon;
 		currentRelic = startRelic;
+		
 		gc.updateSet(onHandWeapon.getID());
 	}
 	public PlayerObject()
 	{
-		this(new RustySword(), new HolyWater());
+		this(new RustySword(),new HolyWater());
 	}
 
 	public void update()
@@ -153,18 +164,13 @@ public class PlayerObject extends MobileGameObject
 						Item foundItem = ((PhysicalItem) go).getAssociatedItem();
 						if (foundItem instanceof OnHand)
 						{
-							OnHand temp = onHandWeapon;
-							onHandWeapon = (OnHand) foundItem;
-							gc.updateSet(onHandWeapon.getID());
-							((PhysicalItem) go).replace(temp);
-							GUIHandler.getGUIHandler().updateOnHand(onHandWeapon);
+							((PhysicalItem) go).replace(onHandWeapon);
+							equipItem(foundItem);
 						}
 						else if (foundItem instanceof Relic)
 						{
-							Relic temp = currentRelic;
-							currentRelic = (Relic) foundItem;
-							((PhysicalItem) go).replace(temp);
-							GUIHandler.getGUIHandler().updateRelic(currentRelic);
+							((PhysicalItem) go).replace(currentRelic);
+							equipItem(foundItem);
 						}
 						break;
 					}
@@ -172,6 +178,7 @@ public class PlayerObject extends MobileGameObject
 					{ 
 						Consumable c = (Consumable) go; 
 						c.useItem();
+						break;
 					}
 				}
 			}
@@ -179,6 +186,29 @@ public class PlayerObject extends MobileGameObject
 		}
 	}
 
+	private void equipItem(Item item)
+	{
+		if(item instanceof OnHand)
+		{
+			if(onHandWeapon!=null)
+				onHandWeapon.dequip();
+			item.equip();
+			onHandWeapon = (OnHand) item;
+
+			gc.updateSet(onHandWeapon.getID());
+			GUIHandler.getGUIHandler().updateOnHand(onHandWeapon);
+		}
+		if(item instanceof Relic)
+		{
+			if(currentRelic!=null)
+				currentRelic.dequip();
+			item.equip();
+			currentRelic = (Relic) item;
+			GUIHandler.getGUIHandler().updateRelic(currentRelic);
+		}
+		
+	}
+	
 	public void inputDone()
 	{
 
@@ -204,7 +234,7 @@ public class PlayerObject extends MobileGameObject
 			setRotation((int) angle);
 			shouldRotate = false;
 			gc.updateTexture("attacking");
-			onHandWeapon.attack((float) angle);
+			onHandWeapon.attack((float) angle,modAtt);
 		}
 	}
 
@@ -217,6 +247,30 @@ public class PlayerObject extends MobileGameObject
 		super.move(dx, dy);
 		Camera.getCamera().setPos(x, y);
 	}
+	
+	public float getModDef()
+	{
+		return modDef;
+	}
+
+
+	public void changeModDef(float amountToAdd)
+	{
+		this.modDef += amountToAdd;
+	}
+
+
+	public float getModAtt()
+	{
+		return modAtt;
+	}
+
+
+	public void changeModAtt(float amountToAdd)
+	{
+		this.modAtt += amountToAdd;
+	}
+
 
 	/*
 	 * Exact same as enemyObject takeDamage.
@@ -227,15 +281,19 @@ public class PlayerObject extends MobileGameObject
 	 */
 	public void takeDamage(int dam, EnemyObject source)
 	{
+		currentRelic.defend(source);
 		
-		int moddedDamage = currentRelic.defend(dam, source);
-		health -= moddedDamage;
-
-		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
-
-		if (health <= 0)
+		int moddedDamage = (int)(dam - (modDef*dam));
+		if(moddedDamage>0)
 		{
-			die();
+			health -= moddedDamage;
+	
+			GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
+	
+			if (health <= 0)
+			{
+				die();
+			}	
 		}
 	}
 
@@ -269,6 +327,7 @@ public class PlayerObject extends MobileGameObject
 		if(health>maxHealth)
 			health = maxHealth;
 		
+		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
 	}
 	public int getHealth() 
 	{ 
