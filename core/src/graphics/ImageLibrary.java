@@ -72,6 +72,17 @@ public class ImageLibrary
 			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
 			images.put("exitButton", new TextureRegion(new Texture("res/gui/exit.png"), 0, 0, 1.0f, 1.0f));
 			images.put("nextLevelButton", new TextureRegion(new Texture("res/gui/nextLevel.png"), 0, 0, 1.0f, 1.0f));
+			images.put("selected", new TextureRegion(new Texture("res/gui/selected.png"), 0, 0, 1.0f, 1.0f));
+			images.put("transparency", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
+			
+			
+			images.put("ourFatherChoice", new TextureRegion(new Texture("res/gui/prayers/choices/ourFather.png"), 0, 0, 1.0f, 1.0f));
+			
+			images.put("ourFatherIcon", new TextureRegion(new Texture("res/gui/prayers/icons/ourFather.png"), 0, 0, 1.0f, 1.0f));
+			images.put("nullBox", new TextureRegion(new Texture("res/gui/prayers/icons/nullBox.png"), 0, 0, 1.0f, 1.0f));
+			
+			
+			
 			
 			
 
