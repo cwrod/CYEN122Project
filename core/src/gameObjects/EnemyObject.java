@@ -26,6 +26,8 @@ public abstract class EnemyObject extends MobileGameObject
 	protected float alertDistance;
 
 	protected int health;
+	protected int maxHealth;
+	
 
 	protected ArrayList<GraphicComponent> healthSigns;
 
@@ -42,7 +44,7 @@ public abstract class EnemyObject extends MobileGameObject
 		attackMaxRange = attackMaxRangeIn;
 		attackMinRange = attackMinRangeIn;
 		alertDistance = alertDistanceIn;
-		health = healthIn;
+		health = maxHealth = healthIn;
 
 		isAttacking = false;
 
@@ -157,7 +159,7 @@ public abstract class EnemyObject extends MobileGameObject
 	{
 
 		addLabel(new TempComponent(x, y, xSize, 5, 0, -10, 1.0f, "healthLostBar", LayerType.EFFECTS));
-		addLabel(new TempComponent(x, y, (int) ((health / 100f) * xSize), 5, 0, -10, 1.0f, "healthBar",
+		addLabel(new TempComponent(x, y, (int) (((float)health / (float)maxHealth) * xSize), 5, 0, -10, 1.0f, "healthBar",
 				LayerType.EFFECTS));
 
 	}

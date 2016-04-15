@@ -1,6 +1,7 @@
 package gameObjects;
 
 import graphics.Canvas.LayerType;
+import quest.QuestHandler;
 
 public abstract class Door extends GameObject
 {

@@ -1,6 +1,13 @@
 package gui;
 
+import java.util.ArrayList;
+
+import game.MainGame;
+import game.MainGame.Level;
+import gameObjects.PlayerObject;
 import graphics.Canvas;
+import graphics.GraphicComponent;
+import graphics.Canvas.LayerType;
 import items.OnHand;
 import items.Relic;
 
@@ -15,28 +22,66 @@ public class GUIHandler
 	{
 		if (guiHandlerSingleton == null)
 		{
-			guiHandlerSingleton = new GUIHandler();
+			reset(Level.FAMINE);
 		}
 		return guiHandlerSingleton;
 	}
 	
-	public static void reset()
+	public static void reset(Level l)
 	{
-		guiHandlerSingleton = new GUIHandler();	
+		guiHandlerSingleton = new GUIHandler(l);	
 	}
 
-	public GUIHandler()
+	public GUIHandler(Level l)
 	{
-		init();
+		init(l);
 	}
 
 	private HealthBar health;
 	private Inventory inventory;
+	private ArrayList<Button> interactableObjects;
+	private Level currentLevel;
 
-	private void init()
+	private void init(Level l)
 	{
+		interactableObjects = new ArrayList<Button>();
+		currentLevel = l;
+		if(l.isPlayable())
+		{
 		health = new HealthBar(30, 30, 200, 20);
 		inventory = new Inventory(Canvas.WIDTH - 150, 100, 140, 300);
+		}
+		else
+		{
+			switch(l)
+			{
+			case MAIN_MENU:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
+				interactableObjects.add(new LevelLoadButton(10,200));
+				return; 
+			case FIRST_PRAYER:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
+				//PrayerChooser pc = new PrayerChooser(currentLevel.getLevelNumber());
+				//RadioButton r = new RadioButton
+				//interactableObjects.add(r);
+				//PrayerChooser.put(r,new Prayer())
+				interactableObjects.add(new LevelLoadButton(100,0));
+				return; 
+			case FAMINE_WON:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWon", LayerType.GUI);
+				interactableObjects.add(new LevelLoadButton(10,200));
+				return; 
+			case GAME_WON:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWon", LayerType.GUI);
+				interactableObjects.add(new ExitButton(200,200));
+				return;
+			case GAME_LOST:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameOver", LayerType.GUI);
+				interactableObjects.add(new ExitButton(200,200,.5f));
+				interactableObjects.add(new LevelLoadButton(10,200,.5f,MainGame.getMainGame().getGameData().getLastCheckPoint()));
+				return;
+			}
+		}
 	}
 
 	public void updateHealth(float healthPercent)
@@ -52,6 +97,28 @@ public class GUIHandler
 	public void updateRelic(Relic newRelic)
 	{
 		inventory.updateRelic(newRelic);
+	}
+
+	public void update()
+	{
+		
+		
+	}
+
+	public boolean wasGUIPressed(int x, int y)
+	{
+		for(Button b : interactableObjects)
+		{
+			if(x>b.getX()&&x<b.getX()+b.getXSize())
+			{
+				if(y>b.getY()&&y<b.getY()+b.getYSize())
+				{
+					b.buttonPressed();
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 

@@ -5,6 +5,8 @@ import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Input.Keys;
 
 import gameObjects.PlayerObject;
+import graphics.Canvas;
+import gui.GUIHandler;
 
 public class InputHandler
 {
@@ -27,9 +29,24 @@ public class InputHandler
 			
 
 			if (Gdx.input.isButtonPressed(Buttons.LEFT))
-				PlayerObject.getPlayerObject().attackLoc(Gdx.input.getX(), Gdx.input.getY());
-
+			{
+				int x = Gdx.input.getX();
+				int y = Canvas.HEIGHT-Gdx.input.getY();
+				if(!GUIHandler.getGUIHandler().wasGUIPressed(x,y))
+					PlayerObject.getPlayerObject().attackLoc(x, y);
+			}
 			charObj.inputDone();
 		}
+		else
+		{
+			if (Gdx.input.isButtonPressed(Buttons.LEFT))
+			{
+				int x = Gdx.input.getX();
+				int y = Canvas.HEIGHT-Gdx.input.getY();
+				GUIHandler.getGUIHandler().wasGUIPressed(x,y);
+					
+			}
+		}
+		
 	}
 }

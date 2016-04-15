@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 
 import game.MainGame;
+import game.MainGame.GameData;
 import game.MainGame.Level;
 import graphics.Camera;
 import graphics.Canvas;
@@ -42,10 +43,17 @@ public class PlayerObject extends MobileGameObject
 		return playerObjectSingleton;
 	}
 	
+	
 	public void softReset()
 	{
-		playerObjectSingleton = new PlayerObject(onHandWeapon, currentRelic);
-		
+		playerObjectSingleton = new PlayerObject(MainGame.getMainGame().getGameData().getLastWeapon(), MainGame.getMainGame().getGameData().getLastRelic());
+	}
+	
+	public void saveCharData()
+	{
+		GameData gd = MainGame.getMainGame().getGameData();
+		gd.setLastRelic(currentRelic);
+		gd.setLastWeapon(onHandWeapon);
 	}
 
 
@@ -64,7 +72,7 @@ public class PlayerObject extends MobileGameObject
 	{
 		super(400, 400, WIDTH, HEIGHT, "player", LayerType.PLAYER, true, true);
 		Camera.getCamera().setPos(x, y);
-		speed = 800;
+		speed = 200;
 		health = maxHealth = 100;
 		canAttack = true;
 		compass = null;
@@ -79,6 +87,7 @@ public class PlayerObject extends MobileGameObject
 
 	public void update()
 	{
+
 		currentRelic.update();
 		if (gc.isDone("attacking"))
 		{
@@ -158,7 +167,7 @@ public class PlayerObject extends MobileGameObject
 							GUIHandler.getGUIHandler().updateRelic(currentRelic);
 						}
 						break;
-					} 
+					}
 					if (go instanceof Consumable) 
 					{ 
 						Consumable c = (Consumable) go; 
@@ -191,7 +200,7 @@ public class PlayerObject extends MobileGameObject
 		if (canAttack)
 		{
 			canAttack = false;
-			double angle = Functions.angleMeasure((-Canvas.WIDTH / 2) + attX, (Canvas.HEIGHT / 2) - attY);
+			double angle = Functions.angleMeasure((-Canvas.WIDTH / 2) + attX, (-Canvas.HEIGHT / 2) + attY);
 			setRotation((int) angle);
 			shouldRotate = false;
 			gc.updateTexture("attacking");
@@ -253,18 +262,19 @@ public class PlayerObject extends MobileGameObject
 		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
 	}
 
+
+	public void incrementHealth(int healthToAdd)
+	{
+		health += healthToAdd;
+		if(health>maxHealth)
+			health = maxHealth;
+		
+	}
 	public int getHealth() 
 	{ 
 		return health; 
 	}
+	
 
-	public void incrementHealth(int amountToHeal) 
-	{
-		health += amountToHeal; 
-		if (health > maxHealth) 
-		{ 
-			health = maxHealth;
-		}
-		
-	}
+
 }

@@ -30,6 +30,6 @@ public class FamineBoss extends EnemyObject
 	@Override
 	public void die()
 	{
-		MainGame.getMainGame().changeLevel(Level.PLAGUE);
+		MainGame.getMainGame().incrementLevel();
 	}
 }

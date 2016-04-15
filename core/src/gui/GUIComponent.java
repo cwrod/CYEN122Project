@@ -15,4 +15,24 @@ public abstract class GUIComponent
 		this.xSize = xSize;
 		this.ySize = ySize;
 	}
+
+	public int getX()
+	{
+		return x;
+	}
+
+	public int getY()
+	{
+		return y;
+	}
+
+	public int getXSize()
+	{
+		return xSize;
+	}
+
+	public int getYSize()
+	{
+		return ySize;
+	}
 }

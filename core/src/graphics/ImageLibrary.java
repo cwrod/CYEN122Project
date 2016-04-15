@@ -70,6 +70,9 @@ public class ImageLibrary
 			images.put("healthLostBar", new TextureRegion(new Texture("res/gui/healthLost.png"), 0, 0, 1.0f, 1.0f));
 			images.put("inventory", new TextureRegion(new Texture("res/gui/inventory.png"), 0, 0, 1.0f, 1.0f));
 			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
+			images.put("exitButton", new TextureRegion(new Texture("res/gui/exit.png"), 0, 0, 1.0f, 1.0f));
+			images.put("nextLevelButton", new TextureRegion(new Texture("res/gui/nextLevel.png"), 0, 0, 1.0f, 1.0f));
+			
 			
 
 			setLengths = new HashMap<String, Integer>();
@@ -109,11 +112,13 @@ public class ImageLibrary
 			animations.put("default", new Animation("res/enemy/famineBoss/famineBossIdleAnim.png", 50, 10, true));
 			animations.put("attacking", new Animation("res/enemy/famineBoss/famineBossAttackAnim.png", 20, 10, false));
 			animationSet.put("famineBoss", animations);
-
+			
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
 			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
 			animationSet.put("zombie", animations);
+
+			
 		}
 		catch (Exception e)
 		{
