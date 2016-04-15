@@ -3,6 +3,8 @@ package graphics;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import game.MainGame;
+import game.MainGame.Level;
 import graphics.Canvas.LayerType;
 
 /*
@@ -71,7 +73,7 @@ public class GraphicComponent
 
 	public void paint(SpriteBatch sb)
 	{
-
+		
 		if (layer == LayerType.GUI)
 		{
 			sb.draw(getTexture(), (float) x, (float) y, (float) xSize / 2, (float) ySize / 2, (float) xSize,

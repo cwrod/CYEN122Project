@@ -44,9 +44,10 @@ public class BuildingHandler
 
 	public void generateLevel(String level, int mapSize)
 	{
+		int modifiedSize = (int)(mapSize-(mapSize*0.2f));
 		if(level.equals("level1"))
 		{
-			generateField("stone",10,(int)(mapSize-(mapSize*0.2f)));
+			generateField("stone",10,modifiedSize);
 		}
 	}
 	

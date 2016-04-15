@@ -17,9 +17,9 @@ public abstract class Relic extends Item
 		super(ID, flavorText);
 	}
 
-	public int defend(int dam, EnemyObject source)
+	public void defend(EnemyObject source)
 	{
-		return dam;
+		
 	}
 	
 	protected int reduceDamage(int dam, float percentReduction)
