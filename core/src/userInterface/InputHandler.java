@@ -7,7 +7,6 @@ import com.badlogic.gdx.Input.Keys;
 import gameObjects.PlayerObject;
 import graphics.Canvas;
 import gui.GUIHandler;
-import gui.PrayerBar;
 
 public class InputHandler
 {
@@ -28,16 +27,6 @@ public class InputHandler
 			if (Gdx.input.isKeyPressed(Keys.F))
 				charObj.pickUp();
 			
-			
-			PrayerBar pb = GUIHandler.getGUIHandler().getPrayerBar();
-			if (Gdx.input.isKeyPressed(Keys.NUM_1))
-				pb.prayerCalled(0);
-			if (Gdx.input.isKeyPressed(Keys.NUM_2))
-				pb.prayerCalled(1);
-			if (Gdx.input.isKeyPressed(Keys.NUM_3))
-				pb.prayerCalled(2);
-			if (Gdx.input.isKeyPressed(Keys.NUM_4))
-				pb.prayerCalled(3);
 
 			if (Gdx.input.isButtonPressed(Buttons.LEFT))
 			{

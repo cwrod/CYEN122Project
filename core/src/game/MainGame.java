@@ -58,9 +58,9 @@ public class MainGame extends ApplicationAdapter
 		{
 			this.lastRelic = lastRelic;
 		}
-		public Prayer[] getPrayers()
+		public Prayer getPrayer(int index)
 		{
-			return prayers;
+			return prayers[index];
 		}
 		public void setPrayer(int index, Prayer prayer)
 		{
@@ -198,7 +198,6 @@ public class MainGame extends ApplicationAdapter
 			ImageLibrary.reset();
 			Canvas.reset();
 			ColliderHandler.reset();
-			GUIHandler.reset(currentLevel);
 			PlayerObject.getPlayerObject().softReset();
 			QuestHandler.reset();
 			EnemyHandler.reset();

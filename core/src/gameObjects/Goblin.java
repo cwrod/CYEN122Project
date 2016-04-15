@@ -9,7 +9,7 @@ public class Goblin extends EnemyObject
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "goblin";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 100;
+	public static final int DAMAGE = 500;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;

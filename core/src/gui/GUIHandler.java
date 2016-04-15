@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import game.MainGame;
 import game.MainGame.Level;
+import gameObjects.PlayerObject;
 import graphics.Canvas;
-import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
+import graphics.Canvas.LayerType;
 import items.OnHand;
 import items.Relic;
-import prayer.OurFather;
 
 public class GUIHandler
 {
@@ -39,7 +39,6 @@ public class GUIHandler
 
 	private HealthBar health;
 	private Inventory inventory;
-	private PrayerBar prayerBar;
 	private ArrayList<Button> interactableObjects;
 	private Level currentLevel;
 
@@ -51,7 +50,6 @@ public class GUIHandler
 		{
 		health = new HealthBar(30, 30, 200, 20);
 		inventory = new Inventory(Canvas.WIDTH - 150, 100, 140, 300);
-		prayerBar = new PrayerBar(0, Canvas.HEIGHT-50, 50);
 		}
 		else
 		{
@@ -63,10 +61,10 @@ public class GUIHandler
 				return; 
 			case FIRST_PRAYER:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
-				PrayerChooser pc = new PrayerChooser(0);
-				RadioButton r = new RadioButton(250, 250, 100, 100, "ourFatherChoice");
-				interactableObjects.add(r);
-				pc.put(r,new OurFather());
+				//PrayerChooser pc = new PrayerChooser(currentLevel.getLevelNumber());
+				//RadioButton r = new RadioButton
+				//interactableObjects.add(r);
+				//PrayerChooser.put(r,new Prayer())
 				interactableObjects.add(new LevelLoadButton(100,0));
 				return; 
 			case FAMINE_WON:
@@ -103,13 +101,10 @@ public class GUIHandler
 
 	public void update()
 	{
-		if(prayerBar!=null)
-			prayerBar.update();
-	} 
-	public PrayerBar getPrayerBar()
-	{
-		return prayerBar;
+		
+		
 	}
+
 	public boolean wasGUIPressed(int x, int y)
 	{
 		for(Button b : interactableObjects)

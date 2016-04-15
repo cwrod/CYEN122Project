@@ -38,8 +38,4 @@ public abstract class Item
 	{
 		return name;
 	}
-
-	public void equip(){}
-	
-	public void dequip(){}
 }

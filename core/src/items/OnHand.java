@@ -27,7 +27,7 @@ public abstract class OnHand extends Item
 		this.attackRange = attackRange;
 	}
 
-	public void attack(float angle, float modAtt)
+	public void attack(float angle)
 	{
 
 		PlayerObject po = PlayerObject.getPlayerObject();
@@ -37,7 +37,7 @@ public abstract class OnHand extends Item
 		ArrayList<GameObject> eo = ColliderHandler.getColliderHandler().checkAllCollisons(attackPointX, attackPointY,
 				EnemyObject.class);
 		if (eo.size() > 0)
-			((EnemyObject) eo.get(0)).takeDamage((int)(damage*modAtt));
+			((EnemyObject) eo.get(0)).takeDamage(damage);
 
 	}
 

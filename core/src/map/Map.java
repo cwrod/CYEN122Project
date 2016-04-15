@@ -13,7 +13,6 @@ import graphics.GraphicComponent;
 import graphics.ImageLibrary;
 import items.HolyWater;
 import items.LegendarySword;
-import physics.Collider;
 
 public class Map
 {
@@ -50,10 +49,6 @@ public class Map
 		}
 
 		BuildingHandler.getBuildingHandler().generateLevel(level,mapSize*TILE_SIZE);
-		new Collider(0, -20, mapSize*TILE_SIZE + 20, 20); //Bottom
-		new Collider(-20, 0, 20,mapSize*TILE_SIZE + 20); //Left
-		new Collider(0, mapSize*TILE_SIZE, mapSize*TILE_SIZE,20); //Top
-		new Collider(mapSize*TILE_SIZE, 0,20,mapSize*TILE_SIZE); //Right
 
 	}
 
