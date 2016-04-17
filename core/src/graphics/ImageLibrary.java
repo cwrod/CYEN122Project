@@ -63,6 +63,8 @@ public class ImageLibrary
 
 			images.put("stone:1",
 					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("stone:2",
+					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern2.png"), 0, 0, 1.0f, 1.0f));
 			images.put("stone:BOSS",
 					new TextureRegion(new Texture("res/buildingGenPatterns/stone/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
 
