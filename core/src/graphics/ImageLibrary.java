@@ -79,9 +79,14 @@ public class ImageLibrary
 			
 			
 			images.put("ourFatherChoice", new TextureRegion(new Texture("res/gui/prayers/choices/ourFather.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gloryBeChoice", new TextureRegion(new Texture("res/gui/prayers/choices/gloryBe.png"), 0, 0, 1.0f, 1.0f));
+			
 			
 			images.put("ourFatherIcon", new TextureRegion(new Texture("res/gui/prayers/icons/ourFather.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gloryBeIcon", new TextureRegion(new Texture("res/gui/prayers/icons/gloryBe.png"), 0, 0, 1.0f, 1.0f));
 			images.put("nullBox", new TextureRegion(new Texture("res/gui/prayers/icons/nullBox.png"), 0, 0, 1.0f, 1.0f));
+			
+			images.put("flame", new TextureRegion(new Texture("res/effects/flame.png"), 0, 0, 1.0f, 1.0f));
 			
 			
 			

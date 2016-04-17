@@ -30,10 +30,14 @@ public class EnemyHandler
 	}
 
 	private ArrayList<EnemyObject> enemies;
+	private ArrayList<EnemyObject> handledEnemies;
+	
 
 	public EnemyHandler()
 	{
 		enemies = new ArrayList<EnemyObject>();
+		handledEnemies = new ArrayList<EnemyObject>();
+		
 	}
 
 	/*
@@ -43,8 +47,20 @@ public class EnemyHandler
 	public void add(EnemyObject eo)
 	{
 		enemies.add(eo);
+		handledEnemies.add(eo);
+		
+	} 
+	
+	public void addHandledEnemy(EnemyObject eo)
+	{
+		handledEnemies.add(eo);
 	}
-
+	public ArrayList<EnemyObject> getEnemies()
+	{
+		return handledEnemies;
+	}
+	
+	
 	/*
 	 * Called from the render class. Updates all enemies.
 	 */
@@ -61,7 +77,11 @@ public class EnemyHandler
 	 */
 	public void remove(EnemyObject enemyObject)
 	{
-		enemies.remove(enemyObject);
+		handledEnemies.remove(enemyObject);
+		if(enemies.contains(enemyObject))
+		{
+			enemies.remove(enemyObject);
+		}
 	}
 
 }

@@ -9,6 +9,7 @@ import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import items.OnHand;
 import items.Relic;
+import prayer.GloryBe;
 import prayer.OurFather;
 
 public class GUIHandler
@@ -64,9 +65,14 @@ public class GUIHandler
 			case FIRST_PRAYER:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
 				PrayerChooser pc = new PrayerChooser(0);
-				RadioButton r = new RadioButton(250, 250, 100, 100, "ourFatherChoice");
-				interactableObjects.add(r);
-				pc.put(r,new OurFather());
+				RadioButton r1 = new RadioButton(250, 250, 100, 100, "ourFatherChoice");
+				RadioButton r2 = new RadioButton(0, 250, 100, 100, "gloryBeChoice");
+				interactableObjects.add(r1);
+				interactableObjects.add(r2);
+				pc.put(r1,new OurFather());
+				pc.put(r2,new GloryBe());
+				r1.addButtonListener(pc);
+				r2.addButtonListener(pc);
 				interactableObjects.add(new LevelLoadButton(100,0));
 				return; 
 			case FAMINE_WON:

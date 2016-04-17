@@ -7,15 +7,24 @@ import graphics.GraphicComponent;
 public abstract class Prayer
 {
 	private final float coolDownMax;
+	protected final float durationMax;
 	
 	private float coolDown;
+	protected float duration;
+	
 	private String texture;
 	
-	public Prayer(float coolDownMax, String texture)
+	
+	public Prayer(float coolDownMax, float durationMax, String texture)
 	{
 		this.coolDownMax = coolDownMax;
+		this.durationMax = durationMax;
 		this.texture = texture;
 		coolDown = 0;
+	}
+	public Prayer(float coolDownMax, String texture)
+	{
+		this(coolDownMax,0.0f,texture);
 	}
 	
 	
@@ -25,6 +34,7 @@ public abstract class Prayer
 		{
 			doPrayer();
 			coolDown = coolDownMax;
+			duration = durationMax;
 		}
 	}
 	
@@ -35,14 +45,30 @@ public abstract class Prayer
 	
 	protected abstract void doPrayer();
 	
-	//TODO call from GUIHandler
+	protected void prayerEnd()
+	{
+		
+	}
+	
+	
 	public void update()
 	{
 		if(coolDown>0)
 		{
 			coolDown -= Gdx.graphics.getDeltaTime();
 		}
+		if(duration > 0)
+		{
+			duration -= Gdx.graphics.getDeltaTime();
+			if(duration <= 0)
+			{
+				prayerEnd();
+			}
+		}
+		
 	}
+	
+	
 	
 	public float getCoolDownPercent()
 	{

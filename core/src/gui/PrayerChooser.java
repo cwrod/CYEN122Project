@@ -36,6 +36,7 @@ public class PrayerChooser implements ButtonListener
 		if(lastSelected != null)
 			lastSelected.deselect();
 		rb.select();
+		lastSelected = rb;
 		MainGame.getMainGame().getGameData().setPrayer(index, choices.get(rb));
 	}
 		
