@@ -112,4 +112,9 @@ public class GraphicComponent
 		this.xSize = xSize;
 		this.ySize = ySize;
 	}
+
+	public String getCurrentTrack()
+	{
+		return null;
+	}
 }

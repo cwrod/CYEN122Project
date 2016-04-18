@@ -8,13 +8,13 @@ public abstract class Relic extends Item
 
 	public Relic(String ID, String flavorText, int x, int y)
 	{
-		super(x, y, ID, flavorText);
+		super(x, y, ID, ID, flavorText);
 
 	}
 
 	public Relic(String ID, String flavorText)
 	{
-		super(ID, flavorText);
+		super(ID, ID, flavorText);
 	}
 
 	public void defend(EnemyObject source)

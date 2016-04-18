@@ -24,11 +24,14 @@ public class AnimationComponent extends GraphicComponent
 		animations = ImageLibrary.getImageLibrary().findAnim(key);
 		defaultTrack = currentTrack = "default";
 
+
 	}
 
 	@Override
 	public boolean isDone(String track)
 	{
+		if(!currentTrack.equals(track))
+			return true;
 		if (animations.get(track).isDone())
 		{
 			updateTexture(defaultTrack);
@@ -44,6 +47,7 @@ public class AnimationComponent extends GraphicComponent
 	@Override
 	public TextureRegion getTexture()
 	{
+
 		isDone(currentTrack);
 		return animations.get(currentTrack).play();
 	}
@@ -54,6 +58,8 @@ public class AnimationComponent extends GraphicComponent
 	@Override
 	public void updateTexture(String key)
 	{
+		if(key.equals("default"))
+			System.out.println();
 		currentTrack = key;
 		animations.get(currentTrack).play();
 	}
@@ -62,6 +68,12 @@ public class AnimationComponent extends GraphicComponent
 	public void updateSet(String key)
 	{
 		animations = ImageLibrary.getImageLibrary().findAnim(key);
+	}
+	
+	@Override
+	public String getCurrentTrack()
+	{
+		return currentTrack;
 	}
 
 }

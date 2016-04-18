@@ -107,19 +107,14 @@ public class ImageLibrary
 			animationSet = new HashMap<String, HashMap<String, Animation>>();
 
 			animations = new HashMap<String, Animation>();
-			animations.put("default", new Animation("res/character/rustySword/rustySwordIdleAnim.png", 50, 10, true));
+			animations.put("default", new Animation("res/character/sword/swordIdleAnim.png", 24, 34, true));
 			animations.put("attacking",
-					new Animation("res/character/rustySword/rustySwordAttackAnim.png", 10, 10, false));
+					new Animation("res/character/sword/swordAttackAnim.png", 24, 17, false));
+			animations.put("walking", new Animation("res/character/sword/swordWalkAnim.png", 24, 34, true));
 
-			animationSet.put("rustySword", animations);
+			animationSet.put("sword", animations);
 
-			animations = new HashMap<String, Animation>();
-			animations.put("default",
-					new Animation("res/character/legendarySword/legendarySwordIdleAnim.png", 50, 20, true));
-			animations.put("attacking",
-					new Animation("res/character/legendarySword/legendarySwordAttackAnim.png", 10, 20, false));
 
-			animationSet.put("legendarySword", animations);
 
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/goblin/goblinIdleAnim.png", 50, 10, true));

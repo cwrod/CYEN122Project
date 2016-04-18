@@ -76,7 +76,7 @@ public class PlayerObject extends MobileGameObject
 	
 	public PlayerObject(OnHand startWeapon, Relic startRelic)
 	{
-		super(400, 400, WIDTH, HEIGHT, "player", LayerType.PLAYER, true, true);
+		super(400, 400, WIDTH, HEIGHT, startWeapon.getType(), LayerType.PLAYER, true, true);
 		Camera.getCamera().setPos(x, y);
 		speed = 200;
 		health = maxHealth = 100;
@@ -89,7 +89,6 @@ public class PlayerObject extends MobileGameObject
 		onHandWeapon = startWeapon;
 		currentRelic = startRelic;
 		
-		gc.updateSet(onHandWeapon.getID());
 	}
 	public PlayerObject()
 	{
@@ -195,7 +194,7 @@ public class PlayerObject extends MobileGameObject
 			item.equip();
 			onHandWeapon = (OnHand) item;
 
-			gc.updateSet(onHandWeapon.getID());
+			gc.updateSet(onHandWeapon.getType());
 			GUIHandler.getGUIHandler().updateOnHand(onHandWeapon);
 		}
 		if(item instanceof Relic)
@@ -214,8 +213,17 @@ public class PlayerObject extends MobileGameObject
 
 		if (horizontalSums != 0 || verticalSums != 0)
 		{
+			if(gc.isDone("attacking"))
+				gc.updateTexture("walking");
 			moveToPoint(x + horizontalSums, y + verticalSums, speed * Gdx.graphics.getDeltaTime());
 			horizontalSums = verticalSums = 0;
+		}
+		else
+		{
+			if(gc.getCurrentTrack().equals("walking"))
+			{
+				gc.updateTexture("default");
+			}
 		}
 
 	}
