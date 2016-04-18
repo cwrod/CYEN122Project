@@ -2,6 +2,7 @@ package gameObjects;
 
 import java.util.ArrayList;
 
+import ai.EnemyHandler;
 import game.MainGame;
 import game.MainGame.Level;
 import graphics.Canvas.LayerType;
@@ -34,6 +35,7 @@ public class Building extends GameObject
 	{
 		enemies.add(eo);
 		enemyOriginalXYCoords.add(new int[] { eo.getX(), eo.getY() });
+		EnemyHandler.getEnemyHandler().addHandledEnemy(eo);
 	}
 
 	public boolean isActive()
@@ -66,6 +68,7 @@ public class Building extends GameObject
 	public void remove(EnemyObject enemyObject)
 	{
 		enemies.remove(enemyObject);
+		EnemyHandler.getEnemyHandler().remove(enemyObject);
 		if (enemies.size() == 0)
 		{
 			QuestHandler.getQuestHandler().buildingCleared();

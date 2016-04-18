@@ -12,22 +12,22 @@ public abstract class OnHand extends Item
 	protected int damage;
 	protected float attackRange;
 
-	public OnHand(int damage, float attackRange, String name, String flavorText, int x, int y)
+	public OnHand(int damage, float attackRange, String id, String type, String flavorText, int x, int y)
 	{
-		super(x, y, name, flavorText);
+		super(x, y, id, type, flavorText);
 		this.damage = damage;
 		this.attackRange = attackRange;
 
 	}
 
-	public OnHand(int damage, float attackRange, String name, String flavorText)
+	public OnHand(int damage, float attackRange, String id, String type, String flavorText)
 	{
-		super(name, flavorText);
+		super(id, type, flavorText);
 		this.damage = damage;
 		this.attackRange = attackRange;
 	}
 
-	public void attack(float angle)
+	public void attack(float angle, float modAtt)
 	{
 
 		PlayerObject po = PlayerObject.getPlayerObject();
@@ -37,7 +37,7 @@ public abstract class OnHand extends Item
 		ArrayList<GameObject> eo = ColliderHandler.getColliderHandler().checkAllCollisons(attackPointX, attackPointY,
 				EnemyObject.class);
 		if (eo.size() > 0)
-			((EnemyObject) eo.get(0)).takeDamage(damage);
+			((EnemyObject) eo.get(0)).takeDamage((int)(damage*modAtt));
 
 	}
 
