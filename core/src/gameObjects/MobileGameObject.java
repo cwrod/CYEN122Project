@@ -19,11 +19,18 @@ public abstract class MobileGameObject extends GameObject
 	public MobileGameObject(int xin, int yin, int xSize, int ySize, String texture, LayerType layer,
 			boolean shouldRotate, boolean animated)
 	{
-		super(xin, yin, xSize, ySize, texture, layer, true, animated);
+		this(xin, yin, xSize, ySize, 0, texture, layer, shouldRotate, animated);
+
+	}
+
+	public MobileGameObject(int xin, int yin, int xSize, int ySize, int rotation, String texture, LayerType layer,
+			boolean shouldRotate, boolean animated)
+	{
+		super(xin, yin, xSize, ySize, rotation, texture, layer, true, animated);
 
 		movementX = movementY = 0;
 		this.shouldRotate = shouldRotate;
-
+		// TODO Auto-generated constructor stub
 	}
 
 	/*
@@ -59,6 +66,7 @@ public abstract class MobileGameObject extends GameObject
 		else
 		{
 			movementX = 0;
+			onHit(hit.getGameObject());
 			if (hit.getGameObject() != null)
 			{
 				hit.getGameObject().onHit(this);
@@ -84,6 +92,7 @@ public abstract class MobileGameObject extends GameObject
 		else
 		{
 			movementY = 0;
+			onHit(hit2.getGameObject());
 			if (hit2.getGameObject() != null)
 			{
 				hit2.getGameObject().onHit(this);
@@ -101,5 +110,9 @@ public abstract class MobileGameObject extends GameObject
 
 		move(magnitude * sideRatios[0], magnitude * sideRatios[1]);
 	}
-
+	public void moveForward(double magnitude)
+	{
+		
+		move(Math.cos(Math.toRadians(rotation))*magnitude,Math.sin(Math.toRadians(rotation))*magnitude);
+	}
 }

@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import toolbox.DeltaTime;
+
 /*
  * A singular moving picture, just like those newfangled city-folk have.
  */
@@ -42,7 +44,7 @@ public class Animation
 	public TextureRegion play()
 	{
 		isDone = false;
-		timeCounter += Gdx.graphics.getDeltaTime();
+		timeCounter += DeltaTime.get();
 		while (timeCounter > frameChange)
 		{
 			timeCounter -= frameChange;

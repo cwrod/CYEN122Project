@@ -170,4 +170,9 @@ public class Collider
 		this.hittable = hittable;
 	}
 
+	public void kill()
+	{
+		ColliderHandler.getColliderHandler().remove(this);
+	}
+
 }

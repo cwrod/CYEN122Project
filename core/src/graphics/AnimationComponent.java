@@ -58,8 +58,6 @@ public class AnimationComponent extends GraphicComponent
 	@Override
 	public void updateTexture(String key)
 	{
-		if(key.equals("default"))
-			System.out.println();
 		currentTrack = key;
 		animations.get(currentTrack).play();
 	}

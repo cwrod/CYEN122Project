@@ -6,6 +6,7 @@ import ai.EnemyHandler;
 import gameObjects.EnemyObject;
 import gameObjects.PlayerObject;
 import graphics.Canvas.LayerType;
+import toolbox.DeltaTime;
 import toolbox.Functions;
 import graphics.GraphicComponent;
 
@@ -44,7 +45,7 @@ public class GloryBe extends Prayer
 		if(isActive)
 		{
 			setFlamePos();
-			damage+=Gdx.graphics.getDeltaTime()*DPS;
+			damage+=DeltaTime.get()*DPS;
 			if(damage>1.0f)
 			{
 				for(EnemyObject eo : EnemyHandler.getEnemyHandler().getEnemies())

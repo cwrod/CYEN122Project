@@ -3,6 +3,7 @@ package prayer;
 import com.badlogic.gdx.Gdx;
 
 import graphics.GraphicComponent;
+import toolbox.DeltaTime;
 
 public abstract class Prayer
 {
@@ -55,11 +56,11 @@ public abstract class Prayer
 	{
 		if(coolDown>0)
 		{
-			coolDown -= Gdx.graphics.getDeltaTime();
+			coolDown -= DeltaTime.get();
 		}
 		if(duration > 0)
 		{
-			duration -= Gdx.graphics.getDeltaTime();
+			duration -= DeltaTime.get();
 			if(duration <= 0)
 			{
 				prayerEnd();

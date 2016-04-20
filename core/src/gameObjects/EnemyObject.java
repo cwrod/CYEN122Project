@@ -8,6 +8,7 @@ import ai.EnemyHandler;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.TempComponent;
+import toolbox.DeltaTime;
 import toolbox.Functions;
 
 /*
@@ -97,7 +98,8 @@ public abstract class EnemyObject extends MobileGameObject
 				}
 				else
 				{
-					moveToPoint(po.getX(), po.getY(), speed * Gdx.graphics.getDeltaTime());
+					moveToPoint(po.getX(), po.getY(), speed * DeltaTime.get());
+					gc.updateTexture("walking");
 
 				}
 			}
@@ -108,7 +110,12 @@ public abstract class EnemyObject extends MobileGameObject
 	{
 		if (this.x != x || this.y != y)
 		{
-			moveToPoint(x, y, speed * Gdx.graphics.getDeltaTime());
+			moveToPoint(x, y, speed * DeltaTime.get());
+			gc.updateTexture("walking");
+		}
+		else
+		{
+			gc.updateTexture("default");
 		}
 	}
 
@@ -178,6 +185,7 @@ public abstract class EnemyObject extends MobileGameObject
 		{
 			owner.remove(this);
 		}
-		c.setHittable(false);
+		c.kill();
+		gc.changeLayer(LayerType.DEAD);
 	}
 }

@@ -85,6 +85,12 @@ public class ColliderHandler
 		}
 		return c;
 	}
+	public void remove(Collider collider)
+	{
+		
+		colliders.remove(collider);
+		
+	}
 
 
 }

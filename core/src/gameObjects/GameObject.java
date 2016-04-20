@@ -30,14 +30,15 @@ public abstract class GameObject
 
 	protected ArrayList<GraphicComponent> labelList;
 
-	public GameObject(int x, int y, int xSize, int ySize, String texture, LayerType layer, boolean shouldCollide,
+	public GameObject(int x, int y, int xSize, int ySize,int rotation, String texture, LayerType layer, boolean shouldCollide,
 			boolean animated)
 	{
+		
 		this.x = x;
 		this.y = y;
 		this.xSize = xSize;
 		this.ySize = ySize;
-		this.rotation = 0;
+		this.rotation = rotation;
 		if (animated)
 		{
 			gc = new AnimationComponent(x, y, xSize, ySize, texture, layer);
@@ -46,8 +47,14 @@ public abstract class GameObject
 		{
 			gc = new GraphicComponent(x, y, xSize, ySize, texture, layer);
 		}
+		gc.setRot(rotation);
 		c = ColliderHandler.getColliderHandler().addCollider(this, shouldCollide);
 		labelList = new ArrayList<GraphicComponent>();
+	}
+	public GameObject(int x, int y, int xSize, int ySize, String texture, LayerType layer, boolean shouldCollide,
+			boolean animated)
+	{
+		this(x, y, xSize, ySize, 0, texture, layer, shouldCollide, animated);
 	}
 
 	public int getX()
@@ -129,7 +136,21 @@ public abstract class GameObject
 	{
 
 	}
+
+	public void update()
+	{
+		
+	}
 	
+	public void kill()
+	{
+		gc.kill();
+		c.kill();
+		for(GraphicComponent graphic : labelList)
+		{
+			graphic.kill();
+		}
+	}
 
 
 }

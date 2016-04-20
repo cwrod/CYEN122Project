@@ -11,6 +11,7 @@ import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.ImageLibrary;
+import items.Bow;
 import items.HolyWater;
 import items.LegendarySword;
 import physics.Collider;
@@ -33,6 +34,8 @@ public class Map
 		spawnTypes.put("holyWater", HolyWater.class);
 		spawnTypes.put("clearDoor", ClearDoor.class);
 		spawnTypes.put("famineBoss", FamineBoss.class);
+		spawnTypes.put("bow", Bow.class);
+		
 		
 
 	}

@@ -30,7 +30,11 @@ public class Building extends GameObject
 
 		BuildingHandler.getBuildingHandler().add(this);
 	}
-
+	
+	public boolean getPlayerIn()
+	{
+		return isPlayerIn;
+	}
 	public void addEnemy(EnemyObject eo)
 	{
 		enemies.add(eo);
