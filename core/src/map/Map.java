@@ -7,6 +7,7 @@ import gameObjects.Building;
 import gameObjects.ClearDoor;
 import gameObjects.FamineBoss;
 import gameObjects.Goblin;
+import gameObjects.HellHound;
 import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
@@ -33,6 +34,7 @@ public class Map
 		spawnTypes.put("holyWater", HolyWater.class);
 		spawnTypes.put("clearDoor", ClearDoor.class);
 		spawnTypes.put("famineBoss", FamineBoss.class);
+		spawnTypes.put("hellHound", HellHound.class);
 		
 
 	}

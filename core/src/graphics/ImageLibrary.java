@@ -131,6 +131,10 @@ public class ImageLibrary
 			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
 			animationSet.put("zombie", animations);
 
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/hellHound/hellHoundIdleAnim.png", 50, 10, true));
+			animations.put("attacking", new Animation("res/enemy/hellHound/hellHoundAttackAnim.png", 10, 10, false));
+			animationSet.put("hellHound", animations);
 			
 		}
 		catch (Exception e)
