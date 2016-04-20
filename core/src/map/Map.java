@@ -6,6 +6,7 @@ import java.util.Random;
 import gameObjects.Building;
 import gameObjects.ClearDoor;
 import gameObjects.FamineBoss;
+import gameObjects.GiantRat;
 import gameObjects.Goblin;
 import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
@@ -30,6 +31,7 @@ public class Map
 
 		spawnTypes.put("goblin", Goblin.class);
 		spawnTypes.put("zombie", Zombie.class);
+		spawnTypes.put("giantRat", GiantRat.class);
 		spawnTypes.put("legendarySword", LegendarySword.class);
 		spawnTypes.put("holyWater", HolyWater.class);
 		spawnTypes.put("clearDoor", ClearDoor.class);

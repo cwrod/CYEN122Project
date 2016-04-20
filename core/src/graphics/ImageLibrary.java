@@ -146,6 +146,11 @@ public class ImageLibrary
 			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
 			animations.put("walking", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
 			animationSet.put("zombie", animations);
+			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/giantRat/giantRatIdleAnim.png", 50, 10, true));
+			animations.put("attacking", new Animation("res/enemy/giantRat/giantRatAttackAnim.png", 10, 10, false));
+			animationSet.put("giantRat", animations);
 
 			
 		}
