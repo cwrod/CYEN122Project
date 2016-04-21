@@ -1,9 +1,7 @@
 package audio;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 
 public class AudioHandler
 {
@@ -24,7 +22,10 @@ public class AudioHandler
 			audioLibrarySingleton = new AudioHandler();
 		}
 
-		private HashMap<String, Sound> sounds;
+		private HashMap<String, Audio> sounds;
+		private ArrayList<Audio> currentSoundEffects;
+		private Audio backgroundMusic;
+		
 
 
 		public AudioHandler()
@@ -34,9 +35,13 @@ public class AudioHandler
 
 		private void loadAudio()
 		{
-			sounds.put("level1music",Gdx.audio.newSound(Gdx.files.internal("res/music/mysound.mp3")));
+			sounds.put("level1music",new Audio("res/music/mysound.mp3",true));
 			
 		}
-
-
+		public void changeMusic(String key)
+		{
+			backgroundMusic.stop();
+			backgroundMusic = sounds.get(key);
+			backgroundMusic.play();
+		}
 }

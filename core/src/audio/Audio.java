@@ -5,8 +5,8 @@ import com.badlogic.gdx.audio.Sound;
 
 public class Audio
 {
-	private Sound currentSound;
-	private boolean isRepeatable;
+	protected Sound currentSound;
+	protected boolean isRepeatable;
 	public Audio(String source, boolean isRepeatable)
 	{
 		currentSound = Gdx.audio.newSound(Gdx.files.internal("res/music/mysound.mp3"));
@@ -23,6 +23,11 @@ public class Audio
 	public void stop()
 	{
 		currentSound.stop();
+	}
+	
+	public boolean isPlaying()
+	{
+		return false;
 	}
 	
 	
