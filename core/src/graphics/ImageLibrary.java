@@ -150,6 +150,7 @@ public class ImageLibrary
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/giantRat/giantRatIdleAnim.png", 50, 10, true));
 			animations.put("attacking", new Animation("res/enemy/giantRat/giantRatAttackAnim.png", 10, 10, false));
+			animations.put("walking", new Animation("res/enemy/giantRat/giantRatIdleAnim.png", 50, 10, true));
 			animationSet.put("giantRat", animations);
 
 			animations = new HashMap<String, Animation>();

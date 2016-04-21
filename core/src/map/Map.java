@@ -6,6 +6,7 @@ import java.util.Random;
 import gameObjects.Building;
 import gameObjects.ClearDoor;
 import gameObjects.FamineBoss;
+import gameObjects.GiantRat;
 import gameObjects.Goblin;
 import gameObjects.HellHound;
 import gameObjects.Zombie;
@@ -37,6 +38,7 @@ public class Map
 		spawnTypes.put("famineBoss", FamineBoss.class);
 		spawnTypes.put("hellHound", HellHound.class);
 		spawnTypes.put("bow", Bow.class);
+		spawnTypes.put("giantRat", GiantRat.class);
 		
 		
 
