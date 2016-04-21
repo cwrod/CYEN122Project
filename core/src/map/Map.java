@@ -13,9 +13,16 @@ import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.ImageLibrary;
+import items.AngelicBlade;
+import items.AxeOfTheFallenViking;
+import items.BladeOfWar;
 import items.Bow;
 import items.HolyWater;
+import items.IronSword;
 import items.LegendarySword;
+import items.SkeletonsArm;
+import items.TheHandOfDeath;
+import items.TheLightBringer;
 import physics.Collider;
 
 public class Map
@@ -39,6 +46,14 @@ public class Map
 		spawnTypes.put("hellHound", HellHound.class);
 		spawnTypes.put("bow", Bow.class);
 		spawnTypes.put("giantRat", GiantRat.class);
+		spawnTypes.put("angelicBlade", AngelicBlade.class);
+		spawnTypes.put("axeOfTheFallenViking", AxeOfTheFallenViking.class);
+		spawnTypes.put("bladeOfWar", BladeOfWar.class);
+		spawnTypes.put("ironSword", IronSword.class);
+		spawnTypes.put("skeletonsArm", SkeletonsArm.class);
+		spawnTypes.put("theHandOfDeath", TheHandOfDeath.class);
+		spawnTypes.put("theLightBringer", TheLightBringer.class);
+		
 		
 		
 
