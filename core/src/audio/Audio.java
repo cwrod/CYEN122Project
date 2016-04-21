@@ -24,11 +24,4 @@ public class Audio
 	{
 		currentSound.stop();
 	}
-	
-	public boolean isPlaying()
-	{
-		return false;
-	}
-	
-	
 }

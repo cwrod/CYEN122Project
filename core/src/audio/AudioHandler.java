@@ -19,11 +19,14 @@ public class AudioHandler
 
 		public static void reset()
 		{
+			for(String a : audioLibrarySingleton.sounds.keySet())
+			{
+				audioLibrarySingleton.sounds.get(a).stop();
+			}
 			audioLibrarySingleton = new AudioHandler();
 		}
 
 		private HashMap<String, Audio> sounds;
-		private ArrayList<Audio> currentSoundEffects;
 		private Audio backgroundMusic;
 		
 
@@ -31,13 +34,18 @@ public class AudioHandler
 		public AudioHandler()
 		{
 			loadAudio();
+			sounds = new HashMap<String,Audio>();
 		}
 
 		private void loadAudio()
 		{
 			sounds.put("level1music",new Audio("res/music/mysound.mp3",true));
-			
 		}
+		public void addSoundEffect(String key)
+		{
+			sounds.get(key).play();
+		}
+		
 		public void changeMusic(String key)
 		{
 			backgroundMusic.stop();
