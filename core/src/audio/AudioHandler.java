@@ -23,7 +23,6 @@ public class AudioHandler
 			{
 				audioLibrarySingleton.sounds.get(a).stop();
 			}
-			audioLibrarySingleton = new AudioHandler();
 		}
 
 		private HashMap<String, Audio> sounds;
@@ -33,8 +32,8 @@ public class AudioHandler
 
 		public AudioHandler()
 		{
-			loadAudio();
 			sounds = new HashMap<String,Audio>();
+			loadAudio();
 		}
 
 		private void loadAudio()
