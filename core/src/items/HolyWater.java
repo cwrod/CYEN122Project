@@ -1,7 +1,6 @@
 package items;
 
 import gameObjects.Building;
-import gameObjects.EnemyObject;
 import gameObjects.PlayerObject;
 
 public class HolyWater extends Relic

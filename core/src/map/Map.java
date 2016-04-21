@@ -39,6 +39,7 @@ public class Map
 		spawnTypes.put("bow", Bow.class);
 		
 		
+		
 
 	}
 

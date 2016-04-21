@@ -53,6 +53,20 @@ public class ImageLibrary
 
 			images.put("rustySword",
 					new TextureRegion(new Texture("res/items/weapons/rustySword.png"), 0, 0, 1.0f, 1.0f));
+			images.put("angelicBlade",
+					new TextureRegion(new Texture("res/items/weapons/AngelicSword.png"), 0, 0, 1.0f, 1.0f));
+			images.put("axeOfTheFallenViking",
+					new TextureRegion(new Texture("res/items/weapons/AxeOfTheFallenViking.png"), 0, 0, 1.0f, 1.0f));
+			images.put("bladeOfWar",
+					new TextureRegion(new Texture("res/items/weapons/BladeOfWar.png"), 0, 0, 1.0f, 1.0f));
+			images.put("skeletonsArm",
+					new TextureRegion(new Texture("res/items/weapons/SkeletonsArm.png"), 0, 0, 1.0f, 1.0f));
+			images.put("theHandOfDeath",
+					new TextureRegion(new Texture("res/items/weapons/TheHandOfDeath.png"), 0, 0, 1.0f, 1.0f));
+			images.put("theLightBringer",
+					new TextureRegion(new Texture("res/items/weapons/TheLightBringer.png"), 0, 0, 1.0f, 1.0f));
+			images.put("ironSword",
+					new TextureRegion(new Texture("res/items/weapons/IronSword.png"), 0, 0, 1.0f, 1.0f));
 			images.put("legendarySword",
 					new TextureRegion(new Texture("res/items/weapons/legendarySword.png"), 0, 0, 1.0f, 1.0f));
 			images.put("bow",

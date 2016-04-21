@@ -1,7 +1,6 @@
 package items;
 
 import gameObjects.EnemyObject;
-import gameObjects.PlayerObject;
 
 public abstract class Relic extends Item
 {
