@@ -55,6 +55,11 @@ public class ImageLibrary
 					new TextureRegion(new Texture("res/items/weapons/rustySword.png"), 0, 0, 1.0f, 1.0f));
 			images.put("legendarySword",
 					new TextureRegion(new Texture("res/items/weapons/legendarySword.png"), 0, 0, 1.0f, 1.0f));
+			images.put("bow",
+					new TextureRegion(new Texture("res/items/weapons/bow.png"), 0, 0, 1.0f, 1.0f));
+
+			images.put("arrow",
+					new TextureRegion(new Texture("res/items/misc/arrow.png"), 0, 0, 1.0f, 1.0f));
 
 			images.put("holyWater", new TextureRegion(new Texture("res/items/relics/holyWater.png"), 0, 0, 1.0f, 1.0f));
 
@@ -65,6 +70,8 @@ public class ImageLibrary
 					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern1.png"), 0, 0, 1.0f, 1.0f));
 			images.put("stone:2",
 					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern2.png"), 0, 0, 1.0f, 1.0f));
+			images.put("stone:3",
+					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern3.png"), 0, 0, 1.0f, 1.0f));
 			images.put("stone:BOSS",
 					new TextureRegion(new Texture("res/buildingGenPatterns/stone/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
 
@@ -94,11 +101,9 @@ public class ImageLibrary
 			
 
 			setLengths = new HashMap<String, Integer>();
-			images.put("level1-1", new TextureRegion(new Texture("res/tiles/level1/grass.png"), 0, 0, 1.0f, 1.0f));
-			images.put("level1-2", new TextureRegion(new Texture("res/tiles/level1/dirt1.png"), 0, 0, 1.0f, 1.0f));
-			images.put("level1-3", new TextureRegion(new Texture("res/tiles/level1/dirt2.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1-1", new TextureRegion(new Texture("res/tiles/level1/crackedDirt.png"), 0, 0, 1.0f, 1.0f));
 
-			setLengths.put("level1", 3);
+			setLengths.put("level1", 1);
 			
 			images.put("level2-1", new TextureRegion(new Texture("res/tiles/level2/lava.png"), 0, 0, 1.0f, 1.0f));
 
@@ -114,22 +119,38 @@ public class ImageLibrary
 
 			animationSet.put("sword", animations);
 
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/character/bow/bowIdleAnim.png", 24, 34, true));
+			animations.put("attacking",
+					new Animation("res/character/bow/bowAttackAnim.png", 24, 50, false));
+			animations.put("walking", new Animation("res/character/bow/bowWalkAnim.png", 24, 34, true));
+
+			animationSet.put("bow", animations);
+
 
 
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/goblin/goblinIdleAnim.png", 50, 10, true));
 			animations.put("attacking", new Animation("res/enemy/goblin/goblinAttackAnim.png", 10, 10, false));
+			animations.put("walking", new Animation("res/enemy/goblin/goblinIdleAnim.png", 50, 10, true));
 			animationSet.put("goblin", animations);
 
 			animations = new HashMap<String, Animation>();
-			animations.put("default", new Animation("res/enemy/famineBoss/famineBossIdleAnim.png", 50, 10, true));
-			animations.put("attacking", new Animation("res/enemy/famineBoss/famineBossAttackAnim.png", 20, 10, false));
+			animations.put("default", new Animation("res/enemy/famineBoss/famineBossIdleAnim.png", 24, 34, true));
+			animations.put("attacking", new Animation("res/enemy/famineBoss/famineBossAttackAnim.png", 24, 17, false));
+			animations.put("walking", new Animation("res/enemy/famineBoss/famineBossWalk.png", 24, 34, true));
 			animationSet.put("famineBoss", animations);
 			
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
 			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
+			animations.put("walking", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
 			animationSet.put("zombie", animations);
+			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/giantRat/giantRatIdleAnim.png", 50, 10, true));
+			animations.put("attacking", new Animation("res/enemy/giantRat/giantRatAttackAnim.png", 10, 10, false));
+			animationSet.put("giantRat", animations);
 
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/hellHound/hellHoundIdleAnim.png", 50, 10, true));
@@ -139,6 +160,7 @@ public class ImageLibrary
 		}
 		catch (Exception e)
 		{
+			System.out.println("tess");
 			System.out.println(e);
 		}
 	}

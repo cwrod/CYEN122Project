@@ -12,6 +12,7 @@ import graphics.Canvas;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import gui.GUIHandler;
+import items.Bow;
 import items.HolyWater;
 import items.Item;
 import items.OnHand;
@@ -19,6 +20,7 @@ import items.Relic;
 import items.RustySword;
 import physics.ColliderHandler;
 import quest.QuestHandler;
+import toolbox.DeltaTime;
 import toolbox.Functions;
 
 /*
@@ -72,7 +74,7 @@ public class PlayerObject extends MobileGameObject
 	private float modDef;
 	private float modAtt;
 	
-
+	private ArrayList<PlayerListener> listeners;
 	
 	public PlayerObject(OnHand startWeapon, Relic startRelic)
 	{
@@ -89,11 +91,26 @@ public class PlayerObject extends MobileGameObject
 		onHandWeapon = startWeapon;
 		currentRelic = startRelic;
 		
+		listeners = new ArrayList<PlayerListener>();
+		
 	}
 	public PlayerObject()
 	{
 		this(new RustySword(),new HolyWater());
+		
 	}
+	
+	
+	
+	public void addListener(PlayerListener l)
+	{
+		listeners.add(l);
+	}
+	public void removeListener(PlayerListener l)
+	{
+		listeners.remove(l);
+	}
+	
 
 	public void update()
 	{
@@ -213,13 +230,15 @@ public class PlayerObject extends MobileGameObject
 
 		if (horizontalSums != 0 || verticalSums != 0)
 		{
+			
 			if(gc.isDone("attacking"))
 				gc.updateTexture("walking");
-			moveToPoint(x + horizontalSums, y + verticalSums, speed * Gdx.graphics.getDeltaTime());
+			moveToPoint(x + horizontalSums, y + verticalSums, speed * DeltaTime.get());
 			horizontalSums = verticalSums = 0;
 		}
 		else
 		{
+			
 			if(gc.getCurrentTrack().equals("walking"))
 			{
 				gc.updateTexture("default");
@@ -237,6 +256,7 @@ public class PlayerObject extends MobileGameObject
 
 		if (canAttack)
 		{
+			actionPerformed(PlayerActions.ATTACK);
 			canAttack = false;
 			double angle = Functions.angleMeasure((-Canvas.WIDTH / 2) + attX, (-Canvas.HEIGHT / 2) + attY);
 			setRotation((int) angle);
@@ -342,6 +362,16 @@ public class PlayerObject extends MobileGameObject
 		return health; 
 	}
 	
-
-
+	public enum PlayerActions
+	{
+		WALK,ATTACK,IDLE
+	}
+	
+	private void actionPerformed(PlayerActions action)
+	{
+		for(PlayerListener l : listeners)
+		{
+			l.actionPerformed(action);
+		}
+	}
 }

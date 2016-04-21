@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ai.EnemyHandler;
+import ai.GameObjectHandler;
 import gameObjects.PlayerObject;
 import graphics.Canvas;
 import graphics.ImageLibrary;
@@ -19,6 +20,7 @@ import map.Map;
 import physics.ColliderHandler;
 import prayer.Prayer;
 import quest.QuestHandler;
+import toolbox.DeltaTime;
 import userInterface.InputHandler;
 
 /*
@@ -222,11 +224,12 @@ public class MainGame extends ApplicationAdapter
 	public void render()
 	{
 		ih.update(currentLevel.isPlayable());
-		if(currentLevel.isPlayable())
+		if(currentLevel.isPlayable()&&!DeltaTime.isPaused())
 		{
 			EnemyHandler.getEnemyHandler().update();
 			BuildingHandler.getBuildingHandler().update();
 			PlayerObject.getPlayerObject().update();
+			GameObjectHandler.getEnemyHandler().update();
 		}	
 			GUIHandler.getGUIHandler().update();
 		Gdx.gl.glClearColor(1, 0, 0, 1);

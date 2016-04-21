@@ -86,7 +86,11 @@ public class GraphicComponent
 					(float) ySize, 1, 1, (float) rotation);
 		}
 	}
-
+	public void changeLayer(LayerType newLayer)
+	{
+		Canvas.getCanvas().removeFromLayer(layer, this);
+		Canvas.getCanvas().addToLayer(newLayer, this);
+	}
 	public void updateTexture(String key)
 	{
 		this.texture = ImageLibrary.getImageLibrary().find(key);

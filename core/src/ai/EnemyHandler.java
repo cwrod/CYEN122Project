@@ -32,11 +32,13 @@ public class EnemyHandler
 	private ArrayList<EnemyObject> enemies;
 	private ArrayList<EnemyObject> handledEnemies;
 	
-
+	private ArrayList<EnemyObject> killList;
 	public EnemyHandler()
 	{
 		enemies = new ArrayList<EnemyObject>();
 		handledEnemies = new ArrayList<EnemyObject>();
+		killList = new ArrayList<EnemyObject>();
+		
 		
 	}
 
@@ -70,6 +72,9 @@ public class EnemyHandler
 		{
 			eo.update();
 		}
+		handledEnemies.removeAll(killList);
+		enemies.removeAll(killList);
+		killList.clear();
 	}
 
 	/*
@@ -77,11 +82,8 @@ public class EnemyHandler
 	 */
 	public void remove(EnemyObject enemyObject)
 	{
-		handledEnemies.remove(enemyObject);
-		if(enemies.contains(enemyObject))
-		{
-			enemies.remove(enemyObject);
-		}
+		killList.add(enemyObject);
+
 	}
 
 }

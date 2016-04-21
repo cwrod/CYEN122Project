@@ -44,7 +44,8 @@ public class PrayerBar extends GUIComponent
 	
 	public void prayerCalled(int index)
 	{
-		playerPrayers[index].activated();
+		if(playerPrayers[index]!=null)
+			playerPrayers[index].activated();
 	}
 
 }

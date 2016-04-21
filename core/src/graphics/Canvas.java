@@ -36,7 +36,7 @@ public class Canvas
 
 	public enum LayerType
 	{
-		BACKGROUND, BUILDINGS, ITEMS, ENEMIES, EFFECTS, PLAYER, GUI
+		BACKGROUND, BUILDINGS, ITEMS, DEAD, ENEMIES, EFFECTS, PLAYER, GUI
 	}
 
 	private ArrayList<Layer> layers;
