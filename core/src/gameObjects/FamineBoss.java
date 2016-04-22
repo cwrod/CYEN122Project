@@ -9,7 +9,7 @@ import quest.QuestHandler;
  * Example child of enemyObject. This is probably not gonna make it to the final cut, 
  * but you should at least see how enemies are done.
  */
-public class FamineBoss extends EnemyObject implements PlayerListener
+public class FamineBoss extends Boss implements PlayerListener
 {
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "famineBoss";
