@@ -45,10 +45,7 @@ public class BuildingHandler
 	public void generateLevel(String level, int mapSize)
 	{
 		int modifiedSize = (int)(mapSize-(mapSize*0.2f));
-		if(level.equals("level1"))
-		{
-			generateField("stone",10,modifiedSize);
-		}
+		generateField(level+"building",10,modifiedSize);
 	}
 	
 	private void generateField(String type, int number, int mapSize)
@@ -166,6 +163,7 @@ public class BuildingHandler
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 			System.out.println(e);
 		}
 	}

@@ -62,8 +62,8 @@ public class PlayerObject extends MobileGameObject
 
 
 	private float speed;
-	private int health;
-	private int maxHealth;
+	private float health;
+	private float maxHealth;
 
 	private OnHand onHandWeapon;
 	private Relic currentRelic;
@@ -74,7 +74,11 @@ public class PlayerObject extends MobileGameObject
 	private float modDef;
 	private float modAtt;
 	
+	private ArrayList<Float> poisonMagnitudes;
+	private ArrayList<Float> poisonTimes;
+	
 	private ArrayList<PlayerListener> listeners;
+	
 	
 	public PlayerObject(OnHand startWeapon, Relic startRelic)
 	{
@@ -92,6 +96,9 @@ public class PlayerObject extends MobileGameObject
 		currentRelic = startRelic;
 		
 		listeners = new ArrayList<PlayerListener>();
+		
+		poisonMagnitudes = new ArrayList<Float>();
+		poisonTimes = new ArrayList<Float>();
 		
 	}
 	public PlayerObject()
@@ -111,10 +118,8 @@ public class PlayerObject extends MobileGameObject
 		listeners.remove(l);
 	}
 	
-
 	public void update()
 	{
-
 		currentRelic.update();
 		if (gc.isDone("attacking"))
 		{
@@ -125,7 +130,28 @@ public class PlayerObject extends MobileGameObject
 		{
 			compass.setRot((int)Functions.angleMeasure(this,QuestHandler.getQuestHandler().getBoss()));
 		}
-		
+
+		for(int i = 0; i < poisonMagnitudes.size(); i++)
+		{
+				takeDamage(poisonMagnitudes.get(i)*DeltaTime.get());
+		}
+		ArrayList<Integer> killIndicies = new ArrayList<Integer>();
+		for(int i = 0; i < poisonTimes.size(); i++)
+		{
+			poisonTimes.set(i, poisonTimes.get(i)-DeltaTime.get());
+			if(poisonTimes.get(i)<=0)
+			{
+				killIndicies.add(i);
+			}
+		}
+		for(Integer i : killIndicies)
+		{
+			poisonTimes.remove(i.intValue());
+			poisonMagnitudes.remove(i.intValue());
+			GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth, poisonMagnitudes.size()>0);
+
+		}
+			
 	}
 
 	/*
@@ -244,6 +270,7 @@ public class PlayerObject extends MobileGameObject
 				gc.updateTexture("default");
 			}
 		}
+		
 
 	}
 
@@ -300,29 +327,25 @@ public class PlayerObject extends MobileGameObject
 	}
 
 
-	/*
-	 * Exact same as enemyObject takeDamage.
-	 * 
-	 * This kinda makes me want both the player object and the enemyObject to
-	 * inherit from an abstract character object class, but I guess this is fine
-	 * for now.
-	 */
-	public void takeDamage(int dam, EnemyObject source)
+	public void takeDamage(float dam)
 	{
-		currentRelic.defend(source);
-		
-		int moddedDamage = (int)(dam - (modDef*dam));
+		float moddedDamage = (dam - (modDef*dam));
 		if(moddedDamage>0)
 		{
 			health -= moddedDamage;
 	
-			GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
+			GUIHandler.getGUIHandler().updateHealth(health / maxHealth, poisonMagnitudes.size()>0);
 	
 			if (health <= 0)
 			{
 				die();
 			}	
 		}
+	}
+	public void takeDamage(int dam, EnemyObject source)
+	{
+		currentRelic.defend(source);
+		takeDamage(dam);
 	}
 
 	/*
@@ -355,9 +378,9 @@ public class PlayerObject extends MobileGameObject
 		if(health>maxHealth)
 			health = maxHealth;
 		
-		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth);
+		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth, poisonMagnitudes.size()>0);
 	}
-	public int getHealth() 
+	public float getHealth() 
 	{ 
 		return health; 
 	}
@@ -373,5 +396,14 @@ public class PlayerObject extends MobileGameObject
 		{
 			l.actionPerformed(action);
 		}
+	}
+
+
+	public void addPoison(float poisonDamage, float time)
+	{
+		poisonMagnitudes.add(poisonDamage);
+		poisonTimes.add(time);
+		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth, poisonMagnitudes.size()>0);
+		
 	}
 }

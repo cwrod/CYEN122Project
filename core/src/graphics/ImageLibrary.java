@@ -80,23 +80,32 @@ public class ImageLibrary
 			images.put("doorClosed", new TextureRegion(new Texture("res/items/misc/doorClosed.png"), 0, 0, 1.0f, 1.0f));
 			images.put("doorOpen", new TextureRegion(new Texture("res/items/misc/doorOpen.png"), 0, 0, 1.0f, 1.0f));
 
-			images.put("stone:1",
-					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern1.png"), 0, 0, 1.0f, 1.0f));
-			images.put("stone:2",
-					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern2.png"), 0, 0, 1.0f, 1.0f));
-			images.put("stone:3",
-					new TextureRegion(new Texture("res/buildingGenPatterns/stone/pattern3.png"), 0, 0, 1.0f, 1.0f));
-			images.put("stone:BOSS",
-					new TextureRegion(new Texture("res/buildingGenPatterns/stone/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1building:1",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/pattern1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1building:2",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/pattern2.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1building:3",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/pattern3.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level1building:BOSS",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
 
+			images.put("level2building:1",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/pattern1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level2building:BOSS",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
+
+			
+			
 			images.put("healthBar", new TextureRegion(new Texture("res/gui/healthFull.png"), 0, 0, 1.0f, 1.0f));
 			images.put("healthLostBar", new TextureRegion(new Texture("res/gui/healthLost.png"), 0, 0, 1.0f, 1.0f));
+			images.put("healthPoison", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
 			images.put("inventory", new TextureRegion(new Texture("res/gui/inventory.png"), 0, 0, 1.0f, 1.0f));
 			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
 			images.put("exitButton", new TextureRegion(new Texture("res/gui/exit.png"), 0, 0, 1.0f, 1.0f));
 			images.put("nextLevelButton", new TextureRegion(new Texture("res/gui/nextLevel.png"), 0, 0, 1.0f, 1.0f));
 			images.put("selected", new TextureRegion(new Texture("res/gui/selected.png"), 0, 0, 1.0f, 1.0f));
 			images.put("transparency", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
+			
 			
 			
 			images.put("ourFatherChoice", new TextureRegion(new Texture("res/gui/prayers/choices/ourFather.png"), 0, 0, 1.0f, 1.0f));
@@ -119,7 +128,7 @@ public class ImageLibrary
 
 			setLengths.put("level1", 1);
 			
-			images.put("level2-1", new TextureRegion(new Texture("res/tiles/level2/lava.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level2-1", new TextureRegion(new Texture("res/tiles/level2/darkStone.png"), 0, 0, 1.0f, 1.0f));
 
 			setLengths.put("level2", 1);
 

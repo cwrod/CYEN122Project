@@ -92,9 +92,9 @@ public class GUIHandler
 		}
 	}
 
-	public void updateHealth(float healthPercent)
+	public void updateHealth(float healthPercent, boolean isPoisoned)
 	{
-		health.updateHealth(healthPercent);
+		health.updateHealth(healthPercent,isPoisoned);
 	}
 
 	public void updateOnHand(OnHand newOnHandWeapon)

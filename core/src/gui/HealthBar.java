@@ -15,9 +15,16 @@ public class HealthBar extends GUIComponent
 
 	}
 
-	public void updateHealth(float healthPercent)
+	public void updateHealth(float healthPercent, boolean isPoisoned)
 	{
 		health.setSize((int) (xSize * healthPercent), ySize);
+		if(isPoisoned)
+		{
+			health.updateTexture("healthPoison");
+		}
+		else
+		{
+			health.updateTexture("healthBar");
+		}
 	}
-
 }

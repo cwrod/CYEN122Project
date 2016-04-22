@@ -28,13 +28,8 @@ public class FamineBoss extends Boss implements PlayerListener
 	{
 		super(xin, yin, SIZE, SIZE, TEXTURE, SPEED, DAMAGE, MAX_RANGE,MIN_RANGE, ALERT_DISTANCE, HEALTH, owner);
 		QuestHandler.getQuestHandler().setBoss(this);
-		PlayerObject.getPlayerObject().addListener(this);
 	}
-	@Override
-	public void die()
-	{
-		MainGame.getMainGame().incrementLevel();
-	}
+	
 	@Override
 	public void actionPerformed(PlayerActions action)
 	{
@@ -45,6 +40,5 @@ public class FamineBoss extends Boss implements PlayerListener
 				PlayerObject.getPlayerObject().takeDamage(ATTACK_PENALTY, this);
 			}	
 		}
-		
 	}
 }
