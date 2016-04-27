@@ -9,7 +9,7 @@ public class Audio
 	protected boolean isRepeatable;
 	public Audio(String source, boolean isRepeatable)
 	{
-		currentSound = Gdx.audio.newSound(Gdx.files.internal("res/music/mysound.mp3"));
+		currentSound = Gdx.audio.newSound(Gdx.files.internal(source));
 		this.isRepeatable = isRepeatable;
 	}
 	public void play()

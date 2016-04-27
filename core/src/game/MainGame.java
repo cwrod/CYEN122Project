@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ai.EnemyHandler;
 import ai.GameObjectHandler;
+import audio.AudioHandler;
 import gameObjects.PlayerObject;
 import graphics.Canvas;
 import graphics.ImageLibrary;
@@ -202,6 +203,7 @@ public class MainGame extends ApplicationAdapter
 			ColliderHandler.reset();
 			GUIHandler.reset(currentLevel);
 			PlayerObject.getPlayerObject().softReset();
+			AudioHandler.getAudioLibrary().softReset(currentLevel);
 			QuestHandler.reset();
 			EnemyHandler.reset();
 			BuildingHandler.reset();

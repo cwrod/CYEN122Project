@@ -3,6 +3,8 @@ package audio;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import game.MainGame.Level;
+
 public class AudioHandler
 {
 
@@ -17,11 +19,16 @@ public class AudioHandler
 			return audioLibrarySingleton;
 		}
 
-		public static void reset()
+		public void softReset(Level l)
 		{
-			for(String a : audioLibrarySingleton.sounds.keySet())
+			for(String a : sounds.keySet())
 			{
-				audioLibrarySingleton.sounds.get(a).stop();
+				sounds.get(a).stop();
+			}
+			
+			if(l.isPlayable())
+			{
+				changeMusic("GameMusic2");
 			}
 		}
 
@@ -38,8 +45,10 @@ public class AudioHandler
 
 		private void loadAudio()
 		{
-			sounds.put("level1music",new Audio("res/music/mysound.mp3",true));
+			sounds.put("GameMusic2",new Audio("res/audio/gameMusic/GameMusic2.mp3",true)); 
+			
 		}
+		
 		public void addSoundEffect(String key)
 		{
 			sounds.get(key).play();
@@ -47,7 +56,8 @@ public class AudioHandler
 		
 		public void changeMusic(String key)
 		{
-			backgroundMusic.stop();
+			if(backgroundMusic!=null)
+				backgroundMusic.stop();
 			backgroundMusic = sounds.get(key);
 			backgroundMusic.play();
 		}
