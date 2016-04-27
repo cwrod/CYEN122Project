@@ -57,9 +57,9 @@ public class QuestHandler
 			for (ClearDoor c : clearDoors)
 			{
 				c.setUnlocked();
+			}
 				bossLair.setActive(true);
 				PlayerObject.getPlayerObject().showCompass();
-			}
 		}
 	}
 

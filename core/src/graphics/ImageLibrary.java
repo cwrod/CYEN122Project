@@ -103,7 +103,7 @@ public class ImageLibrary
 			
 			images.put("healthBar", new TextureRegion(new Texture("res/gui/healthFull.png"), 0, 0, 1.0f, 1.0f));
 			images.put("healthLostBar", new TextureRegion(new Texture("res/gui/healthLost.png"), 0, 0, 1.0f, 1.0f));
-			images.put("healthPoison", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
+			images.put("healthPoison", new TextureRegion(new Texture("res/gui/healthPoison.png"), 0, 0, 1.0f, 1.0f));
 			images.put("inventory", new TextureRegion(new Texture("res/gui/inventory.png"), 0, 0, 1.0f, 1.0f));
 			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
 			images.put("quitButton", new TextureRegion(new Texture("res/gui/quit.png"), 0, 0, 1.0f, 1.0f));

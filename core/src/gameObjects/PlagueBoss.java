@@ -36,6 +36,7 @@ public class PlagueBoss extends Boss
 		if(isActive&&owner.getPlayerIn()&&!didPoison)
 		{
 			PlayerObject.getPlayerObject().addPoison(POISON_DAMAGE,Float.MAX_VALUE);
+			didPoison = true;
 		}
 	}
 }

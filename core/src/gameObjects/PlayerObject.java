@@ -133,6 +133,7 @@ public class PlayerObject extends MobileGameObject
 
 		for(int i = 0; i < poisonMagnitudes.size(); i++)
 		{
+			if(!isDead)
 				takeDamage(poisonMagnitudes.get(i)*DeltaTime.get());
 		}
 		ArrayList<Integer> killIndicies = new ArrayList<Integer>();
@@ -348,6 +349,7 @@ public class PlayerObject extends MobileGameObject
 		takeDamage(dam);
 	}
 
+	private boolean isDead = false;
 	/*
 	 * TODO: make this actually do something.
 	 */
