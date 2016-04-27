@@ -41,7 +41,7 @@ public class QuestHandler
 	{
 		clearDoors = new ArrayList<ClearDoor>();
 		currentCleared = 0;
-		goalNumber = 1;
+		goalNumber = 3;
 	}
 
 	public void setGoalNumber(int goalNumber)
