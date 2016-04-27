@@ -1,8 +1,9 @@
 package prayer;
 
-import com.badlogic.gdx.Gdx;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-import graphics.GraphicComponent;
 import toolbox.DeltaTime;
 
 public abstract class Prayer
@@ -14,7 +15,6 @@ public abstract class Prayer
 	protected float duration;
 	
 	private String texture;
-	
 	
 	public Prayer(float coolDownMax, float durationMax, String texture)
 	{
@@ -74,6 +74,34 @@ public abstract class Prayer
 	public float getCoolDownPercent()
 	{
 		return coolDown/coolDownMax;
+	}
+	public abstract String getID();
+	
+	
+	private static HashMap<String,Class<?>> prayerList;
+	
+	private static void initPrayerList()
+	{
+		prayerList = new HashMap<String,Class<?>>();
+		
+		prayerList.put("gloryBe", GloryBe.class);
+		prayerList.put("ourFather", OurFather.class);
+		
+	}
+	
+	public static Prayer getPrayerInstance(String key)
+	{
+		if(prayerList == null)
+			initPrayerList();
+		try
+		{
+			return (Prayer) prayerList.get(key).getDeclaredConstructor().newInstance();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 }

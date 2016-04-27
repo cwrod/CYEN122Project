@@ -18,6 +18,7 @@ public class GloryBe extends Prayer
 	public static final float MAX_RADIUS = 50.0f;
 	public static final float DPS = 20.0f;
 	
+	public static final String ID = "gloryBe";
 	
 
 	public GloryBe()
@@ -76,6 +77,12 @@ public class GloryBe extends Prayer
 		int radInt = (int)radius;
 		flame.setPos(po.getX()+(int)((float)po.getxSize()/2.0f) - radInt, po.getY()+(int)((float)po.getySize()/2.0f) - radInt);
 		flame.setSize(radInt*2, radInt*2);
+	}
+
+	@Override
+	public String getID()
+	{
+		return ID;
 	}
 
 }

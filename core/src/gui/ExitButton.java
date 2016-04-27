@@ -1,19 +1,26 @@
 package gui;
 
+import game.MainGame.Level;
+
 public class ExitButton extends Button
 {
-
-	public ExitButton(int x, int y, float scale, String texture)
+	public static final String DEFAULT_TEXTURE = "quitButton"; 
+	public static final int DEFAULT_SIZE_X = 65;
+	public static final int DEFAULT_SIZE_Y = 33;
+	
+	
+	public ExitButton(int x, int y, int width, int height, String texture)
 	{
-		super(x, y,(int)(250f*scale),(int)(150f*scale), texture);
+		super(x, y, width,height,texture);
 	}
-	public ExitButton(int x, int y, float scale)
-	{
-		this(x,y,scale,"exitButton");
-	}
+	
 	public ExitButton(int x, int y)
 	{
-		this(x,y,1.0f);
+		this(x,y,DEFAULT_SIZE_X,DEFAULT_SIZE_Y,DEFAULT_TEXTURE);
+	}
+	public ExitButton(int x, int y,Level l)
+	{
+		this(x,y,DEFAULT_SIZE_X,DEFAULT_SIZE_Y,DEFAULT_TEXTURE);
 	}
 	
 	@Override

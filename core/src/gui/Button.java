@@ -11,6 +11,7 @@ public class Button extends GUIComponent
 	{
 		super(x, y, xSize, ySize);
 		buttonGC = new GraphicComponent(x, y, xSize, ySize, texture, LayerType.GUI);
+		addComponentToKill(buttonGC);
 	}
 	
 	public void addButtonListener(ButtonListener listener)
@@ -22,6 +23,13 @@ public class Button extends GUIComponent
 	{
 		if(owner != null)
 			owner.onButtonPressed(this);
+	}
+	
+	@Override
+	public void kill()
+	{
+		super.kill();
+		GUIHandler.getGUIHandler().removeInteractableObject(this);
 	}
 
 }

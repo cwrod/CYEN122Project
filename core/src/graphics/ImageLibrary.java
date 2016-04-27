@@ -49,7 +49,12 @@ public class ImageLibrary
 			
 
 			images.put("gameOver", new TextureRegion(new Texture("res/cutscenes/gameOver.png"), 0, 0, 1.0f, 1.0f));
-			images.put("gameWon", new TextureRegion(new Texture("res/cutscenes/gameWon.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonFamine", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonPlague", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonWar", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonDeath", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
+			images.put("titleScreen", new TextureRegion(new Texture("res/cutscenes/titleScreen.png"), 0, 0, 1.0f, 1.0f));
+			
 
 			images.put("rustySword",
 					new TextureRegion(new Texture("res/items/weapons/rustySword.png"), 0, 0, 1.0f, 1.0f));
@@ -101,8 +106,8 @@ public class ImageLibrary
 			images.put("healthPoison", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
 			images.put("inventory", new TextureRegion(new Texture("res/gui/inventory.png"), 0, 0, 1.0f, 1.0f));
 			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
-			images.put("exitButton", new TextureRegion(new Texture("res/gui/exit.png"), 0, 0, 1.0f, 1.0f));
-			images.put("nextLevelButton", new TextureRegion(new Texture("res/gui/nextLevel.png"), 0, 0, 1.0f, 1.0f));
+			images.put("quitButton", new TextureRegion(new Texture("res/gui/quit.png"), 0, 0, 1.0f, 1.0f));
+			images.put("continueButton", new TextureRegion(new Texture("res/gui/continue.png"), 0, 0, 1.0f, 1.0f));
 			images.put("selected", new TextureRegion(new Texture("res/gui/selected.png"), 0, 0, 1.0f, 1.0f));
 			images.put("transparency", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
 			
@@ -165,6 +170,25 @@ public class ImageLibrary
 			animationSet.put("famineBoss", animations);
 			
 			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/plagueBoss/plagueBossIdleAnim.png", 24, 34, true));
+			animations.put("attacking", new Animation("res/enemy/plagueBoss/plagueBossAttackAnim.png", 24, 17, false));
+			animations.put("walking", new Animation("res/enemy/plagueBoss/plagueBossWalk.png", 24, 34, true));
+			animationSet.put("plagueBoss", animations);
+			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/warBoss/warBossIdleAnim.png", 24, 34, true));
+			animations.put("attacking", new Animation("res/enemy/warBoss/warBossAttackAnim.png", 24, 17, false));
+			animations.put("walking", new Animation("res/enemy/warBoss/warBossWalk.png", 24, 34, true));
+			animationSet.put("warBoss", animations);
+
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/deathBoss/deathBossIdleAnim.png", 24, 34, true));
+			animations.put("attacking", new Animation("res/enemy/deathBoss/deathBossAttackAnim.png", 24, 17, false));
+			animations.put("walking", new Animation("res/enemy/deathBoss/deathBossWalk.png", 24, 34, true));
+			animationSet.put("deathBoss", animations);
+			
+			
+			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
 			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
 			animations.put("walking", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
@@ -184,7 +208,6 @@ public class ImageLibrary
 		}
 		catch (Exception e)
 		{
-			System.out.println("tess");
 			System.out.println(e);
 		}
 	}

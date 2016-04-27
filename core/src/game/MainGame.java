@@ -1,5 +1,10 @@
 package game;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.ApplicationAdapter;
@@ -37,6 +42,65 @@ public class MainGame extends ApplicationAdapter
 		private OnHand lastWeapon;
 		private Relic lastRelic;
 		private Prayer[] prayers = new Prayer[4];
+		
+		
+		public void save()
+		{
+			try
+			{
+				FileWriter fw = new FileWriter("res/saves/game.txt");
+				fw.write(lastCheckpoint.getLevelNumber()+"\n");
+				fw.write(lastWeapon.getID()+"\n");
+				fw.write(lastRelic.getID()+"\n");
+				for(int i = 0; i < prayers.length; i++)
+				{
+					if(prayers[i]!=null)
+						fw.write(prayers[i].getID()+"\n");
+				}
+				fw.close();
+			}
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		public void load()
+		{
+			try
+			{
+				BufferedReader br = new BufferedReader(new FileReader("res/saves/game.txt"));
+				lastCheckpoint = Level.getLevel(Integer.parseInt(br.readLine()));
+				lastWeapon = (OnHand) Map.getInstanceOfSpawnType(br.readLine());
+				lastRelic = (Relic) Map.getInstanceOfSpawnType(br.readLine());
+				String nextLine = br.readLine();
+				int counter = 0;
+				while(nextLine != null)
+				{
+					prayers[counter] = Prayer.getPrayerInstance(nextLine);
+					counter++;
+					nextLine = br.readLine();
+				}
+				br.close();
+				MainGame.getMainGame().changeLevel(lastCheckpoint);
+			}
+			catch (FileNotFoundException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			catch (NumberFormatException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		public void setLastCheckpoint(Level lastCheckpoint)
 		{
 			this.lastCheckpoint = lastCheckpoint;
@@ -100,16 +164,41 @@ public class MainGame extends ApplicationAdapter
 		GAME_LOST;
 		private boolean playable;
 		private int levelNumber;
+		private static ArrayList<Level> playableLevels;
 		Level(int levelNumber)
 		{
 			this.playable = true;
 			this.levelNumber = levelNumber;
+		}
+		public static Level getLevel(int levelToGet)
+		{
+			if(playableLevels == null)
+				initLevels();
+			for(Level l : playableLevels)
+			{
+				if(l.getLevelNumber() == levelToGet)
+					return l;
+			}
+			System.out.println(levelToGet+": index not found");
+			return null;
+			
+		}
+		private static void initLevels()
+		{
+			playableLevels = new ArrayList<Level>();
+			playableLevels.add(FAMINE);
+			playableLevels.add(PLAGUE);
+			playableLevels.add(WAR);
+			playableLevels.add(DEATH);
+			
+			
 		}
 		Level()
 		{
 			playable = false;
 			levelNumber = -1;
 		}
+		
 		public boolean isPlayable()
 		{
 			return playable;
@@ -168,7 +257,7 @@ public class MainGame extends ApplicationAdapter
 		if(newLevel.isPlayable())
 		{
 			gd.setLastCheckpoint(newLevel);
-			
+			gd.save();
 		}
 			
 		reset();
@@ -189,7 +278,6 @@ public class MainGame extends ApplicationAdapter
 		ih = new InputHandler();
 		gd = new GameData();
 		Map.initSpawnTypes();
-		PlayerObject.getPlayerObject();
 		PlayerObject.getPlayerObject().saveCharData();
 		reset();
 	}

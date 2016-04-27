@@ -53,6 +53,15 @@ public class InputHandler
 				}
 				charObj.inputDone();			
 			}
+			else
+			{
+				if (Gdx.input.isButtonPressed(Buttons.LEFT))
+				{
+					int x = Gdx.input.getX();
+					int y = Canvas.HEIGHT-Gdx.input.getY();
+					GUIHandler.getGUIHandler().wasGUIPressed(x,y);
+				}
+			}
 			if(Gdx.input.isKeyJustPressed(Keys.P))
 			{
 				DeltaTime.togglePause();

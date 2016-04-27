@@ -5,28 +5,28 @@ import game.MainGame.Level;
 
 public class LevelLoadButton extends Button
 {
+	public static final String DEFAULT_TEXTURE = "continueButton"; 
+	public static final int DEFAULT_SIZE_X = 165;
+	public static final int DEFAULT_SIZE_Y = 42;
+	
+	
+	
+	
 	public Level levelToLoad;
 	
-	public LevelLoadButton(int x, int y, float scale, String texture, Level levelToLoad)
+	public LevelLoadButton(int x, int y, int width, int height, String texture, Level levelToLoad)
 	{
-		super(x, y, (int)(250f*scale),(int)(150f*scale),texture);
+		super(x, y, width,height,texture);
 		this.levelToLoad = levelToLoad;
 	}
-	public LevelLoadButton(int x, int y, float scale,Level levelToLoad)
-	{
-		this(x, y, scale,"nextLevelButton",levelToLoad);
-	}
-	public LevelLoadButton(int x, int y, float scale, String texture)
-	{
-		this(x, y, scale,texture,null);
-	}
-	public LevelLoadButton(int x, int y, float scale)
-	{
-		this(x, y, scale,"nextLevelButton");
-	}
+	
 	public LevelLoadButton(int x, int y)
 	{
-		this(x, y, 1.0f);
+		this(x,y,DEFAULT_SIZE_X,DEFAULT_SIZE_Y,DEFAULT_TEXTURE,null);
+	}
+	public LevelLoadButton(int x, int y,Level l)
+	{
+		this(x,y,DEFAULT_SIZE_X,DEFAULT_SIZE_Y,DEFAULT_TEXTURE,l);
 	}
 	
 	@Override

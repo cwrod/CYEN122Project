@@ -9,6 +9,7 @@ import gameObjects.FamineBoss;
 import gameObjects.GiantRat;
 import gameObjects.Goblin;
 import gameObjects.HellHound;
+import gameObjects.PlagueBoss;
 import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
@@ -19,7 +20,9 @@ import items.BladeOfWar;
 import items.Bow;
 import items.HolyWater;
 import items.IronSword;
+import items.Item;
 import items.LegendarySword;
+import items.RustySword;
 import items.SkeletonsArm;
 import items.TheHandOfDeath;
 import items.TheLightBringer;
@@ -40,9 +43,11 @@ public class Map
 		spawnTypes.put("goblin", Goblin.class);
 		spawnTypes.put("zombie", Zombie.class);
 		spawnTypes.put("legendarySword", LegendarySword.class);
+		spawnTypes.put("rustySword", RustySword.class);
 		spawnTypes.put("holyWater", HolyWater.class);
 		spawnTypes.put("clearDoor", ClearDoor.class);
 		spawnTypes.put("famineBoss", FamineBoss.class);
+		spawnTypes.put("plagueBoss", PlagueBoss.class);
 		spawnTypes.put("hellHound", HellHound.class);
 		spawnTypes.put("bow", Bow.class);
 		spawnTypes.put("giantRat", GiantRat.class);
@@ -95,6 +100,19 @@ public class Map
 		catch (Exception e)
 		{
 			System.out.println(e);
+		}
+	}
+
+	public static Item getInstanceOfSpawnType(String key)
+	{
+
+		try
+		{
+			return (Item) spawnTypes.get(key).getDeclaredConstructor().newInstance();
+		}
+		catch (Exception e)
+		{
+			return null;
 		}
 	}
 }

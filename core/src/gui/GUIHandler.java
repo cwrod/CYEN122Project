@@ -7,6 +7,7 @@ import game.MainGame.Level;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
+import graphics.TextComponent;
 import items.OnHand;
 import items.Relic;
 import prayer.GloryBe;
@@ -43,6 +44,8 @@ public class GUIHandler
 	private PrayerBar prayerBar;
 	private ArrayList<Button> interactableObjects;
 	private Level currentLevel;
+	
+	private TextComponent notification; //TODO add notification to screen. One component that changes from public function. 
 
 	private void init(Level l)
 	{
@@ -59,8 +62,8 @@ public class GUIHandler
 			switch(l)
 			{
 			case MAIN_MENU:
-				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
-				interactableObjects.add(new LevelLoadButton(10,200));
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "titleScreen", LayerType.GUI);
+				interactableObjects.add(new LevelLoadButton(30,170));
 				return; 
 			case FIRST_PRAYER:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
@@ -76,7 +79,7 @@ public class GUIHandler
 				interactableObjects.add(new LevelLoadButton(100,0));
 				return; 
 			case FAMINE_WON:
-				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWon", LayerType.GUI);
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonFamine", LayerType.GUI);
 				interactableObjects.add(new LevelLoadButton(10,200));
 				return; 
 			case GAME_WON:
@@ -85,11 +88,19 @@ public class GUIHandler
 				return;
 			case GAME_LOST:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameOver", LayerType.GUI);
-				interactableObjects.add(new ExitButton(200,200,.5f));
-				interactableObjects.add(new LevelLoadButton(10,200,.5f,MainGame.getMainGame().getGameData().getLastCheckPoint()));
+				interactableObjects.add(new ExitButton(200,200));
+				interactableObjects.add(new LevelLoadButton(10,200,MainGame.getMainGame().getGameData().getLastCheckPoint()));
 				return;
 			}
 		}
+	}
+	public void addInteractableObject(Button button)
+	{
+		interactableObjects.add(button);
+	}
+	public void removeInteractableObject(Button button)
+	{
+		interactableObjects.remove(button);
 	}
 
 	public void updateHealth(float healthPercent, boolean isPoisoned)
@@ -131,6 +142,22 @@ public class GUIHandler
 		}
 		return false;
 	}
+	
+	public void changeNotification(String newText)
+	{
+		if(notification != null)
+			notification.kill();
+		notification = new TextComponent(150, Canvas.HEIGHT-75, 500, 50, newText, LayerType.GUI);
+	}
 
-
+	private PauseScreen pauseScreen;
+	public void setPause(boolean shouldPause)
+	{
+		if(pauseScreen!=null)
+			pauseScreen.kill();
+		if(shouldPause)
+		{
+			pauseScreen = new PauseScreen();
+		}
+	}
 }
