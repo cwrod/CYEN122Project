@@ -121,7 +121,7 @@ public class Functions
 
 	public static float angleMeasure(GameObject go1, GameObject go2)
 	{
-		return angleMeasure(go1.getX(),go1.getY(),go2.getX(),go2.getY());
+		return angleMeasure(go1.getX()+(((float)go1.getxSize())/2.0),go1.getY()+(((float)go1.getySize())/2.0),go2.getX()+(((float)go2.getxSize())/2.0),go2.getY()+(((float)go2.getySize())/2.0));
 	}
 
 }

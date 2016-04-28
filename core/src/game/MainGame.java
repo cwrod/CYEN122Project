@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import ai.EnemyHandler;
 import ai.GameObjectHandler;
@@ -253,14 +255,28 @@ public class MainGame extends ApplicationAdapter
 	
 	public void changeLevel(Level newLevel)
 	{
-		currentLevel = newLevel;
+		nextLevel = newLevel;
 		if(newLevel.isPlayable())
 		{
-			gd.setLastCheckpoint(newLevel);
+		loadLevel = 0;
+		}
+		else
+		{
+			changeLevel();
+		}
+	}
+	private void changeLevel()
+	{
+		if(nextLevel!= null)
+			currentLevel = nextLevel;
+		if(currentLevel.isPlayable())
+		{
+			gd.setLastCheckpoint(currentLevel);
 			gd.save();
 		}
 			
 		reset();
+		loadLevel = 3;
 	}
 	
 	
@@ -275,6 +291,11 @@ public class MainGame extends ApplicationAdapter
 		m = this;
 		batch = new SpriteBatch();
 		currentLevel = Level.MAIN_MENU;
+
+	}
+	
+	private void init()
+	{
 		ih = new InputHandler();
 		gd = new GameData();
 		Map.initSpawnTypes();
@@ -305,7 +326,8 @@ public class MainGame extends ApplicationAdapter
 		GUIHandler.reset(currentLevel);
 	}
 
-
+	private Level nextLevel;
+	private int loadLevel = -2;
 	/*
 	 * Another method from libgdx. Gets called every frame. All updates should
 	 * be called from here.
@@ -313,6 +335,28 @@ public class MainGame extends ApplicationAdapter
 	@Override
 	public void render()
 	{
+		if(loadLevel == -1)
+		{
+			init();
+			loadLevel = 3;
+			return;
+		}
+		if(loadLevel==0||loadLevel==1||loadLevel==-2)
+		{
+
+			Gdx.gl.glClearColor(0, 0, 0, 1);
+			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+			batch.begin();
+			batch.draw(new TextureRegion(new Texture("res/cutscenes/loading.png"), 0, 0, 1.0f, 1.0f), 0, 0, Canvas.WIDTH,Canvas.HEIGHT);
+			batch.end();
+			loadLevel++;
+			return;
+		}
+		if(loadLevel==2)
+		{
+			changeLevel();
+			return;
+		}
 		ih.update(currentLevel.isPlayable());
 		if(currentLevel.isPlayable()&&!DeltaTime.isPaused())
 		{
@@ -321,7 +365,7 @@ public class MainGame extends ApplicationAdapter
 			PlayerObject.getPlayerObject().update();
 			GameObjectHandler.getEnemyHandler().update();
 		}	
-			GUIHandler.getGUIHandler().update();
+		GUIHandler.getGUIHandler().update();
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();

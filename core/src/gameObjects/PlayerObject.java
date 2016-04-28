@@ -18,6 +18,7 @@ import items.Item;
 import items.OnHand;
 import items.Relic;
 import items.RustySword;
+import map.BuildingHandler;
 import physics.ColliderHandler;
 import quest.QuestHandler;
 import toolbox.DeltaTime;
@@ -69,7 +70,9 @@ public class PlayerObject extends MobileGameObject
 	private Relic currentRelic;
 
 	private boolean canAttack;
+	
 	private GraphicComponent compass;
+	private boolean compassPointsToBoss;
 	
 	private float modDef;
 	private float modAtt;
@@ -87,7 +90,7 @@ public class PlayerObject extends MobileGameObject
 		speed = 200;
 		health = maxHealth = 100;
 		canAttack = true;
-		compass = null;
+		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
 		
 		modDef = 0.0f;
 		modAtt = 1.0f;
@@ -126,9 +129,13 @@ public class PlayerObject extends MobileGameObject
 			shouldRotate = true;
 			canAttack = true;
 		}
-		if(compass != null)
+		if(compassPointsToBoss)
 		{
 			compass.setRot((int)Functions.angleMeasure(this,QuestHandler.getQuestHandler().getBoss()));
+		}
+		else
+		{
+			compass.setRot((int)Functions.angleMeasure(this, BuildingHandler.getBuildingHandler().closestBuilding(this)));
 		}
 
 		for(int i = 0; i < poisonMagnitudes.size(); i++)
@@ -368,9 +375,9 @@ public class PlayerObject extends MobileGameObject
 		return currentRelic;
 	}
 
-	public void showCompass()
+	public void pointCompassToBoss()
 	{
-		compass = new GraphicComponent(Canvas.WIDTH - 50, Canvas.HEIGHT - 50, 25,25, "compass", LayerType.GUI);
+		compassPointsToBoss = true;
 	}
 
 

@@ -66,17 +66,17 @@ public class GUIHandler
 				interactableObjects.add(new LevelLoadButton(30,170));
 				return; 
 			case FIRST_PRAYER:
-				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "inventory", LayerType.GUI);
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "prayerChoiceScreen", LayerType.GUI);
 				PrayerChooser pc = new PrayerChooser(0);
-				RadioButton r1 = new RadioButton(250, 250, 100, 100, "ourFatherChoice");
-				RadioButton r2 = new RadioButton(0, 250, 100, 100, "gloryBeChoice");
+				RadioButton r1 = new RadioButton(350, 250, 151, 31, "ourFatherChoice");
+				RadioButton r2 = new RadioButton(0, 250, 128, 46, "gloryBeChoice");
 				interactableObjects.add(r1);
 				interactableObjects.add(r2);
 				pc.put(r1,new OurFather());
 				pc.put(r2,new GloryBe());
 				r1.addButtonListener(pc);
 				r2.addButtonListener(pc);
-				interactableObjects.add(new LevelLoadButton(100,0));
+				interactableObjects.add(new LevelLoadButton(180,0));
 				return; 
 			case FAMINE_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonFamine", LayerType.GUI);

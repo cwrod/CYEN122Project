@@ -59,7 +59,7 @@ public class QuestHandler
 				c.setUnlocked();
 			}
 				bossLair.setActive(true);
-				PlayerObject.getPlayerObject().showCompass();
+				PlayerObject.getPlayerObject().pointCompassToBoss();
 		}
 	}
 

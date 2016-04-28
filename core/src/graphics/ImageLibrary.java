@@ -54,6 +54,8 @@ public class ImageLibrary
 			images.put("gameWonWar", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
 			images.put("gameWonDeath", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
 			images.put("titleScreen", new TextureRegion(new Texture("res/cutscenes/titleScreen.png"), 0, 0, 1.0f, 1.0f));
+			images.put("prayerChoiceScreen", new TextureRegion(new Texture("res/cutscenes/prayerChoiceScreen.png"), 0, 0, 1.0f, 1.0f));
+			
 			
 
 			images.put("rustySword",

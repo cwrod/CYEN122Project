@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import gameObjects.Building;
+import gameObjects.GameObject;
 import gameObjects.PlayerObject;
 import physics.Collider;
 import quest.QuestHandler;
+import toolbox.Functions;
 
 public class BuildingHandler
 {
@@ -184,6 +186,18 @@ public class BuildingHandler
 	public void remove(Building b)
 	{
 		buildings.remove(b);
+	}
+	public Building closestBuilding(GameObject go)
+	{
+		Building minBuild = buildings.get(0);
+		for (Building b : buildings)
+		{
+			if(Functions.distance(go, b)<Functions.distance(go, minBuild))
+			{
+				minBuild = b;
+			}
+		}
+		return minBuild;
 	}
 
 
