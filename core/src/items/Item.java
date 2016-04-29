@@ -20,7 +20,7 @@ public abstract class Item
 	public Item(String id, String type, String flavorText)
 	{
 		this.id = id;
-		this.flavorText = Functions.formatString(flavorText, TextComponent.LINE_SIZE);
+		this.flavorText = flavorText;
 		this.type = type;
 
 		name = Functions.camelCaseString(id);
