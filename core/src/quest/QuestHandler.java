@@ -2,6 +2,8 @@ package quest;
 
 import java.util.ArrayList;
 
+import audio.AudioHandler;
+import game.MainGame;
 import gameObjects.Building;
 import gameObjects.ClearDoor;
 import gameObjects.EnemyObject;
@@ -63,6 +65,13 @@ public class QuestHandler
 		}
 	}
 
+	public void update()
+	{
+		if(bossLair.getPlayerIn())
+		{
+			AudioHandler.getAudioLibrary().changeMusic("bossMusic"+MainGame.getMainGame().getCurrentLevel().getLevelNumber());
+		}
+	}
 	public void addClearDoor(ClearDoor door)
 	{
 		clearDoors.add(door);

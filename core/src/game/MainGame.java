@@ -330,6 +330,7 @@ public class MainGame extends ApplicationAdapter
 		else
 		{
 			Canvas.reset();
+			AudioHandler.getAudioLibrary().softReset(currentLevel);
 		}
 
 		GUIHandler.reset(currentLevel);
