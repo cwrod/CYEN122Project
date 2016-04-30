@@ -63,7 +63,22 @@ public class GUIHandler
 			{
 			case MAIN_MENU:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "titleScreen", LayerType.GUI);
-				interactableObjects.add(new LevelLoadButton(30,170));
+				interactableObjects.add(new LevelLoadButton(30, 190, 201, 44, "newGameButton",null));
+				Button continueButton = new Button(30, 160, 165, 42, "continueButton");
+				continueButton.addButtonListener(new ButtonListener()
+						{
+
+							@Override
+							public void onButtonPressed(Button b)
+							{
+								MainGame.getMainGame().getGameData().load();
+								
+							}
+					
+						}	
+						);
+				interactableObjects.add(continueButton);
+				
 				return; 
 			case FIRST_PRAYER:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "prayerChoiceScreen", LayerType.GUI);
@@ -80,8 +95,20 @@ public class GUIHandler
 				return; 
 			case FAMINE_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonFamine", LayerType.GUI);
-				interactableObjects.add(new LevelLoadButton(10,200));
+				interactableObjects.add(new LevelLoadButton(300,100));
 				return; 
+			case PLAGUE_WON:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonPlague", LayerType.GUI);
+				interactableObjects.add(new LevelLoadButton(300,100));
+				return; 
+			case WAR_WON:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonWar", LayerType.GUI);
+				interactableObjects.add(new LevelLoadButton(300,100));
+				return;
+			case DEATH_WON:
+				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonDeath", LayerType.GUI);
+				interactableObjects.add(new LevelLoadButton(300,100));
+				return;			
 			case GAME_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWon", LayerType.GUI);
 				interactableObjects.add(new ExitButton(200,200));

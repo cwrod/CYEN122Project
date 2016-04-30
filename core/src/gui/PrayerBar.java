@@ -1,6 +1,7 @@
 package gui;
 
 import game.MainGame;
+import gameObjects.PlayerObject;
 import graphics.GraphicComponent;
 import graphics.Canvas.LayerType;
 import prayer.Prayer;
@@ -45,7 +46,10 @@ public class PrayerBar extends GUIComponent
 	public void prayerCalled(int index)
 	{
 		if(playerPrayers[index]!=null)
+		{
 			playerPrayers[index].activated();
+			PlayerObject.getPlayerObject().pray();
+		}
 	}
 
 }

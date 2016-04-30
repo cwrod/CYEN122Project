@@ -19,7 +19,6 @@ public class LevelLoadButton extends Button
 		super(x, y, width,height,texture);
 		this.levelToLoad = levelToLoad;
 	}
-	
 	public LevelLoadButton(int x, int y)
 	{
 		this(x,y,DEFAULT_SIZE_X,DEFAULT_SIZE_Y,DEFAULT_TEXTURE,null);

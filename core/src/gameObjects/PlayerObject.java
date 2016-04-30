@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import game.MainGame;
 import game.MainGame.GameData;
 import game.MainGame.Level;
+import gameObjects.PlayerObject.PlayerActions;
 import graphics.Camera;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
@@ -82,6 +83,7 @@ public class PlayerObject extends MobileGameObject
 	
 	private ArrayList<PlayerListener> listeners;
 	
+	private PlayerActions currentAction;
 	
 	public PlayerObject(OnHand startWeapon, Relic startRelic)
 	{
@@ -102,6 +104,8 @@ public class PlayerObject extends MobileGameObject
 		
 		poisonMagnitudes = new ArrayList<Float>();
 		poisonTimes = new ArrayList<Float>();
+		
+		currentAction = PlayerActions.IDLE;
 		
 	}
 	public PlayerObject()
@@ -128,6 +132,7 @@ public class PlayerObject extends MobileGameObject
 		{
 			shouldRotate = true;
 			canAttack = true;
+			actionPerformed(PlayerActions.IDLE);
 		}
 		if(compassPointsToBoss)
 		{
@@ -266,9 +271,13 @@ public class PlayerObject extends MobileGameObject
 		{
 			
 			if(gc.isDone("attacking"))
+			{
 				gc.updateTexture("walking");
+				actionPerformed(PlayerActions.WALK);
+			}
 			moveToPoint(x + horizontalSums, y + verticalSums, speed * DeltaTime.get());
 			horizontalSums = verticalSums = 0;
+			
 		}
 		else
 		{
@@ -396,17 +405,21 @@ public class PlayerObject extends MobileGameObject
 	
 	public enum PlayerActions
 	{
-		WALK,ATTACK,IDLE
+		WALK,ATTACK,IDLE, PRAY
+	}
+	public void pray()
+	{
+		actionPerformed(PlayerActions.PRAY);
 	}
 	
 	private void actionPerformed(PlayerActions action)
 	{
+		currentAction = action;
 		for(PlayerListener l : listeners)
 		{
 			l.actionPerformed(action);
 		}
 	}
-
 
 	public void addPoison(float poisonDamage, float time)
 	{
@@ -414,5 +427,11 @@ public class PlayerObject extends MobileGameObject
 		poisonTimes.add(time);
 		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth, poisonMagnitudes.size()>0);
 		
+	}
+
+
+	public PlayerActions getCurrentAction()
+	{
+		return currentAction;
 	}
 }

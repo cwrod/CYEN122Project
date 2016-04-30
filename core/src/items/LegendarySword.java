@@ -15,5 +15,9 @@ public class LegendarySword extends OnHand
 	{
 		super(DAMAGE, ATTACK_RANGE, ID, TYPE, FLAVOR, x, y);
 	}
+	public LegendarySword()
+	{
+		super(DAMAGE, ATTACK_RANGE, ID, TYPE, FLAVOR);
+	}
 
 }

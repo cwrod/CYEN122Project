@@ -5,11 +5,13 @@ import java.util.Random;
 
 import gameObjects.Building;
 import gameObjects.ClearDoor;
+import gameObjects.DeathBoss;
 import gameObjects.FamineBoss;
 import gameObjects.GiantRat;
 import gameObjects.Goblin;
 import gameObjects.HellHound;
 import gameObjects.PlagueBoss;
+import gameObjects.WarBoss;
 import gameObjects.Zombie;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
@@ -48,6 +50,8 @@ public class Map
 		spawnTypes.put("clearDoor", ClearDoor.class);
 		spawnTypes.put("famineBoss", FamineBoss.class);
 		spawnTypes.put("plagueBoss", PlagueBoss.class);
+		spawnTypes.put("warBoss", WarBoss.class);		
+		spawnTypes.put("deathBoss", DeathBoss.class);		
 		spawnTypes.put("hellHound", HellHound.class);
 		spawnTypes.put("bow", Bow.class);
 		spawnTypes.put("giantRat", GiantRat.class);
@@ -99,7 +103,8 @@ public class Map
 		}
 		catch (Exception e)
 		{
-			System.out.println(e);
+			System.out.println(key);
+			e.printStackTrace();
 		}
 	}
 
@@ -112,6 +117,7 @@ public class Map
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 			return null;
 		}
 	}

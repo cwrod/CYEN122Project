@@ -50,9 +50,9 @@ public class ImageLibrary
 
 			images.put("gameOver", new TextureRegion(new Texture("res/cutscenes/gameOver.png"), 0, 0, 1.0f, 1.0f));
 			images.put("gameWonFamine", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
-			images.put("gameWonPlague", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
-			images.put("gameWonWar", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
-			images.put("gameWonDeath", new TextureRegion(new Texture("res/cutscenes/gameWonFamine.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonPlague", new TextureRegion(new Texture("res/cutscenes/gameWonPlague.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonWar", new TextureRegion(new Texture("res/cutscenes/gameWonWar.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gameWonDeath", new TextureRegion(new Texture("res/cutscenes/gameWonDeath.png"), 0, 0, 1.0f, 1.0f));
 			images.put("titleScreen", new TextureRegion(new Texture("res/cutscenes/titleScreen.png"), 0, 0, 1.0f, 1.0f));
 			images.put("prayerChoiceScreen", new TextureRegion(new Texture("res/cutscenes/prayerChoiceScreen.png"), 0, 0, 1.0f, 1.0f));
 			
@@ -101,6 +101,15 @@ public class ImageLibrary
 			images.put("level2building:BOSS",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
 
+			images.put("level3building:1",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level3building/pattern1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level3building:BOSS",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level3building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
+			
+			images.put("level4building:1",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level4building/pattern1.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level4building:BOSS",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level4building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
 			
 			
 			images.put("healthBar", new TextureRegion(new Texture("res/gui/healthFull.png"), 0, 0, 1.0f, 1.0f));
@@ -110,6 +119,7 @@ public class ImageLibrary
 			images.put("compass", new TextureRegion(new Texture("res/gui/compass.png"), 0, 0, 1.0f, 1.0f));
 			images.put("quitButton", new TextureRegion(new Texture("res/gui/quit.png"), 0, 0, 1.0f, 1.0f));
 			images.put("continueButton", new TextureRegion(new Texture("res/gui/continue.png"), 0, 0, 1.0f, 1.0f));
+			images.put("newGameButton", new TextureRegion(new Texture("res/gui/newGame.png"), 0, 0, 1.0f, 1.0f));	
 			images.put("selected", new TextureRegion(new Texture("res/gui/selected.png"), 0, 0, 1.0f, 1.0f));
 			images.put("transparency", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
 			
@@ -132,12 +142,18 @@ public class ImageLibrary
 
 			setLengths = new HashMap<String, Integer>();
 			images.put("level1-1", new TextureRegion(new Texture("res/tiles/level1/crackedDirt.png"), 0, 0, 1.0f, 1.0f));
-
 			setLengths.put("level1", 1);
 			
-			images.put("level2-1", new TextureRegion(new Texture("res/tiles/level2/darkStone.png"), 0, 0, 1.0f, 1.0f));
-
+			images.put("level2-1", new TextureRegion(new Texture("res/tiles/level2/mossTile.png"), 0, 0, 1.0f, 1.0f));
 			setLengths.put("level2", 1);
+			
+			images.put("level3-1", new TextureRegion(new Texture("res/tiles/level3/redRock.png"), 0, 0, 1.0f, 1.0f));
+			setLengths.put("level3", 1);
+			
+			images.put("level4-1", new TextureRegion(new Texture("res/tiles/level4/darkStone.png"), 0, 0, 1.0f, 1.0f));
+			setLengths.put("level4", 1);
+			
+			
 
 			animationSet = new HashMap<String, HashMap<String, Animation>>();
 

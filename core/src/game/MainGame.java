@@ -162,6 +162,7 @@ public class MainGame extends ApplicationAdapter
 		WAR(3),
 		WAR_WON,
 		DEATH(4),
+		DEATH_WON,
 		GAME_WON,
 		GAME_LOST;
 		private boolean playable;
@@ -221,10 +222,16 @@ public class MainGame extends ApplicationAdapter
 				return FAMINE_WON;
 			case FAMINE_WON:
 				return PLAGUE;
+			case PLAGUE:
+				return PLAGUE_WON;
+			case PLAGUE_WON:
+				return WAR;
 			case WAR:
+				return WAR_WON;
+			case WAR_WON:
 				return DEATH;
 			case DEATH:
-				return GAME_WON;
+				return DEATH_WON;
 			default:
 				return null;
 				
@@ -291,6 +298,7 @@ public class MainGame extends ApplicationAdapter
 		m = this;
 		batch = new SpriteBatch();
 		currentLevel = Level.MAIN_MENU;
+		
 
 	}
 	

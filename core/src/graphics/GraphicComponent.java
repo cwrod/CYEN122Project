@@ -3,8 +3,6 @@ package graphics;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-import game.MainGame;
-import game.MainGame.Level;
 import graphics.Canvas.LayerType;
 
 /*
@@ -30,6 +28,10 @@ public class GraphicComponent
 		this.xSize = xSize;
 		this.ySize = ySize;
 		this.texture = ImageLibrary.getImageLibrary().find(key);
+		if(this.texture == null)
+		{
+			throw new NullPointerException("No such texture: "+key);
+		}
 		Canvas.getCanvas().addToLayer(l, this);
 		rotation = 0;
 		this.layer = l;
