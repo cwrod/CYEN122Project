@@ -91,8 +91,6 @@ public class ImageLibrary
 					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/pattern1.png"), 0, 0, 1.0f, 1.0f));
 			images.put("level1building:2",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/pattern2.png"), 0, 0, 1.0f, 1.0f));
-			images.put("level1building:3",
-					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/pattern3.png"), 0, 0, 1.0f, 1.0f));
 			images.put("level1building:BOSS",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level1building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
 
@@ -211,6 +209,14 @@ public class ImageLibrary
 			animations.put("attacking", new Animation("res/enemy/zombie/zombieAttackAnim.png", 10, 10, false));
 			animations.put("walking", new Animation("res/enemy/zombie/zombieIdleAnim.png", 50, 10, true));
 			animationSet.put("zombie", animations);
+			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/warDemon/warDemonIdleAnim.png", 24, 20, true));
+			animations.put("attacking", new Animation("res/enemy/warDemon/warDemonAttackAnim.png", 24, 20, false));
+			animations.put("dying", new Animation("res/enemy/warDemon/warDemonDieAnim.png", 24, 15, false));
+			animations.put("dead", new Animation("res/enemy/warDemon/warDemonDead.png", 1, 1, true));
+			animations.put("walking", new Animation("res/enemy/warDemon/warDemonWalkAnim.png", 24, 40, true));
+			animationSet.put("demonWar", animations);
 			
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/giantRat/giantRatIdleAnim.png", 50, 10, true));

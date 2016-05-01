@@ -2,9 +2,8 @@ package gameObjects;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.Gdx;
-
 import ai.EnemyHandler;
+import graphics.AnimationComponent;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import graphics.TempComponent;
@@ -78,7 +77,7 @@ public abstract class EnemyObject extends MobileGameObject
 		if (isAttacking)
 		{
 
-			if (gc.isDone("attacking"))
+			if (((AnimationComponent) gc).isDone("attacking"))
 			{
 				attack();
 				isAttacking = false;
@@ -187,5 +186,9 @@ public abstract class EnemyObject extends MobileGameObject
 		}
 		c.kill();
 		gc.changeLayer(LayerType.DEAD);
+		gc.updateTexture("dying");
+		((AnimationComponent) gc).freezeOnEnd();
+				
 	}
+	
 }

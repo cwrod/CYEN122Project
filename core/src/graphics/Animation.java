@@ -20,12 +20,16 @@ public class Animation
 
 	private boolean shouldLoop;
 	private boolean isDone;
-
+	
+	private String source;
+	private int fps;
 	public Animation(String source, int fps, int animationLength, boolean shouldLoop)
 	{
 		this.frameChange = 1.0f / fps;
 		this.animationLength = animationLength;
 		this.shouldLoop = shouldLoop;
+		this.source = source;
+		this.fps = fps;
 		currentFrame = 0;
 		isDone = true;
 		frames = new TextureRegion[animationLength];
@@ -36,6 +40,11 @@ public class Animation
 			frames[i] = new TextureRegion(texture, i * (1.0f / animationLength), 0,
 					(i * (1.0f / animationLength)) + (1.0f / animationLength), 1.0f);
 		}
+	}
+
+	public Animation(Animation animation)
+	{
+		this(animation.source,animation.fps,animation.animationLength,animation.shouldLoop);
 	}
 
 	/*

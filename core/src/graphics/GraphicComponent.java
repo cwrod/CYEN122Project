@@ -98,16 +98,6 @@ public class GraphicComponent
 		this.texture = ImageLibrary.getImageLibrary().find(key);
 	}
 
-	public boolean isDone(String track)
-	{
-		return true;
-	}
-
-	public void updateSet(String key)
-	{
-
-	}
-
 	public void kill()
 	{
 		Canvas.getCanvas().removeFromLayer(layer, this);
@@ -119,8 +109,4 @@ public class GraphicComponent
 		this.ySize = ySize;
 	}
 
-	public String getCurrentTrack()
-	{
-		return null;
-	}
 }

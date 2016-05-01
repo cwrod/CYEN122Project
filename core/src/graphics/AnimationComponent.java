@@ -17,19 +17,26 @@ public class AnimationComponent extends GraphicComponent
 
 	private String currentTrack;
 	private String defaultTrack;
+	
+	private boolean freezeOnEnd = false;
 
 	public AnimationComponent(int x, int y, int xSize, int ySize, String key, LayerType layer)
 	{
 		super(x, y, xSize, ySize, "animError", layer);
-		animations = ImageLibrary.getImageLibrary().findAnim(key);
+		animations = new HashMap<String, Animation>();
+		for(String animation : ImageLibrary.getImageLibrary().findAnim(key).keySet())
+		{
+			animations.put(animation, new Animation(ImageLibrary.getImageLibrary().findAnim(key).get(animation)));
+		}
 		defaultTrack = currentTrack = "default";
 
 
 	}
 
-	@Override
 	public boolean isDone(String track)
 	{
+		if(freezeOnEnd)
+			return false;
 		if(!currentTrack.equals(track))
 			return true;
 		if (animations.get(track).isDone())
@@ -38,6 +45,10 @@ public class AnimationComponent extends GraphicComponent
 			return true;
 		}
 		return false;
+	}
+	public void freezeOnEnd()
+	{
+		freezeOnEnd = true;
 	}
 
 	/*
@@ -62,13 +73,15 @@ public class AnimationComponent extends GraphicComponent
 		animations.get(currentTrack).play();
 	}
 
-	@Override
 	public void updateSet(String key)
 	{
 		animations = ImageLibrary.getImageLibrary().findAnim(key);
 	}
-	
-	@Override
+	public void setDefaultTrack(String key)
+	{
+		defaultTrack = key;
+	}
+
 	public String getCurrentTrack()
 	{
 		return currentTrack;

@@ -8,7 +8,7 @@
 0.1f,0.0f,0.3f,0.1f
 0.6f,0.0f,0.3f,0.1f
 END
-0.3f:0.6f:zombie
-0.5f:0.6f:zombie
-0.3f:0.5f:zombie
-0.5f:0.5f:zombie
+0.3f:0.6f:demonWar
+0.5f:0.6f:demonWar
+0.3f:0.5f:demonWar
+0.5f:0.5f:demonWar

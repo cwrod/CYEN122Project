@@ -43,14 +43,12 @@ public class GUIHandler
 	private Inventory inventory;
 	private PrayerBar prayerBar;
 	private ArrayList<Button> interactableObjects;
-	private Level currentLevel;
 	
 	private TextComponent notification; //TODO add notification to screen. One component that changes from public function. 
 
 	private void init(Level l)
 	{
 		interactableObjects = new ArrayList<Button>();
-		currentLevel = l;
 		if(l.isPlayable())
 		{
 		health = new HealthBar(30, 30, 200, 20);
@@ -107,7 +105,7 @@ public class GUIHandler
 				return;
 			case DEATH_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonDeath", LayerType.GUI);
-				interactableObjects.add(new LevelLoadButton(300,100));
+				//interactableObjects.add(new LevelLoadButton(300,100));
 				return;			
 			case GAME_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWon", LayerType.GUI);

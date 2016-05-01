@@ -17,10 +17,10 @@
 0.3f,0.0f,0.35f,0.05f
 0.8f,0.0f,0.15f,0.05f
 END
-0.05f:0.85f:zombie
-0.85f:0.85f:zombie
-0.45f:0.5f:zombie
+0.05f:0.85f:demonWar
+0.85f:0.85f:demonWar
+0.45f:0.5f:demonWar
 0.35f:0.4f:legendarySword
-0.5f:0.4f:zombie
-0.05f:0.05f:zombie
-0.85f:0.05f:zombie
+0.5f:0.4f:demonWar
+0.05f:0.05f:demonWar
+0.85f:0.05f:demonWar

@@ -2,18 +2,15 @@ package gameObjects;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.Gdx;
-
 import game.MainGame;
 import game.MainGame.GameData;
 import game.MainGame.Level;
-import gameObjects.PlayerObject.PlayerActions;
+import graphics.AnimationComponent;
 import graphics.Camera;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
 import gui.GUIHandler;
-import items.Bow;
 import items.HolyWater;
 import items.Item;
 import items.OnHand;
@@ -128,7 +125,7 @@ public class PlayerObject extends MobileGameObject
 	public void update()
 	{
 		currentRelic.update();
-		if (gc.isDone("attacking"))
+		if (((AnimationComponent) gc).isDone("attacking"))
 		{
 			shouldRotate = true;
 			canAttack = true;
@@ -250,7 +247,7 @@ public class PlayerObject extends MobileGameObject
 			item.equip();
 			onHandWeapon = (OnHand) item;
 
-			gc.updateSet(onHandWeapon.getType());
+			((AnimationComponent) gc).updateSet(onHandWeapon.getType());
 			GUIHandler.getGUIHandler().updateOnHand(onHandWeapon);
 		}
 		if(item instanceof Relic)
@@ -270,7 +267,7 @@ public class PlayerObject extends MobileGameObject
 		if (horizontalSums != 0 || verticalSums != 0)
 		{
 			
-			if(gc.isDone("attacking"))
+			if(((AnimationComponent) gc).isDone("attacking"))
 			{
 				gc.updateTexture("walking");
 				actionPerformed(PlayerActions.WALK);
@@ -282,7 +279,7 @@ public class PlayerObject extends MobileGameObject
 		else
 		{
 			
-			if(gc.getCurrentTrack().equals("walking"))
+			if(((AnimationComponent) gc).getCurrentTrack().equals("walking"))
 			{
 				gc.updateTexture("default");
 			}
