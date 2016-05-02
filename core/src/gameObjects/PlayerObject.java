@@ -238,7 +238,7 @@ public class PlayerObject extends MobileGameObject
 		}
 	}
 
-	private void equipItem(Item item)
+	public void equipItem(Item item)
 	{
 		if(item instanceof OnHand)
 		{

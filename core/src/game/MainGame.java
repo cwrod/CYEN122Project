@@ -29,6 +29,7 @@ import physics.ColliderHandler;
 import prayer.Prayer;
 import quest.QuestHandler;
 import toolbox.DeltaTime;
+import userInterface.Debug;
 import userInterface.InputHandler;
 
 /*

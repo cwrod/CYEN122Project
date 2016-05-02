@@ -13,10 +13,21 @@ import toolbox.DeltaTime;
 public class InputHandler
 {
 
+	private Debug debugger = new Debug();
 	public void update(boolean playableLevel)
 	{
 		if (playableLevel)
 		{
+			if(Gdx.input.isKeyPressed(Keys.C))
+			{
+				boolean wasPaused = DeltaTime.isPaused();
+				if(wasPaused)
+					DeltaTime.togglePause();
+				debugger.update();
+				if(wasPaused)
+					DeltaTime.togglePause();
+				return;
+			}
 			if(!DeltaTime.isPaused())
 			{
 				PlayerObject charObj = PlayerObject.getPlayerObject();
