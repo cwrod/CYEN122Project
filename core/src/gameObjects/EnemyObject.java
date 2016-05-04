@@ -25,8 +25,8 @@ public abstract class EnemyObject extends MobileGameObject
 
 	protected float alertDistance;
 
-	protected int health;
-	protected int maxHealth;
+	protected float health;
+	protected float maxHealth;
 	
 
 	protected ArrayList<GraphicComponent> healthSigns;
@@ -97,7 +97,7 @@ public abstract class EnemyObject extends MobileGameObject
 				}
 				else
 				{
-					moveToPoint(po.getX(), po.getY(), speed * DeltaTime.get());
+					moveToPoint(po.getX(), po.getY(), speed * DeltaTime.getDeltaTime().getForEnemy());
 					gc.updateTexture("walking");
 
 				}
@@ -109,7 +109,7 @@ public abstract class EnemyObject extends MobileGameObject
 	{
 		if (this.x != x || this.y != y)
 		{
-			moveToPoint(x, y, speed * DeltaTime.get());
+			moveToPoint(x, y, speed * DeltaTime.getDeltaTime().getForEnemy());
 			gc.updateTexture("walking");
 		}
 		else
@@ -145,19 +145,23 @@ public abstract class EnemyObject extends MobileGameObject
 	/*
 	 * When the character hits the enemy, this is called
 	 */
-	public void takeDamage(int dam)
+	public void takeDamage(float dam)
 	{
 		if (isActive)
 		{
 			health -= dam;
+			
 			if (health <= 0)
 			{
+				health = 0;
+				makeHealthSigns();
 				die();
 			}
 			else
 			{
 				makeHealthSigns();
 			}
+			
 		}
 	}
 
@@ -165,7 +169,7 @@ public abstract class EnemyObject extends MobileGameObject
 	{
 
 		addLabel(new TempComponent(x, y, xSize, 5, 0, -10, 1.0f, "healthLostBar", LayerType.EFFECTS));
-		addLabel(new TempComponent(x, y, (int) (((float)health / (float)maxHealth) * xSize), 5, 0, -10, 1.0f, "healthBar",
+		addLabel(new TempComponent(x, y, (int) ((health /  maxHealth) * xSize), 5, 0, -10, 1.0f, "healthBar",
 				LayerType.EFFECTS));
 
 	}

@@ -56,11 +56,11 @@ public abstract class Prayer
 	{
 		if(coolDown>0)
 		{
-			coolDown -= DeltaTime.get();
+			coolDown -= DeltaTime.getDeltaTime().get();
 		}
 		if(duration > 0)
 		{
-			duration -= DeltaTime.get();
+			duration -= DeltaTime.getDeltaTime().get();
 			if(duration <= 0)
 			{
 				prayerEnd();
@@ -84,8 +84,15 @@ public abstract class Prayer
 	{
 		prayerList = new HashMap<String,Class<?>>();
 		
-		prayerList.put("gloryBe", GloryBe.class);
-		prayerList.put("ourFather", OurFather.class);
+		prayerList.put(GloryBe.ID, GloryBe.class);
+		prayerList.put(OurFather.ID, OurFather.class);
+		prayerList.put(BoltOfGod.ID, BoltOfGod.class);
+		prayerList.put(DeusVult.ID, DeusVult.class);
+		prayerList.put(HolyRetribution.ID, HolyRetribution.class);
+		prayerList.put(SlowTheUnholy.ID, SlowTheUnholy.class);
+		prayerList.put(TueriCorpus.ID, TueriCorpus.class);
+		prayerList.put(WingsOfAngels.ID, WingsOfAngels.class);
+		
 		
 	}
 	

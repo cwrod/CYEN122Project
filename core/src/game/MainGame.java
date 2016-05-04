@@ -156,12 +156,14 @@ public class MainGame extends ApplicationAdapter
 		MAIN_MENU,
 		FIRST_PRAYER,
 		FAMINE(1),
-		SECOND_PRAYER,
 		FAMINE_WON,
+		SECOND_PRAYER,
 		PLAGUE(2),
 		PLAGUE_WON,
+		THIRD_PRAYER,
 		WAR(3),
 		WAR_WON,
+		FOURTH_PRAYER,
 		DEATH(4),
 		DEATH_WON,
 		GAME_WON,
@@ -222,14 +224,20 @@ public class MainGame extends ApplicationAdapter
 			case FAMINE:
 				return FAMINE_WON;
 			case FAMINE_WON:
+				return SECOND_PRAYER;
+			case SECOND_PRAYER:
 				return PLAGUE;
 			case PLAGUE:
 				return PLAGUE_WON;
 			case PLAGUE_WON:
+				return THIRD_PRAYER;
+			case THIRD_PRAYER:
 				return WAR;
 			case WAR:
 				return WAR_WON;
 			case WAR_WON:
+				return FOURTH_PRAYER;
+			case FOURTH_PRAYER:
 				return DEATH;
 			case DEATH:
 				return DEATH_WON;
@@ -307,6 +315,7 @@ public class MainGame extends ApplicationAdapter
 	{
 		ih = new InputHandler();
 		gd = new GameData();
+		ImageLibrary.reset();
 		Map.initSpawnTypes();
 		PlayerObject.getPlayerObject().saveCharData();
 		reset();
@@ -316,7 +325,7 @@ public class MainGame extends ApplicationAdapter
 	{
 		if(currentLevel.isPlayable())
 		{
-			ImageLibrary.reset();
+			DeltaTime.reset();
 			Canvas.reset();
 			ColliderHandler.reset();
 			GUIHandler.reset(currentLevel);
@@ -368,7 +377,7 @@ public class MainGame extends ApplicationAdapter
 			return;
 		}
 		ih.update(currentLevel.isPlayable());
-		if(currentLevel.isPlayable()&&!DeltaTime.isPaused())
+		if(currentLevel.isPlayable()&&!DeltaTime.getDeltaTime().isPaused())
 		{
 			EnemyHandler.getEnemyHandler().update();
 			BuildingHandler.getBuildingHandler().update();

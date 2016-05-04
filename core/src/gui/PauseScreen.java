@@ -21,7 +21,7 @@ public class PauseScreen extends GUIComponent
 					@Override
 					public void onButtonPressed(Button b)
 					{
-						DeltaTime.togglePause();
+						DeltaTime.getDeltaTime().togglePause();
 					}
 				});
 		addComponentToKill(returnToGame);

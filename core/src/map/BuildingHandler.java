@@ -133,7 +133,7 @@ public class BuildingHandler
 
 			int size = (int) (Float.parseFloat(br.readLine()) * Map.TILE_SIZE);
 
-			Building building = new Building(x, y, size, size, type + ":" + patternID, !isBossLair);
+			Building building = new Building(x, y, size, size, type + ":" + patternID, !isBossLair, isBossLair);
 			if (isBossLair)
 				QuestHandler.getQuestHandler().setBossLair(building);
 
@@ -187,14 +187,15 @@ public class BuildingHandler
 	{
 		buildings.remove(b);
 	}
-	public Building closestBuilding(GameObject go)
+	public Building closestNonBossBuilding(GameObject go)
 	{
 		Building minBuild = buildings.get(0);
 		for (Building b : buildings)
 		{
 			if(Functions.distance(go, b)<Functions.distance(go, minBuild))
 			{
-				minBuild = b;
+				if(!b.isBossLair())
+					minBuild = b;
 			}
 		}
 		return minBuild;

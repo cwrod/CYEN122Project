@@ -31,6 +31,8 @@ public class TempComponent extends GraphicComponent
 	{
 		super(gc.x,gc.y,gc.xSize,gc.ySize,"animError",gc.layer);
 		this.gc = gc;
+		this.millisecondsToDisplay = (int) (secondsToDisplay * 1000);
+		startTime = System.currentTimeMillis();
 	}
 	
 
@@ -39,6 +41,8 @@ public class TempComponent extends GraphicComponent
 	{
 		if (System.currentTimeMillis() - startTime > millisecondsToDisplay)
 		{
+			if(gc!=null)
+				gc.kill();
 			kill();
 			return;
 		}

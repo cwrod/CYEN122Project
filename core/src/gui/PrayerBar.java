@@ -19,14 +19,12 @@ public class PrayerBar extends GUIComponent
 		this.boxSize = boxSize;
 		for(int i = 0; i < playerPrayers.length; i++)
 		{
-			if(playerPrayers[i]==null)
+			new GraphicComponent(x+(boxSize*i), y, boxSize, boxSize, "nullBox", LayerType.GUI);
+			
+			if(playerPrayers[i]!=null)
 			{
-				new GraphicComponent(x+(boxSize*i), y, boxSize, boxSize, "nullBox", LayerType.GUI);
-			}
-			else
-			{
-				new GraphicComponent(x+(boxSize*i), y, boxSize, boxSize, playerPrayers[i].getTexture(), LayerType.GUI);	
-				transparents[i] = new GraphicComponent(x+(boxSize*i), y, boxSize, boxSize, "transparency", LayerType.GUI);	
+				new GraphicComponent(x+(boxSize*i)+10, y+10, boxSize-20, boxSize-20, playerPrayers[i].getTexture(), LayerType.GUI);	
+				transparents[i] = new GraphicComponent(x+(boxSize*i), y, 0, 0, "transparency", LayerType.GUI);	
 			}
 		}
 	}

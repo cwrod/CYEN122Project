@@ -79,6 +79,8 @@ public class PlayerObject extends MobileGameObject
 	private ArrayList<Float> poisonTimes;
 	
 	private ArrayList<PlayerListener> listeners;
+	private ArrayList<PlayerDamageListener> damageListeners;
+	
 	
 	private PlayerActions currentAction;
 	
@@ -98,6 +100,8 @@ public class PlayerObject extends MobileGameObject
 		currentRelic = startRelic;
 		
 		listeners = new ArrayList<PlayerListener>();
+		damageListeners = new ArrayList<PlayerDamageListener>();
+		
 		
 		poisonMagnitudes = new ArrayList<Float>();
 		poisonTimes = new ArrayList<Float>();
@@ -122,6 +126,15 @@ public class PlayerObject extends MobileGameObject
 		listeners.remove(l);
 	}
 	
+	public void addDamageListener(PlayerDamageListener l)
+	{
+		damageListeners.add(l);
+	}
+	public void removeDamageListener(PlayerDamageListener l)
+	{
+		damageListeners.remove(l);
+	}
+	
 	public void update()
 	{
 		currentRelic.update();
@@ -137,18 +150,18 @@ public class PlayerObject extends MobileGameObject
 		}
 		else
 		{
-			compass.setRot((int)Functions.angleMeasure(this, BuildingHandler.getBuildingHandler().closestBuilding(this)));
+			compass.setRot((int)Functions.angleMeasure(this, BuildingHandler.getBuildingHandler().closestNonBossBuilding(this)));
 		}
 
 		for(int i = 0; i < poisonMagnitudes.size(); i++)
 		{
 			if(!isDead)
-				takeDamage(poisonMagnitudes.get(i)*DeltaTime.get());
+				takeDamage(poisonMagnitudes.get(i)*DeltaTime.getDeltaTime().get(),null);
 		}
 		ArrayList<Integer> killIndicies = new ArrayList<Integer>();
 		for(int i = 0; i < poisonTimes.size(); i++)
 		{
-			poisonTimes.set(i, poisonTimes.get(i)-DeltaTime.get());
+			poisonTimes.set(i, poisonTimes.get(i)-DeltaTime.getDeltaTime().get());
 			if(poisonTimes.get(i)<=0)
 			{
 				killIndicies.add(i);
@@ -272,7 +285,7 @@ public class PlayerObject extends MobileGameObject
 				gc.updateTexture("walking");
 				actionPerformed(PlayerActions.WALK);
 			}
-			moveToPoint(x + horizontalSums, y + verticalSums, speed * DeltaTime.get());
+			moveToPoint(x + horizontalSums, y + verticalSums, speed * DeltaTime.getDeltaTime().get());
 			horizontalSums = verticalSums = 0;
 			
 		}
@@ -339,13 +352,21 @@ public class PlayerObject extends MobileGameObject
 	{
 		this.modAtt += amountToAdd;
 	}
+	
+	public void changeSpeed(float amountToAdd)
+	{
+		this.speed += amountToAdd;
+	}
 
-
-	public void takeDamage(float dam)
+	public void takeDamage(float dam,EnemyObject source)
 	{
 		float moddedDamage = (dam - (modDef*dam));
 		if(moddedDamage>0)
 		{
+			for(PlayerDamageListener pdl : damageListeners)
+			{
+				pdl.damageTaken(source, dam);
+			}
 			health -= moddedDamage;
 	
 			GUIHandler.getGUIHandler().updateHealth(health / maxHealth, poisonMagnitudes.size()>0);
@@ -356,11 +377,7 @@ public class PlayerObject extends MobileGameObject
 			}	
 		}
 	}
-	public void takeDamage(int dam, EnemyObject source)
-	{
-		currentRelic.defend(source);
-		takeDamage(dam);
-	}
+
 
 	private boolean isDead = false;
 	/*

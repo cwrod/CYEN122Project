@@ -1,9 +1,9 @@
 package graphics;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import gameObjects.EnemyObject;
 import toolbox.DeltaTime;
 
 /*
@@ -23,6 +23,8 @@ public class Animation
 	
 	private String source;
 	private int fps;
+	private Object owner;
+	
 	public Animation(String source, int fps, int animationLength, boolean shouldLoop)
 	{
 		this.frameChange = 1.0f / fps;
@@ -40,11 +42,13 @@ public class Animation
 			frames[i] = new TextureRegion(texture, i * (1.0f / animationLength), 0,
 					(i * (1.0f / animationLength)) + (1.0f / animationLength), 1.0f);
 		}
+		owner = null;
 	}
 
-	public Animation(Animation animation)
+	public Animation(Animation animation,Object owner)
 	{
 		this(animation.source,animation.fps,animation.animationLength,animation.shouldLoop);
+		this.owner = owner;
 	}
 
 	/*
@@ -53,7 +57,10 @@ public class Animation
 	public TextureRegion play()
 	{
 		isDone = false;
-		timeCounter += DeltaTime.get();
+		if(owner instanceof EnemyObject)
+			timeCounter += DeltaTime.getDeltaTime().getForEnemy();
+		else
+			timeCounter += DeltaTime.getDeltaTime().get();
 		while (timeCounter > frameChange)
 		{
 			timeCounter -= frameChange;

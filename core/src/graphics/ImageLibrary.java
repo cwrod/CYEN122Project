@@ -125,10 +125,23 @@ public class ImageLibrary
 			
 			images.put("ourFatherChoice", new TextureRegion(new Texture("res/gui/prayers/choices/ourFather.png"), 0, 0, 1.0f, 1.0f));
 			images.put("gloryBeChoice", new TextureRegion(new Texture("res/gui/prayers/choices/gloryBe.png"), 0, 0, 1.0f, 1.0f));
+			images.put("boltOfGodChoice", new TextureRegion(new Texture("res/gui/prayers/choices/boltOfGod.png"), 0, 0, 1.0f, 1.0f));
+			images.put("deusVultChoice", new TextureRegion(new Texture("res/gui/prayers/choices/deusVult.png"), 0, 0, 1.0f, 1.0f));
+			images.put("holyRetributionChoice", new TextureRegion(new Texture("res/gui/prayers/choices/holyRetribution.png"), 0, 0, 1.0f, 1.0f));
+			images.put("slowTheUnholyChoice", new TextureRegion(new Texture("res/gui/prayers/choices/slowTheUnholy.png"), 0, 0, 1.0f, 1.0f));
+			images.put("tueriCorpusChoice", new TextureRegion(new Texture("res/gui/prayers/choices/tueriCorpus.png"), 0, 0, 1.0f, 1.0f));
+			images.put("wingsOfAngelsChoice", new TextureRegion(new Texture("res/gui/prayers/choices/wingsOfAngels.png"), 0, 0, 1.0f, 1.0f));
 			
 			
-			images.put("ourFatherIcon", new TextureRegion(new Texture("res/gui/prayers/icons/ourFather.png"), 0, 0, 1.0f, 1.0f));
-			images.put("gloryBeIcon", new TextureRegion(new Texture("res/gui/prayers/icons/gloryBe.png"), 0, 0, 1.0f, 1.0f));
+			images.put("ourFather", new TextureRegion(new Texture("res/gui/prayers/icons/ourFather.png"), 0, 0, 1.0f, 1.0f));
+			images.put("gloryBe", new TextureRegion(new Texture("res/gui/prayers/icons/gloryBe.png"), 0, 0, 1.0f, 1.0f));
+			images.put("boltOfGod", new TextureRegion(new Texture("res/gui/prayers/icons/boltOfGod.png"), 0, 0, 1.0f, 1.0f));
+			images.put("deusVult", new TextureRegion(new Texture("res/gui/prayers/icons/deusVult.png"), 0, 0, 1.0f, 1.0f));
+			images.put("holyRetribution", new TextureRegion(new Texture("res/gui/prayers/icons/holyRetribution.png"), 0, 0, 1.0f, 1.0f));
+			images.put("slowTheUnholy", new TextureRegion(new Texture("res/gui/prayers/icons/slowTheUnholy.png"), 0, 0, 1.0f, 1.0f));
+			images.put("tueriCorpus", new TextureRegion(new Texture("res/gui/prayers/icons/tueriCorpus.png"), 0, 0, 1.0f, 1.0f));
+			images.put("wingsOfAngels", new TextureRegion(new Texture("res/gui/prayers/icons/wingsOfAngels.png"), 0, 0, 1.0f, 1.0f));
+			
 			images.put("nullBox", new TextureRegion(new Texture("res/gui/prayers/icons/nullBox.png"), 0, 0, 1.0f, 1.0f));
 			
 			images.put("flame", new TextureRegion(new Texture("res/effects/flame.png"), 0, 0, 1.0f, 1.0f));

@@ -19,14 +19,17 @@ public class AnimationComponent extends GraphicComponent
 	private String defaultTrack;
 	
 	private boolean freezeOnEnd = false;
+	
+	private Object owner;
 
-	public AnimationComponent(int x, int y, int xSize, int ySize, String key, LayerType layer)
+	public AnimationComponent(int x, int y, int xSize, int ySize, String key, LayerType layer, Object owner)
 	{
 		super(x, y, xSize, ySize, "animError", layer);
+		this.owner = owner;
 		animations = new HashMap<String, Animation>();
 		for(String animation : ImageLibrary.getImageLibrary().findAnim(key).keySet())
 		{
-			animations.put(animation, new Animation(ImageLibrary.getImageLibrary().findAnim(key).get(animation)));
+			animations.put(animation, new Animation(ImageLibrary.getImageLibrary().findAnim(key).get(animation),owner));
 		}
 		defaultTrack = currentTrack = "default";
 

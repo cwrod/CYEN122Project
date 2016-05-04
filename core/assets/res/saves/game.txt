@@ -1,4 +1,7 @@
-1
+4
 rustySword
 holyWater
-gloryBe
+ourFather
+deusVult
+slowTheUnholy
+boltOfGod

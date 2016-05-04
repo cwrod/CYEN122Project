@@ -20,15 +20,15 @@ public class InputHandler
 		{
 			if(Gdx.input.isKeyPressed(Keys.C))
 			{
-				boolean wasPaused = DeltaTime.isPaused();
+				boolean wasPaused = DeltaTime.getDeltaTime().isPaused();
 				if(wasPaused)
-					DeltaTime.togglePause();
+					DeltaTime.getDeltaTime().togglePause();
 				debugger.update();
 				if(wasPaused)
-					DeltaTime.togglePause();
+					DeltaTime.getDeltaTime().togglePause();
 				return;
 			}
-			if(!DeltaTime.isPaused())
+			if(!DeltaTime.getDeltaTime().isPaused())
 			{
 				PlayerObject charObj = PlayerObject.getPlayerObject();
 				if (Gdx.input.isKeyPressed(Keys.W))
@@ -75,7 +75,7 @@ public class InputHandler
 			}
 			if(Gdx.input.isKeyJustPressed(Keys.P))
 			{
-				DeltaTime.togglePause();
+				DeltaTime.getDeltaTime().togglePause();
 			}
 		}
 		else

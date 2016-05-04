@@ -39,7 +39,7 @@ public class WarBoss extends Boss
 		{
 			if(PlayerObject.getPlayerObject().getCurrentAction()==PlayerActions.IDLE)
 			{
-				PlayerObject.getPlayerObject().takeDamage(IDLE_PENALTY*DeltaTime.get());
+				PlayerObject.getPlayerObject().takeDamage(IDLE_PENALTY*DeltaTime.getDeltaTime().get(),null);
 			}
 		}
 	}

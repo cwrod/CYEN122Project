@@ -6,23 +6,53 @@ import gui.GUIHandler;
 
 public class DeltaTime
 {
-	private static boolean paused = false;
+	private boolean paused = false;
+	private float timeFactor = 1;
+	
+	private static DeltaTime deltaTimeSingleton;
 
-	public static float get()
+	public static DeltaTime getDeltaTime()
+	{
+		if (deltaTimeSingleton == null)
+		{
+			deltaTimeSingleton = new DeltaTime();
+		}
+
+		return deltaTimeSingleton;
+	}
+	
+	public static void reset()
+	{
+		deltaTimeSingleton = new DeltaTime();
+	}
+
+	
+
+	public float get()
 	{
 		if(paused)
 			return 0;
 		return Gdx.graphics.getDeltaTime();
 	}
+	public float getForEnemy()
+	{
+		return get()*timeFactor;
+	}
 	
-	public static boolean isPaused()
+	public boolean isPaused()
 	{
 		return paused;
 	}
-	public static void togglePause()
+	public void togglePause()
 	{
 		paused = !paused;
 		GUIHandler.getGUIHandler().setPause(paused);
+		
+	}
+
+	public void modTime(float timeFactor)
+	{
+		this.timeFactor*=timeFactor;
 		
 	}
 }

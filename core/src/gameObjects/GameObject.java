@@ -41,7 +41,7 @@ public abstract class GameObject
 		this.rotation = rotation;
 		if (animated)
 		{
-			gc = new AnimationComponent(x, y, xSize, ySize, texture, layer);
+			gc = new AnimationComponent(x, y, xSize, ySize, texture, layer,this);
 		}
 		else
 		{

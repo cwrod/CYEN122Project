@@ -13,7 +13,6 @@ import graphics.GraphicComponent;
 public class GloryBe extends Prayer
 {
 	public static final float COOLDOWN = 5.0f;
-	public static final String ICON = "gloryBeIcon";
 	public static final float DURATION = 1.0f;
 	public static final float MAX_RADIUS = 50.0f;
 	public static final float DPS = 20.0f;
@@ -23,7 +22,7 @@ public class GloryBe extends Prayer
 
 	public GloryBe()
 	{
-		super(COOLDOWN,DURATION,ICON);
+		super(COOLDOWN,DURATION,ID);
 	}
 
 	private GraphicComponent flame; 
@@ -46,7 +45,7 @@ public class GloryBe extends Prayer
 		if(isActive)
 		{
 			setFlamePos();
-			damage+=DeltaTime.get()*DPS;
+			damage+=DeltaTime.getDeltaTime().get()*DPS;
 			if(damage>1.0f)
 			{
 				for(EnemyObject eo : EnemyHandler.getEnemyHandler().getEnemies())

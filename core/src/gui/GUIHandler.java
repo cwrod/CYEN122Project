@@ -12,6 +12,7 @@ import items.OnHand;
 import items.Relic;
 import prayer.GloryBe;
 import prayer.OurFather;
+import prayer.Prayer;
 
 public class GUIHandler
 {
@@ -79,18 +80,16 @@ public class GUIHandler
 				
 				return; 
 			case FIRST_PRAYER:
-				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "prayerChoiceScreen", LayerType.GUI);
-				PrayerChooser pc = new PrayerChooser(0);
-				RadioButton r1 = new RadioButton(350, 250, 151, 31, "ourFatherChoice");
-				RadioButton r2 = new RadioButton(0, 250, 128, 46, "gloryBeChoice");
-				interactableObjects.add(r1);
-				interactableObjects.add(r2);
-				pc.put(r1,new OurFather());
-				pc.put(r2,new GloryBe());
-				r1.addButtonListener(pc);
-				r2.addButtonListener(pc);
-				interactableObjects.add(new LevelLoadButton(180,0));
+				makePrayerChoices("gloryBe","ourFather");
+				return;
+			case SECOND_PRAYER:
+				makePrayerChoices("deusVult","tueriCorpus");
 				return; 
+			case THIRD_PRAYER:
+				makePrayerChoices("slowTheUnholy","wingsOfAngels");
+			case FOURTH_PRAYER:
+				makePrayerChoices("boltOfGod","holyRetribution");
+				return;
 			case FAMINE_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonFamine", LayerType.GUI);
 				interactableObjects.add(new LevelLoadButton(300,100));
@@ -105,7 +104,7 @@ public class GUIHandler
 				return;
 			case DEATH_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonDeath", LayerType.GUI);
-				//interactableObjects.add(new LevelLoadButton(300,100));
+				interactableObjects.add(new LevelLoadButton(300,100,Level.MAIN_MENU));
 				return;			
 			case GAME_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWon", LayerType.GUI);
@@ -119,6 +118,22 @@ public class GUIHandler
 			}
 		}
 	}
+	
+	private void makePrayerChoices(String prayer1, String prayer2)
+	{
+		new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "prayerChoiceScreen", LayerType.GUI);
+		PrayerChooser pc = new PrayerChooser(0);
+		RadioButton r1 = new RadioButton(350, 250, 151, 31, prayer1+"Choice");
+		RadioButton r2 = new RadioButton(0, 250, 128, 46, prayer2+"Choice");
+		interactableObjects.add(r1);
+		interactableObjects.add(r2);
+		pc.put(r1,Prayer.getPrayerInstance(prayer1));
+		pc.put(r2,Prayer.getPrayerInstance(prayer2));
+		r1.addButtonListener(pc);
+		r2.addButtonListener(pc);
+		interactableObjects.add(new LevelLoadButton(180,0));
+	}
+	
 	public void addInteractableObject(Button button)
 	{
 		interactableObjects.add(button);
