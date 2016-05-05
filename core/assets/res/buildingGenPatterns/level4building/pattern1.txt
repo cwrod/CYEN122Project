@@ -6,9 +6,9 @@
 0.1f,0.9f,0.8f,0.1f
 0.1f,0.0f,0.8f,0.1f
 END
-0.1f:0.8f:demonWar
-0.5f:0.8f:demonWar
-0.8f:0.8f:demonWar
-0.1f:0.1f:demonWar
-0.5f:0.1f:demonWar
-0.8f:0.1f:demonWar
+0.1f:0.8f:demonDeath
+0.5f:0.8f:demonDeath
+0.8f:0.8f:demonDeath
+0.1f:0.1f:demonDeath
+0.5f:0.1f:demonDeath
+0.8f:0.1f:demonDeath

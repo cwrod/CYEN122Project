@@ -227,9 +227,29 @@ public class ImageLibrary
 			animations.put("default", new Animation("res/enemy/warDemon/warDemonIdleAnim.png", 24, 20, true));
 			animations.put("attacking", new Animation("res/enemy/warDemon/warDemonAttackAnim.png", 24, 20, false));
 			animations.put("dying", new Animation("res/enemy/warDemon/warDemonDieAnim.png", 24, 15, false));
-			animations.put("dead", new Animation("res/enemy/warDemon/warDemonDead.png", 1, 1, true));
 			animations.put("walking", new Animation("res/enemy/warDemon/warDemonWalkAnim.png", 24, 40, true));
 			animationSet.put("demonWar", animations);
+
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/famineDemon/famineDemonIdleAnim.png", 24, 20, true));
+			animations.put("attacking", new Animation("res/enemy/famineDemon/famineDemonAttackAnim.png", 24, 20, false));
+			animations.put("dying", new Animation("res/enemy/famineDemon/famineDemonDieAnim.png", 24, 15, false));
+			animations.put("walking", new Animation("res/enemy/famineDemon/famineDemonWalkAnim.png", 24, 40, true));
+			animationSet.put("demonFamine", animations);
+			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/plagueDemon/plagueDemonIdleAnim.png", 24, 20, true));
+			animations.put("attacking", new Animation("res/enemy/plagueDemon/plagueDemonAttackAnim.png", 24, 20, false));
+			animations.put("dying", new Animation("res/enemy/plagueDemon/plagueDemonDieAnim.png", 24, 15, false));
+			animations.put("walking", new Animation("res/enemy/plagueDemon/plagueDemonWalkAnim.png", 24, 40, true));
+			animationSet.put("demonPlague", animations);
+			
+			animations = new HashMap<String, Animation>();
+			animations.put("default", new Animation("res/enemy/deathDemon/deathDemonIdleAnim.png", 24, 20, true));
+			animations.put("attacking", new Animation("res/enemy/deathDemon/deathDemonAttackAnim.png", 24, 20, false));
+			animations.put("dying", new Animation("res/enemy/deathDemon/deathDemonDieAnim.png", 24, 15, false));
+			animations.put("walking", new Animation("res/enemy/deathDemon/deathDemonWalkAnim.png", 24, 40, true));
+			animationSet.put("demonDeath", animations);
 			
 			animations = new HashMap<String, Animation>();
 			animations.put("default", new Animation("res/enemy/giantRat/giantRatIdleAnim.png", 50, 10, true));

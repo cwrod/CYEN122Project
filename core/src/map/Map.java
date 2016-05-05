@@ -6,6 +6,9 @@ import java.util.Random;
 import gameObjects.Building;
 import gameObjects.ClearDoor;
 import gameObjects.DeathBoss;
+import gameObjects.DemonDeath;
+import gameObjects.DemonFamine;
+import gameObjects.DemonPlague;
 import gameObjects.DemonWar;
 import gameObjects.FamineBoss;
 import gameObjects.GiantRat;
@@ -63,7 +66,11 @@ public class Map
 		spawnTypes.put("skeletonsArm", SkeletonsArm.class);
 		spawnTypes.put("theHandOfDeath", TheHandOfDeath.class);
 		spawnTypes.put("theLightBringer", TheLightBringer.class);
+		spawnTypes.put("demonFamine", DemonFamine.class);
+		spawnTypes.put("demonPlague", DemonPlague.class);
 		spawnTypes.put("demonWar", DemonWar.class);
+		spawnTypes.put("demonDeath", DemonDeath.class);
+		
 		
 		
 		

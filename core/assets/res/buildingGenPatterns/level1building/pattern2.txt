@@ -11,8 +11,8 @@
 0.1f,0.0f,0.2f,0.1f
 0.6f,0.0f,0.3f,0.1f
 END
-0.1f:0.8f:demonWar
-0.8f:0.8f:demonWar
+0.1f:0.8f:demonFamine
+0.8f:0.8f:demonFamine
 0.4f:0.5f:bow
-0.1f:0.1f:demonWar
-0.8f:0.1f:demonWar
+0.1f:0.1f:demonFamine
+0.8f:0.1f:demonFamine

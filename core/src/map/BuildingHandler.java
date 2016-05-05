@@ -189,7 +189,14 @@ public class BuildingHandler
 	}
 	public Building closestNonBossBuilding(GameObject go)
 	{
-		Building minBuild = buildings.get(0);
+		Building minBuild = null;
+		for (Building b : buildings)
+		{
+			if(!b.isBossLair())
+			{
+				minBuild = b;
+			}
+		}
 		for (Building b : buildings)
 		{
 			if(Functions.distance(go, b)<Functions.distance(go, minBuild))

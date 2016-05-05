@@ -1,7 +1,4 @@
-4
+3
 rustySword
 holyWater
-ourFather
-deusVult
 slowTheUnholy
-boltOfGod

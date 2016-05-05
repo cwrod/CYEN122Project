@@ -80,15 +80,16 @@ public class GUIHandler
 				
 				return; 
 			case FIRST_PRAYER:
-				makePrayerChoices("gloryBe","ourFather");
+				makePrayerChoices("gloryBe",130,45,"ourFather",151,31,0);
 				return;
 			case SECOND_PRAYER:
-				makePrayerChoices("deusVult","tueriCorpus");
+				makePrayerChoices("deusVult",125,26,"tueriCorpus",160,34,1);
 				return; 
 			case THIRD_PRAYER:
-				makePrayerChoices("slowTheUnholy","wingsOfAngels");
+				makePrayerChoices("slowTheUnholy",122,66,"wingsOfAngels",202,26,2);
+				return;
 			case FOURTH_PRAYER:
-				makePrayerChoices("boltOfGod","holyRetribution");
+				makePrayerChoices("boltOfGod",141,29,"holyRetribution",202,33,3);
 				return;
 			case FAMINE_WON:
 				new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "gameWonFamine", LayerType.GUI);
@@ -119,12 +120,12 @@ public class GUIHandler
 		}
 	}
 	
-	private void makePrayerChoices(String prayer1, String prayer2)
+	private void makePrayerChoices(String prayer1,  int width1, int height1,String prayer2, int width2, int height2, int level)
 	{
 		new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "prayerChoiceScreen", LayerType.GUI);
-		PrayerChooser pc = new PrayerChooser(0);
-		RadioButton r1 = new RadioButton(350, 250, 151, 31, prayer1+"Choice");
-		RadioButton r2 = new RadioButton(0, 250, 128, 46, prayer2+"Choice");
+		PrayerChooser pc = new PrayerChooser(level);
+		RadioButton r1 = new RadioButton(350, 250, width1, height1, prayer1+"Choice");
+		RadioButton r2 = new RadioButton(0, 250, width2, height2, prayer2+"Choice");
 		interactableObjects.add(r1);
 		interactableObjects.add(r2);
 		pc.put(r1,Prayer.getPrayerInstance(prayer1));
