@@ -10,5 +10,5 @@
 END
 0.2f:0.2f:demonFamine
 0.6f:0.2f:demonFamine
-0.6f:0.6f:demonFamine
+0.6f:0.6f:demonFamine:rosary
 0.5f:0.2f:bow

@@ -8,4 +8,5 @@
 END
 0.0f:0.5f:clearDoor
 0.4f:0.5f:plagueBoss
+0.8f:0.7f:null:elixr
 0.9f:0.5f:clearDoor

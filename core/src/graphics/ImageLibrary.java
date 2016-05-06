@@ -81,9 +81,17 @@ public class ImageLibrary
 
 			images.put("arrow",
 					new TextureRegion(new Texture("res/items/misc/arrow.png"), 0, 0, 1.0f, 1.0f));
+			images.put("elixr",
+					new TextureRegion(new Texture("res/items/misc/elixr.png"), 0, 0, 1.0f, 1.0f));
 
+			
+			
 			images.put("holyWater", new TextureRegion(new Texture("res/items/relics/holyWater.png"), 0, 0, 1.0f, 1.0f));
+			images.put("rosary", new TextureRegion(new Texture("res/items/relics/rosary.png"), 0, 0, 1.0f, 1.0f));
 
+			
+			
+			
 			images.put("doorClosed", new TextureRegion(new Texture("res/items/misc/doorClosed.png"), 0, 0, 1.0f, 1.0f));
 			images.put("doorOpen", new TextureRegion(new Texture("res/items/misc/doorOpen.png"), 0, 0, 1.0f, 1.0f));
 

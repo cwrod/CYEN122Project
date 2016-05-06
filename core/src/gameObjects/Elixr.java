@@ -1,10 +1,10 @@
 package gameObjects;
 
-public class Elixir extends Consumable 
+public class Elixr extends Consumable 
 {
-	public Elixir(int x, int y, String texture) 
+	public Elixr(int x, int y, Building owner) 
 	{
-		super(x, y, texture);
+		super(x, y, "elixr");
 	}
 
 	public void useItem() 

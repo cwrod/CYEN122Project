@@ -11,10 +11,11 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.height = 500;
 		config.width = 500;
-		config.title = "Journey Through Hell: Dr. Kiremire's Quest for Tenure";
+		config.title = "Journey Through Hell";
 		config.addIcon("res/misc/title128by128.png", FileType.Internal);
 		config.addIcon("res/misc/title32by32.png", FileType.Internal);
 		config.addIcon("res/misc/title16by16.png", FileType.Internal);
+		config.resizable = false;
 		
 		new LwjglApplication(new MainGame(), config);
 	}

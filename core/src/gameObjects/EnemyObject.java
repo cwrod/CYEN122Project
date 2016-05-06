@@ -1,6 +1,7 @@
 package gameObjects;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import ai.EnemyHandler;
 import audio.AudioHandler;
@@ -67,12 +68,24 @@ public abstract class EnemyObject extends MobileGameObject
 		this.isActive = isActive;
 	}
 
+	
+	
+	
+	private long lastGrowl = System.currentTimeMillis();
+	private float growlDelay = 1+((new Random()).nextFloat()*4); //seconds
 	/*
 	 * Basic chase function that most enemies should inherit. This can be
 	 * overridden if some enemies should do something else.
 	 */
 	public void update()
 	{
+		if(System.currentTimeMillis()-lastGrowl>growlDelay*1000)
+		{
+			lastGrowl = System.currentTimeMillis();
+			growlDelay = 1+((new Random()).nextFloat()*4);
+			playSound();
+		}
+		
 		PlayerObject po = PlayerObject.getPlayerObject();
 
 		if (isAttacking)
@@ -135,7 +148,7 @@ public abstract class EnemyObject extends MobileGameObject
 			dealDamage();
 		}
 	}
-	protected void playAttackSound()
+	protected void playSound()
 	{
 		AudioHandler.getAudioLibrary().playSoundEffect("growl");
 	}

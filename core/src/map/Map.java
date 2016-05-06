@@ -10,6 +10,7 @@ import gameObjects.DemonDeath;
 import gameObjects.DemonFamine;
 import gameObjects.DemonPlague;
 import gameObjects.DemonWar;
+import gameObjects.Elixr;
 import gameObjects.FamineBoss;
 import gameObjects.GiantRat;
 import gameObjects.Goblin;
@@ -28,6 +29,7 @@ import items.HolyWater;
 import items.IronSword;
 import items.Item;
 import items.LegendarySword;
+import items.Rosary;
 import items.RustySword;
 import items.SkeletonsArm;
 import items.TheHandOfDeath;
@@ -70,6 +72,10 @@ public class Map
 		spawnTypes.put("demonPlague", DemonPlague.class);
 		spawnTypes.put("demonWar", DemonWar.class);
 		spawnTypes.put("demonDeath", DemonDeath.class);
+		spawnTypes.put("rosary", Rosary.class);
+		spawnTypes.put("elixr", Elixr.class);
+		
+		
 		
 		
 		
@@ -106,6 +112,8 @@ public class Map
 
 	public static void spawnElement(String key, int elementX, int elementY, Building owner)
 	{
+		if(key.equals("null"))
+			return;
 		try
 		{
 			Class<?>[] args = { int.class, int.class, Building.class };
@@ -120,7 +128,6 @@ public class Map
 
 	public static Item getInstanceOfSpawnType(String key)
 	{
-
 		try
 		{
 			return (Item) spawnTypes.get(key).getDeclaredConstructor().newInstance();

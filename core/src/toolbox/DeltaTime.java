@@ -28,6 +28,9 @@ public class DeltaTime
 
 	
 
+	/*
+	 * @return The time since the last render in seconds, or 0 if paused
+	 */
 	public float get()
 	{
 		if(paused)

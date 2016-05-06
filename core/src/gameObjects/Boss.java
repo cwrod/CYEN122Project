@@ -22,7 +22,7 @@ public abstract class Boss extends EnemyObject
 	}
 	
 	@Override
-	protected void playAttackSound()
+	protected void playSound()
 	{
 		AudioHandler.getAudioLibrary().playSoundEffect("bossTaunt");
 	}

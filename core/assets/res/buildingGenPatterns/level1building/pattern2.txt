@@ -13,6 +13,6 @@
 END
 0.1f:0.8f:demonFamine
 0.8f:0.8f:demonFamine
-0.4f:0.5f:bow
-0.1f:0.1f:demonFamine
+0.4f:0.5f:bow:legendarySword
+0.1f:0.1f:demonFamine:rosary
 0.8f:0.1f:demonFamine

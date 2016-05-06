@@ -38,5 +38,6 @@ public class Bow extends OnHand
 		int x = po.getX() + (po.getxSize() / 2);
 		int y = po.getY() + (po.getySize() / 2);
 		new Projectile(x,y,10,10,"arrow",LayerType.PLAYER,SPEED,(int)(DAMAGE*modAtt),(int)angle);
+		playSound();
 	}
 }

@@ -273,13 +273,9 @@ public class MainGame extends ApplicationAdapter
 	{
 		nextLevel = newLevel;
 		if(newLevel.isPlayable())
-		{
-		loadLevel = 0;
-		}
+			loadLevel = 0;
 		else
-		{
-			changeLevel();
-		}
+			loadLevel = 2;
 	}
 	private void changeLevel()
 	{

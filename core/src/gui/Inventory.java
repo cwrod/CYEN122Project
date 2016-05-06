@@ -14,6 +14,9 @@ public class Inventory extends GUIComponent
 	private GraphicComponent onHandInfoPic;
 	private GraphicComponent relicInfoPic;
 
+	private TextComponent onHandName;
+	private TextComponent relicName;
+
 	private TextComponent onHandInfoFlavor;
 	private TextComponent relicInfoFlavor;
 
@@ -28,9 +31,16 @@ public class Inventory extends GUIComponent
 				(int) (y + ((float) ySize / 2.0f) - 50), ITEM_SIZE, ITEM_SIZE,
 				PlayerObject.getPlayerObject().getRelic().getID(), LayerType.GUI);
 
-		onHandInfoFlavor = new TextComponent(x, y + ySize - 60, xSize, 0,
+		
+		onHandName = new TextComponent(x, y + ySize - 60, xSize, 0,
+				PlayerObject.getPlayerObject().getOnHand().getName(), LayerType.GUI);
+		onHandInfoFlavor = new TextComponent(x, y + ySize - 80, xSize, 0,
 				PlayerObject.getPlayerObject().getOnHand().getFlavorText(), LayerType.GUI);
-		relicInfoFlavor = new TextComponent(x, (int) (y + ((float) ySize / 2.0f) - 60), xSize, 0,
+		
+
+		relicName = new TextComponent(x, (int) (y + ((float) ySize / 2.0f) - 60), xSize, 0,
+				PlayerObject.getPlayerObject().getRelic().getName(), LayerType.GUI);
+		relicInfoFlavor = new TextComponent(x, (int) (y + ((float) ySize / 2.0f) - 80), xSize, 0,
 				PlayerObject.getPlayerObject().getRelic().getFlavorText(), LayerType.GUI);
 
 	}
@@ -38,12 +48,14 @@ public class Inventory extends GUIComponent
 	public void updateOnHand(OnHand newOnHandWeapon)
 	{
 		onHandInfoPic.updateTexture(newOnHandWeapon.getID());
+		onHandName.updateText(newOnHandWeapon.getName());
 		onHandInfoFlavor.updateText(newOnHandWeapon.getFlavorText());
 	}
 
 	public void updateRelic(Relic newRelic)
 	{
 		relicInfoPic.updateTexture(newRelic.getID());
+		relicName.updateText(newRelic.getName());		
 		relicInfoFlavor.updateText(newRelic.getFlavorText());
 	}
 

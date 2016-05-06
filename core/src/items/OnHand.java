@@ -2,6 +2,7 @@ package items;
 
 import java.util.ArrayList;
 
+import audio.AudioHandler;
 import gameObjects.EnemyObject;
 import gameObjects.GameObject;
 import gameObjects.PlayerObject;
@@ -38,7 +39,14 @@ public abstract class OnHand extends Item
 				EnemyObject.class);
 		if (eo.size() > 0)
 			((EnemyObject) eo.get(0)).takeDamage((int)(damage*modAtt));
+		
+		playSound();
 
+	}
+	
+	protected void playSound()
+	{
+		AudioHandler.getAudioLibrary().playSoundEffect("swoosh");
 	}
 
 }

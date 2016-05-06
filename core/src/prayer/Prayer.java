@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import audio.AudioHandler;
 import toolbox.DeltaTime;
 
 public abstract class Prayer
@@ -14,13 +15,13 @@ public abstract class Prayer
 	private float coolDown;
 	protected float duration;
 	
-	private String texture;
+	private String ID;
 	
-	public Prayer(float coolDownMax, float durationMax, String texture)
+	public Prayer(float coolDownMax, float durationMax, String ID)
 	{
 		this.coolDownMax = coolDownMax;
 		this.durationMax = durationMax;
-		this.texture = texture;
+		this.ID = ID;
 		coolDown = 0;
 	}
 	public Prayer(float coolDownMax, String texture)
@@ -33,6 +34,7 @@ public abstract class Prayer
 	{
 		if(coolDown <= 0)
 		{
+			AudioHandler.getAudioLibrary().playSoundEffect(ID);
 			doPrayer();
 			coolDown = coolDownMax;
 			duration = durationMax;
@@ -41,7 +43,7 @@ public abstract class Prayer
 	
 	public String getTexture()
 	{
-		return texture;
+		return ID;
 	}
 	
 	protected abstract void doPrayer();
