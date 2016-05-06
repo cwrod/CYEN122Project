@@ -15,6 +15,9 @@ public class DemonPlague extends EnemyObject
 	public static final int ALERT_DISTANCE = 400;
 	public static final int HEALTH = 100;
 	
+
+	public static final int POISON_DAMAGE = 2;
+	public static final float POISON_DURATION = 5.0f;
 	
 	
 	
@@ -23,4 +26,10 @@ public class DemonPlague extends EnemyObject
 		super(xin, yin, SIZE, SIZE, TEXTURE, SPEED, DAMAGE, MAX_RANGE,MIN_RANGE, ALERT_DISTANCE, HEALTH, owner);
 	}
 
+	@Override
+	protected void dealDamage()
+	{
+		super.dealDamage();
+		PlayerObject.getPlayerObject().addPoison(POISON_DAMAGE, POISON_DURATION);
+	}
 }

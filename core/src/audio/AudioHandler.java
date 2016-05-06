@@ -28,6 +28,24 @@ public class AudioHandler
 			
 			if(l.isPlayable())
 			{
+				switch(l)
+				{
+					case FAMINE:
+						changeMusic("GameMusic2");
+						break;
+					case PLAGUE:
+						changeMusic("GameMusic2");
+						break;
+					case WAR:
+						changeMusic("GameMusic2");
+						break;
+					case DEATH:
+						changeMusic("GameMusic2");
+						break;			
+				}
+			}
+			else
+			{
 				changeMusic("GameMusic2");
 			}
 		}

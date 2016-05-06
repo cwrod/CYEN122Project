@@ -131,8 +131,13 @@ public abstract class EnemyObject extends MobileGameObject
 
 		if (po.getCollider().willCollide(attackPointX, attackPointY))
 		{
-			PlayerObject.getPlayerObject().takeDamage(damage, this);
+			dealDamage();
 		}
+	}
+	
+	protected void dealDamage()
+	{
+		PlayerObject.getPlayerObject().takeDamage(damage, this);
 	}
 
 	/*

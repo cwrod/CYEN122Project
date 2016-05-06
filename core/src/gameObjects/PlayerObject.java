@@ -435,6 +435,10 @@ public class PlayerObject extends MobileGameObject
 		}
 	}
 
+	/*
+	 * @param poisonDamage The poisons damage per second
+	 * @param time Time to apply the poison in seconds
+	 */
 	public void addPoison(float poisonDamage, float time)
 	{
 		poisonMagnitudes.add(poisonDamage);
