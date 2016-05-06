@@ -2,6 +2,7 @@ package gameObjects;
 
 import java.util.ArrayList;
 
+import audio.AudioHandler;
 import game.MainGame;
 import game.MainGame.GameData;
 import game.MainGame.Level;
@@ -155,8 +156,7 @@ public class PlayerObject extends MobileGameObject
 
 		for(int i = 0; i < poisonMagnitudes.size(); i++)
 		{
-			if(!isDead)
-				takeDamage(poisonMagnitudes.get(i)*DeltaTime.getDeltaTime().get(),null);
+			takeDamage(poisonMagnitudes.get(i)*DeltaTime.getDeltaTime().get(),null);
 		}
 		ArrayList<Integer> killIndicies = new ArrayList<Integer>();
 		for(int i = 0; i < poisonTimes.size(); i++)
@@ -363,6 +363,8 @@ public class PlayerObject extends MobileGameObject
 		float moddedDamage = (dam - (modDef*dam));
 		if(moddedDamage>0)
 		{
+			if(source!=null)
+				AudioHandler.getAudioLibrary().playSoundEffect("pain");
 			for(PlayerDamageListener pdl : damageListeners)
 			{
 				pdl.damageTaken(source, dam);
@@ -379,10 +381,6 @@ public class PlayerObject extends MobileGameObject
 	}
 
 
-	private boolean isDead = false;
-	/*
-	 * TODO: make this actually do something.
-	 */
 	public void die()
 	{
 		MainGame.getMainGame().changeLevel(Level.GAME_LOST);
@@ -404,7 +402,7 @@ public class PlayerObject extends MobileGameObject
 	}
 
 
-	public void incrementHealth(int healthToAdd)
+	public void incrementHealth(float healthToAdd)
 	{
 		health += healthToAdd;
 		if(health>maxHealth)
@@ -442,9 +440,8 @@ public class PlayerObject extends MobileGameObject
 	public void addPoison(float poisonDamage, float time)
 	{
 		poisonMagnitudes.add(poisonDamage);
-		poisonTimes.add(time);
+		poisonTimes.add(time);		
 		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth, poisonMagnitudes.size()>0);
-		
 	}
 
 
