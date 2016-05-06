@@ -34,13 +34,13 @@ public class AudioHandler
 						changeMusic("GameMusic2");
 						break;
 					case PLAGUE:
-						changeMusic("GameMusic2");
+						changeMusic("GameMusic1");
 						break;
 					case WAR:
-						changeMusic("GameMusic2");
+						changeMusic("GameMusic3");
 						break;
 					case DEATH:
-						changeMusic("GameMusic2");
+						changeMusic("GameMusic4");
 						break;			
 				}
 			}
@@ -66,15 +66,15 @@ public class AudioHandler
 			sounds.put("GameMusic2",new Audio("res/audio/gameMusic/GameMusic2.mp3",true)); 
 			sounds.put("bossMusic1",new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
 			
-			/*
-			sounds.put("bossMusic1",new Audio("res/audio/gameMusic/Molgera.mp3",true)); 
 			
-			sounds.put("bossMusic2",  new Audio("res/audio/gameMusic/Vordt.mp3",true)); 
+			sounds.put("GameMusic1",new Audio("res/audio/gameMusic/GameMusic1.mp3",true)); 
 			
-			sounds.put("bossMusic3",  new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
+			sounds.put("GameMusic3",  new Audio("res/audio/gameMusic/VordtMusic.mp3",true)); 
 			
-			sounds.put("bossMusic4",  new Audio("res/audio/gameMusic/NamelessKing.mp3",true));
-			*/
+			sounds.put("GameMusic4",  new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
+			
+			
+			
 			
 			
 		}
