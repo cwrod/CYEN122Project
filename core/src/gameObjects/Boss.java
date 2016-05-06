@@ -1,5 +1,6 @@
 package gameObjects;
 
+import audio.AudioHandler;
 import game.MainGame;
 import quest.QuestHandler;
 
@@ -18,6 +19,12 @@ public abstract class Boss extends EnemyObject
 	public void die()
 	{
 		MainGame.getMainGame().incrementLevel();
+	}
+	
+	@Override
+	protected void playAttackSound()
+	{
+		AudioHandler.getAudioLibrary().playSoundEffect("bossTaunt");
 	}
 
 }

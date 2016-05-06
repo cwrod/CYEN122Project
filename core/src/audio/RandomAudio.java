@@ -7,9 +7,9 @@ import com.badlogic.gdx.audio.Sound;
 
 public class RandomAudio extends Audio
 {
-
-	Sound[] audioChoices;
-	public RandomAudio(String[] source, boolean isRepeatable)
+	private float probabilityToPlay;
+	private Sound[] audioChoices;
+	public RandomAudio(String[] source, boolean isRepeatable, float probabilityToPlay)
 	{
 		super(source[0], isRepeatable);
 		audioChoices = new Sound[source.length];
@@ -17,12 +17,16 @@ public class RandomAudio extends Audio
 		{
 			audioChoices[i] =  Gdx.audio.newSound(Gdx.files.internal(source[i]));
 		}
+		this.probabilityToPlay = probabilityToPlay;
 	}
 	
 	@Override
 	public void play()
 	{
-		currentSound = audioChoices[new Random().nextInt(audioChoices.length)];
-		super.play();
+		if((new Random()).nextFloat()<probabilityToPlay)
+		{
+			currentSound = audioChoices[new Random().nextInt(audioChoices.length)];
+			super.play();
+		}
 	}
 }

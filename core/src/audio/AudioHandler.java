@@ -79,7 +79,7 @@ public class AudioHandler
 			
 		}
 		
-		public void addSoundEffect(String key)
+		public void playSoundEffect(String key)
 		{
 			sounds.get(key).play();
 		}

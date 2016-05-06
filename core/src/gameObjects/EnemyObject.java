@@ -3,6 +3,7 @@ package gameObjects;
 import java.util.ArrayList;
 
 import ai.EnemyHandler;
+import audio.AudioHandler;
 import graphics.AnimationComponent;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
@@ -134,7 +135,10 @@ public abstract class EnemyObject extends MobileGameObject
 			dealDamage();
 		}
 	}
-	
+	protected void playAttackSound()
+	{
+		AudioHandler.getAudioLibrary().playSoundEffect("growl");
+	}
 	protected void dealDamage()
 	{
 		PlayerObject.getPlayerObject().takeDamage(damage, this);
