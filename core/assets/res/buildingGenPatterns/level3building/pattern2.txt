@@ -1,3 +1,4 @@
+10
 0.0f,0.0f,0.1f,1.0f
 0.1f,0.57143f,0.1f,0.42857f
 0.2f,0.71429f,0.1f,0.28571f
@@ -13,9 +14,9 @@
 0.3f,0.0f,0.1f,0.14286f
 0.6f,0.0f,0.1f,0.14286f
 END
-0.3f:0.57143f:item
-0.6f:0.57143f:item
-0.1f:0.42857f:item
-0.8f:0.42857f:item
-0.3f:0.28571f:item
-0.6f:0.28571f:item
+0.3f:0.57143f:demonWar
+0.6f:0.57143f:demonWar
+0.1f:0.42857f:angelicBlade
+0.8f:0.42857f:demonWar
+0.3f:0.28571f:demonWar
+0.6f:0.28571f:demonWar

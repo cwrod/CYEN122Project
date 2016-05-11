@@ -106,11 +106,17 @@ public class ImageLibrary
 					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/pattern1.png"), 0, 0, 1.0f, 1.0f));
 			images.put("level2building:BOSS",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level2building:2",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/pattern2.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level2building:3",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level2building/pattern3.png"), 0, 0, 1.0f, 1.0f));
 
 			images.put("level3building:1",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level3building/pattern1.png"), 0, 0, 1.0f, 1.0f));
 			images.put("level3building:BOSS",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level3building/patternBOSS.png"), 0, 0, 1.0f, 1.0f));
+			images.put("level3building:2",
+					new TextureRegion(new Texture("res/buildingGenPatterns/level3building/pattern2.png"), 0, 0, 1.0f, 1.0f));
 			
 			images.put("level4building:1",
 					new TextureRegion(new Texture("res/buildingGenPatterns/level4building/pattern1.png"), 0, 0, 1.0f, 1.0f));
