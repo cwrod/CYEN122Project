@@ -8,6 +8,11 @@ public abstract class Consumable extends GameObject {
 	{
 		super(x, y, 15, 15, texture, LayerType.ITEMS, false, false);
 	}
-	public abstract void useItem();
+	public void useItem()
+	{
+		onItemUse();
+		this.kill();
+	}
+	protected abstract void onItemUse();
 	
 }

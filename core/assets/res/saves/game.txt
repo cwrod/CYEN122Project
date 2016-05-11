@@ -1,5 +1,7 @@
-2
-rustySword
+4
+axeOfTheFallenViking
 rosary
 ourFather
-deusVult
+tueriCorpus
+slowTheUnholy
+holyRetribution

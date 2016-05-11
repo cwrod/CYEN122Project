@@ -7,8 +7,9 @@ public class Elixr extends Consumable
 		super(x, y, "elixr");
 	}
 
-	public void useItem() 
+	public void onItemUse() 
 	{
 		PlayerObject.getPlayerObject().incrementHealth(100);
+		this.kill();
 	}
 }
