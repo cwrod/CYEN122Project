@@ -2,6 +2,8 @@ package gameObjects;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Color;
+
 import audio.AudioHandler;
 import game.MainGame;
 import game.MainGame.GameData;
@@ -439,6 +441,7 @@ public class PlayerObject extends MobileGameObject
 	 */
 	public void addPoison(float poisonDamage, float time)
 	{
+		GUIHandler.getGUIHandler().changeNotification("You Have Been Poisoned!",Color.GREEN);
 		poisonMagnitudes.add(poisonDamage);
 		poisonTimes.add(time);		
 		GUIHandler.getGUIHandler().updateHealth((float) health / (float) maxHealth, poisonMagnitudes.size()>0);

@@ -46,7 +46,7 @@ public class BoltOfGod extends Prayer
 		int x = po.getX() + (po.getxSize() / 2);
 		int y = po.getY() + (po.getySize() / 2);
 		Projectile p = new Projectile(x,y,10,10,"arrow",LayerType.PLAYER,SPEED,DAMAGE,
-				(int)Functions.angleMeasure(((float)Canvas.WIDTH)/2.0f, ((float)Canvas.HEIGHT)/2.0f, Gdx.input.getX(),Canvas.HEIGHT-Gdx.input.getY()));
+				(int)Functions.angleMeasure(((float)Canvas.WIDTH)/2.0f, ((float)Canvas.HEIGHT)/2.0f, Gdx.input.getX(),Canvas.HEIGHT-Gdx.input.getY()),po);
 		p.setHitListener(new HitListener()
 				{
 					@Override

@@ -15,4 +15,9 @@ public class AxeOfTheFallenViking extends OnHand
 	{
 		super(DAMAGE, ATTACK_RANGE, ID, TYPE, FLAVOR, x, y);
 	}
+	public AxeOfTheFallenViking()
+	{
+		super(DAMAGE, ATTACK_RANGE, ID, TYPE, FLAVOR);
+	}
+
 }

@@ -2,11 +2,14 @@ package gui;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Color;
+
 import game.MainGame;
 import game.MainGame.Level;
 import graphics.Canvas;
 import graphics.Canvas.LayerType;
 import graphics.GraphicComponent;
+import graphics.TempComponent;
 import graphics.TextComponent;
 import items.OnHand;
 import items.Relic;
@@ -32,12 +35,13 @@ public class GUIHandler
 	
 	public static void reset(Level l)
 	{
-		guiHandlerSingleton = new GUIHandler(l);	
+		guiHandlerSingleton = new GUIHandler();
+		GUIHandler.getGUIHandler().init(l);
 	}
 
-	public GUIHandler(Level l)
+	public GUIHandler()
 	{
-		init(l);
+		
 	}
 
 	private HealthBar health;
@@ -45,9 +49,9 @@ public class GUIHandler
 	private PrayerBar prayerBar;
 	private ArrayList<Button> interactableObjects;
 	
-	private TextComponent notification; //TODO add notification to screen. One component that changes from public function. 
+	private TempComponent notification; //TODO add notification to screen. One component that changes from public function. 
 
-	private void init(Level l)
+	public void init(Level l)
 	{
 		interactableObjects = new ArrayList<Button>();
 		if(l.isPlayable())
@@ -184,11 +188,11 @@ public class GUIHandler
 		return false;
 	}
 	
-	public void changeNotification(String newText)
+	public void changeNotification(String newText,Color c)
 	{
 		if(notification != null)
 			notification.kill();
-		notification = new TextComponent(150, Canvas.HEIGHT-75, 500, 50, newText, LayerType.GUI);
+		notification = new TempComponent(2.0f,new TextComponent(0, Canvas.HEIGHT-75, 500, 50, newText, LayerType.GUI,c));
 	}
 
 	private PauseScreen pauseScreen;
@@ -200,5 +204,27 @@ public class GUIHandler
 		{
 			pauseScreen = new PauseScreen();
 		}
+	}
+	public void minimizeInventory()
+	{
+		inventory.kill();
+		Button maximizeButton = new Button(470,470,20,20,"maximize");
+		maximizeButton.addButtonListener(new ButtonListener()
+				{
+
+					@Override
+					public void onButtonPressed(Button b)
+					{
+						GUIHandler.getGUIHandler().maximizeInventory();
+						GUIHandler.getGUIHandler().removeInteractableObject(b);
+						b.kill();
+					}
+				});
+		addInteractableObject(maximizeButton);
+	}
+
+	public void maximizeInventory()
+	{
+		inventory = new Inventory(Canvas.WIDTH - 150, 100, 140, 300);
 	}
 }

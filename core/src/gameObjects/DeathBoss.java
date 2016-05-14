@@ -42,4 +42,6 @@ public class DeathBoss extends Boss implements PlayerListener
 			}	
 		}
 	}
+	
+	
 }

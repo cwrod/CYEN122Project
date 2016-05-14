@@ -324,7 +324,6 @@ public class MainGame extends ApplicationAdapter
 			DeltaTime.reset();
 			Canvas.reset();
 			ColliderHandler.reset();
-			GUIHandler.reset(currentLevel);
 			PlayerObject.getPlayerObject().softReset();
 			AudioHandler.getAudioLibrary().softReset(currentLevel);
 			QuestHandler.reset();
@@ -372,6 +371,7 @@ public class MainGame extends ApplicationAdapter
 			changeLevel();
 			return;
 		}
+		
 		ih.update(currentLevel.isPlayable());
 		if(currentLevel.isPlayable()&&!DeltaTime.getDeltaTime().isPaused())
 		{
@@ -379,6 +379,7 @@ public class MainGame extends ApplicationAdapter
 			BuildingHandler.getBuildingHandler().update();
 			PlayerObject.getPlayerObject().update();
 			GameObjectHandler.getEnemyHandler().update();
+			QuestHandler.getQuestHandler().update();
 		}	
 		GUIHandler.getGUIHandler().update();
 		Gdx.gl.glClearColor(1, 0, 0, 1);

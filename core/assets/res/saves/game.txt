@@ -1,7 +1,4 @@
-4
-axeOfTheFallenViking
-rosary
+1
+rustySword
+holyWater
 ourFather
-tueriCorpus
-slowTheUnholy
-holyRetribution

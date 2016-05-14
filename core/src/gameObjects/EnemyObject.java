@@ -36,9 +36,12 @@ public abstract class EnemyObject extends MobileGameObject
 	protected Building owner;
 
 	protected boolean isActive;
+	
+	private long lastAttack;
+	private float attackDelay;
 
 	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
-			int attackMaxRangeIn, int attackMinRangeIn, float alertDistanceIn, int healthIn, Building owner)
+			int attackMaxRangeIn, int attackMinRangeIn, float alertDistanceIn, int healthIn, Building owner, float attackDelay)
 	{
 		super(xin, yin, xSize, ySize, texture, LayerType.ENEMIES, true, true);
 		speed = speedIn;
@@ -61,6 +64,13 @@ public abstract class EnemyObject extends MobileGameObject
 			owner.addEnemy(this);
 			isActive = owner.isActive();
 		}
+		
+		this.attackDelay = attackDelay;
+	}
+	public EnemyObject(int xin, int yin, int xSize, int ySize, String texture, double speedIn, int damageIn,
+			int attackMaxRangeIn, int attackMinRangeIn, float alertDistanceIn, int healthIn, Building owner)
+	{
+		this(xin,yin,xSize,ySize,texture,speedIn,damageIn,attackMaxRangeIn,attackMinRangeIn,alertDistanceIn,healthIn,owner,0);
 	}
 
 	public void setActive(boolean isActive)
@@ -73,6 +83,7 @@ public abstract class EnemyObject extends MobileGameObject
 	
 	private long lastGrowl = System.currentTimeMillis();
 	private float growlDelay = 1+((new Random()).nextFloat()*4); //seconds
+	
 	/*
 	 * Basic chase function that most enemies should inherit. This can be
 	 * overridden if some enemies should do something else.
@@ -95,6 +106,7 @@ public abstract class EnemyObject extends MobileGameObject
 			{
 				attack();
 				isAttacking = false;
+				lastAttack=System.currentTimeMillis();
 			}
 		}
 		else
@@ -105,9 +117,15 @@ public abstract class EnemyObject extends MobileGameObject
 				{
 
 					turnTo(po.getX(), po.getY());
-					gc.updateTexture("attacking");
-					isAttacking = true;
-
+					if(System.currentTimeMillis()-lastAttack>attackDelay*1000)
+					{
+						gc.updateTexture("attacking");
+						isAttacking = true;
+					}
+					else
+					{
+						gc.updateTexture("default");
+					}
 				}
 				else
 				{

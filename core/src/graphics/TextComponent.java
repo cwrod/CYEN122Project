@@ -16,16 +16,25 @@ public class TextComponent extends GraphicComponent
 	private String text;
 	private BitmapFont font;
 	
-	public TextComponent(int x, int y, int xSize, int ySize, String text, LayerType l)
+	private Color color;
+	
+	public TextComponent(int x, int y, int xSize, int ySize, String text, LayerType l,Color color)
 	{
 		super(x, y, xSize, ySize, "animError", l);
 		this.text = text;
 		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("res/fonts/DroidSans.ttf"));
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 		parameter.size = 14;
-		parameter.color=Color.BLACK;
+		if(color == null)
+			parameter.color=Color.BLACK;
+		else
+			parameter.color = color;
 		font = generator.generateFont(parameter); // font size 12 pixels
 		generator.dispose();
+	}
+	public TextComponent(int x, int y, int xSize, int ySize, String text, LayerType l)
+	{
+		this(x, y, xSize, ySize, text, l,null);;
 	}
 
 	@Override

@@ -40,7 +40,8 @@ public class HolyRetribution extends Prayer implements PlayerDamageListener
 	@Override
 	public void damageTaken(EnemyObject source, float damage)
 	{
-		source.takeDamage(damage*REFLECTION);
+		if(source!=null)
+			source.takeDamage(damage*REFLECTION);
 		
 	}
 

@@ -134,6 +134,8 @@ public class ImageLibrary
 			images.put("newGameButton", new TextureRegion(new Texture("res/gui/newGame.png"), 0, 0, 1.0f, 1.0f));	
 			images.put("selected", new TextureRegion(new Texture("res/gui/selected.png"), 0, 0, 1.0f, 1.0f));
 			images.put("transparency", new TextureRegion(new Texture("res/gui/transparency.png"), 0, 0, 1.0f, 1.0f));
+			images.put("minimize", new TextureRegion(new Texture("res/gui/minimize.png"), 0, 0, 1.0f, 1.0f));
+			images.put("maximize", new TextureRegion(new Texture("res/gui/maximize.png"), 0, 0, 1.0f, 1.0f));
 			
 			
 			
