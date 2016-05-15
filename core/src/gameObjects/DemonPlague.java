@@ -9,14 +9,14 @@ public class DemonPlague extends EnemyObject
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "demonPlague";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 15;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;
-	public static final int HEALTH = 100;
+	public static final int HEALTH = 60;
 	
 
-	public static final int POISON_DAMAGE = 2;
+	public static final int POISON_DAMAGE = 4;
 	public static final float POISON_DURATION = 5.0f;
 	
 	

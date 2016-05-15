@@ -56,6 +56,10 @@ public class ImageLibrary
 			images.put("titleScreen", new TextureRegion(new Texture("res/cutscenes/titleScreen.png"), 0, 0, 1.0f, 1.0f));
 			images.put("prayerChoiceScreen", new TextureRegion(new Texture("res/cutscenes/prayerChoiceScreen.png"), 0, 0, 1.0f, 1.0f));
 			
+			images.put("intro1", new TextureRegion(new Texture("res/cutscenes/famineIntro.jpg"), 0, 0, 1.0f, 1.0f));
+			images.put("intro2", new TextureRegion(new Texture("res/cutscenes/plagueIntro.jpg"), 0, 0, 1.0f, 1.0f));
+			images.put("intro3", new TextureRegion(new Texture("res/cutscenes/warIntro.jpg"), 0, 0, 1.0f, 1.0f));
+			images.put("intro4", new TextureRegion(new Texture("res/cutscenes/deathIntro.jpg"), 0, 0, 1.0f, 1.0f));
 			
 
 			images.put("rustySword",
@@ -81,6 +85,8 @@ public class ImageLibrary
 
 			images.put("arrow",
 					new TextureRegion(new Texture("res/items/misc/arrow.png"), 0, 0, 1.0f, 1.0f));
+			images.put("deathBall",
+					new TextureRegion(new Texture("res/effects/deathBall.png"), 0, 0, 1.0f, 1.0f));
 			images.put("elixr",
 					new TextureRegion(new Texture("res/items/misc/elixr.png"), 0, 0, 1.0f, 1.0f));
 

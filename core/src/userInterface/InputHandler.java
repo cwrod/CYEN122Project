@@ -14,6 +14,10 @@ public class InputHandler
 {
 
 	private Debug debugger = new Debug();
+	
+	private int lockX = -1;
+	private int lockY = -1;
+	private long lastButtonClick;
 	public void update(boolean playableLevel)
 	{
 		if (playableLevel)
@@ -59,18 +63,25 @@ public class InputHandler
 				{
 					int x = Gdx.input.getX();
 					int y = Canvas.HEIGHT-Gdx.input.getY();
-					if(!GUIHandler.getGUIHandler().wasGUIPressed(x,y))
+					if(GUIHandler.getGUIHandler().wasGUIPressed(x,y))
+					{
+						lockX = x;
+						lockY = y;
+						lastButtonClick = System.currentTimeMillis();
+					}
+					if(!(x==lockX && y==lockY) || System.currentTimeMillis()-lastButtonClick>500)
 						PlayerObject.getPlayerObject().attackLoc(x, y);
 				}
 				charObj.inputDone();			
 			}
 			else
 			{
-				if (Gdx.input.isButtonPressed(Buttons.LEFT))
+				if (Gdx.input.isButtonPressed(Buttons.LEFT)&&System.currentTimeMillis()-lastButtonClick>500)
 				{
 					int x = Gdx.input.getX();
 					int y = Canvas.HEIGHT-Gdx.input.getY();
 					GUIHandler.getGUIHandler().wasGUIPressed(x,y);
+					lastButtonClick = System.currentTimeMillis();
 				}
 			}
 			if(Gdx.input.isKeyJustPressed(Keys.P))
@@ -80,11 +91,12 @@ public class InputHandler
 		}
 		else
 		{
-			if (Gdx.input.isButtonPressed(Buttons.LEFT))
+			if (Gdx.input.isButtonPressed(Buttons.LEFT)&&System.currentTimeMillis()-lastButtonClick>500)
 			{
 				int x = Gdx.input.getX();
 				int y = Canvas.HEIGHT-Gdx.input.getY();
 				GUIHandler.getGUIHandler().wasGUIPressed(x,y);
+				lastButtonClick=System.currentTimeMillis();
 					
 			}
 		}

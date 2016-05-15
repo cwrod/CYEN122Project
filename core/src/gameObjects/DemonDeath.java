@@ -11,13 +11,13 @@ public class DemonDeath extends EnemyObject
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "demonDeath";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 8;
 	public static final int MAX_RANGE = 0;
 	public static final int MIN_RANGE = 100;
 	public static final int ALERT_DISTANCE = 400;
-	public static final int HEALTH = 100;
+	public static final int HEALTH = 180;
 	public static final float ATTACK_DELAY = 2.0f;
-	public static final double PROJECTILE_SPEED = 300;
+	public static final double PROJECTILE_SPEED = 200;
 		
 	
 	
@@ -31,6 +31,6 @@ public class DemonDeath extends EnemyObject
 	@Override
 	public void attack()
 	{
-		new Projectile(x,y,10,10,"arrow",LayerType.PLAYER,PROJECTILE_SPEED,(int)(DAMAGE),(int)rotation,this);
+		new Projectile(x,y,10,10,"deathBall",LayerType.PLAYER,PROJECTILE_SPEED,(int)(DAMAGE),(int)rotation,this);
 	}
 }

@@ -14,14 +14,14 @@ public class PlagueBoss extends Boss
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "plagueBoss";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 20;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;
-	public static final int HEALTH = 150;
+	public static final int HEALTH = 130;
 	
 
-	public static final float POISON_DAMAGE = 5;
+	public static final float POISON_DAMAGE = 6;
 	
 	
 	public PlagueBoss(int xin, int yin, Building owner)

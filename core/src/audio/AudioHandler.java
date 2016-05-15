@@ -65,6 +65,9 @@ public class AudioHandler
 		private void loadAudio()
 		{
 			sounds.put("bossMusic1",new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
+			sounds.put("bossMusic2",new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
+			sounds.put("bossMusic3",new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
+			sounds.put("bossMusic4",new Audio("res/audio/gameMusic/NamelessKing.mp3",true)); 
 			
 			
 			sounds.put("GameMusic1",new Audio("res/audio/gameMusic/GameMusic1.mp3",true)); 

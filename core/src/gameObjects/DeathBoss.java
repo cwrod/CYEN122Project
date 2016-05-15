@@ -14,11 +14,11 @@ public class DeathBoss extends Boss implements PlayerListener
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "deathBoss";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 30;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;
-	public static final int HEALTH = 150;
+	public static final int HEALTH = 400;
 	
 
 	public static final int PRAYER_PENALTY = 5;
@@ -30,6 +30,7 @@ public class DeathBoss extends Boss implements PlayerListener
 		QuestHandler.getQuestHandler().setBoss(this);
 		PlayerObject.getPlayerObject().addListener(this);
 	}
+	
 	
 	@Override
 	public void actionPerformed(PlayerActions action)
