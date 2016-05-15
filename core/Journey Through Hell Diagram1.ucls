@@ -1,0 +1,1952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="gameObjects.Projectile" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Projectile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="312" x="1336" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="gui.GUIHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/GUIHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="282" x="3350" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="3" language="java" name="map" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/map" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="177" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="4" language="java" name="gui.Inventory" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/Inventory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="168" x="3512" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="5" language="java" name="prayer" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="330" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="6" language="java" name="gui.GUIComponent" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/GUIComponent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="245" x="4083" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="map.BuildingHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/map/BuildingHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="249" x="3185" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="graphics.GraphicComponent" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/GraphicComponent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="264" x="4249" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="items.IronSword" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/IronSword.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="150" x="945" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="gameObjects.DemonDeath" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/DemonDeath.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="161" x="2415" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="11" language="java" name="audio" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/audio" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="482" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="12" language="java" name="gameObjects.EnemyObject" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/EnemyObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="495" width="360" x="2577" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="toolbox.DeltaTime" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/toolbox/DeltaTime.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="144" x="633" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="gameObjects.WarBoss" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/WarBoss.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="144" x="3505" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="items.AngelicBlade" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/AngelicBlade.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="162" x="1135" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="gameObjects.GameObject" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/GameObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="459" width="327" x="2616" y="1599"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="items.LegendarySword" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/LegendarySword.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="184" x="1337" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="gameObjects.PlagueBoss" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/PlagueBoss.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="156" x="3689" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="items.SkeletonsArm" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/SkeletonsArm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="166" x="1561" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="20" language="java" name="graphics" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="836" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="21" language="java" name="gameObjects.GiantRat" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/GiantRat.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="140" x="2616" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="gameObjects.Door" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Door.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="116" x="2732" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="gameObjects.PhysicalItem" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/PhysicalItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="171" x="2082" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="prayer.OurFather" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/OurFather.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="114" x="4329" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="gameObjects.MobileGameObject" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/MobileGameObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="357" x="2293" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="gameObjects.FamineBoss" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/FamineBoss.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="203" x="3019" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="gameObjects.Consumable" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Consumable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="149" x="1893" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="audio.Audio" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/audio/Audio.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="133" x="5530" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="29" language="java" name="gameObjects.PlayerListener" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/PlayerListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="203" x="2156" y="4392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="30" language="java" name="graphics.AnimationComponent" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/AnimationComponent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="307" x="4249" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="audio.RandomAudio" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/audio/RandomAudio.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="200" x="5530" y="835"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="items.HolyWater" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/HolyWater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="149" x="530" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="33" language="java" name="gui.ButtonListener" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/ButtonListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="171" x="2772" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="34" language="java" name="gameObjects.DemonFamine" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/DemonFamine.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="166" x="2796" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="game.MainGame.GameData" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/game/MainGame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="172" x="4325" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="gameObjects.HellHound" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/HellHound.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="147" x="3002" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="gui.Button" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/Button.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="215" x="3234" y="835"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="38" language="java" name="game.MainGame.Level" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/game/MainGame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="513" width="186" x="5096" y="1599"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="39" language="java" name="gui.PrayerChooser" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/PrayerChooser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="171" x="3025" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="items.Relic" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/Relic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="156" x="728" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="gameObjects.Goblin" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Goblin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="131" x="3189" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="42" language="java" name="ai" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/ai" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="985" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="43" language="java" name="graphics.TempComponent" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/TempComponent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="303" x="3568" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="prayer.TueriCorpus" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/TueriCorpus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="114" x="4483" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="graphics.Camera" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/Camera.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="126" x="1135" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="46" language="java" name="gui" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="1321" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="47" language="java" name="items.Rosary" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/Rosary.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="165" x="719" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="prayer.Prayer" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/Prayer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="214" x="4483" y="835"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="items.TheHandOfDeath" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/TheHandOfDeath.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="182" x="1767" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="50" language="java" name="physics" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/physics" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="1473" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="51" language="java" name="userInterface.InputHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/userInterface/InputHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="5133" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="52" language="java" name="toolbox" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/toolbox" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="1626" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="53" language="java" name="gameObjects.Boss" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Boss.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="298" x="2035" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="gui.LevelLoadButton" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/LevelLoadButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="228" x="3748" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="55" language="java" name="quest" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/quest" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="1780" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="56" language="java" name="gui.RadioButton" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/RadioButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="176" x="3025" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="57" language="java" name="graphics.Layer" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/Layer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="271" x="5406" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="58" language="java" name="physics.Collider" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/physics/Collider.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="225" x="1628" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="59" language="java" name="items.OnHand" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/OnHand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="229" x="1337" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="60" language="java" name="map.Map" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/map/Map.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="228" x="1935" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="gameObjects.DemonWar" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/DemonWar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="152" x="3360" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="ai.EnemyHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/ai/EnemyHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="212" x="3014" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="63" language="java" name="gui.HealthBar" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/HealthBar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="182" x="4083" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="64" language="java" name="items.AxeOfTheFallenViking" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/AxeOfTheFallenViking.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="206" x="1989" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="65" language="java" name="prayer.DeusVult" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/DeusVult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="127" x="4637" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <component id="66" language="java" name="src" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="39" width="114" x="2218" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </component>  
+  <class id="67" language="java" name="graphics.TextComponent" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/TextComponent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="274" x="3935" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="68" language="java" name="gameObjects.ClearDoor" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/ClearDoor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="147" x="2977" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="69" language="java" name="game.MainGame" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/game/MainGame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="152" x="5303" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="70" language="java" name="gameObjects.DeathBoss" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/DeathBoss.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="203" x="3262" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="71" language="java" name="gui.ExitButton" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/ExitButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="166" x="3241" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="72" language="java" name="game" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/game" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="2388" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="73" language="java" name="items.RustySword" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/RustySword.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="160" x="2235" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="74" language="java" name="prayer.GloryBe" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/GloryBe.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="120" x="4966" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="75" language="java" name="gameObjects.PlayerObject.PlayerActions" 
+    project="JourneyThroughHellLibGDX-core" file="/JourneyThroughHellLibGDX-core/src/gameObjects/PlayerObject.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="139" x="1606" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="76" language="java" name="graphics.Canvas.LayerType" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/Canvas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="156" x="5698" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="77" language="java" name="prayer.SlowTheUnholy" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/SlowTheUnholy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="122" x="4804" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="78" language="java" name="toolbox.Functions" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/toolbox/Functions.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="263" x="2546" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="79" language="java" name="items.TheLightBringer" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/TheLightBringer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="175" x="2435" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="80" language="java" name="gameObjects.PlayerObject" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/PlayerObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="945" width="279" x="2185" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="81" language="java" name="userInterface.Debug" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/userInterface/Debug.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="114" x="5147" y="835"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="82" language="java" name="gameObjects.Building" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Building.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="237" x="3930" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="83" language="java" name="graphics.Canvas" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/Canvas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="291" x="5553" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="84" language="java" name="items.Item" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/Item.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="171" x="1688" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="85" language="java" name="gameObjects" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="2867" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="86" language="java" name="items.Bow" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/Bow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="131" x="2650" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="87" language="java" name="prayer.HolyRetribution" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/HolyRetribution.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="210" x="4037" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="88" language="java" name="prayer.WingsOfAngels" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/WingsOfAngels.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="114" x="5126" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="89" language="java" name="gameObjects.PlayerDamageListener" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/PlayerDamageListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="210" x="1785" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="90" language="java" name="audio.AudioHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/audio/AudioHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="179" x="5530" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="91" language="java" name="gui.PrayerBar" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/PrayerBar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="129" x="4537" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="92" language="java" name="graphics.Animation" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/Animation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="178" x="1938" y="4392"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="93" language="java" name="userInterface" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/userInterface" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="3027" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="94" language="java" name="quest.QuestHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/quest/QuestHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="184" x="3276" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="95" language="java" name="gameObjects.HitListener" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/HitListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="106" x="582" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="96" language="java" name="prayer.BoltOfGod" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/prayer/BoltOfGod.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="114" x="3594" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="97" language="java" name="ai.GameObjectHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/ai/GameObjectHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="217" x="2505" y="1244"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="98" language="java" name="gameObjects.Elixr" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Elixr.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="119" x="1177" y="2633"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="99" language="java" name="gameObjects.Zombie" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/Zombie.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="134" x="3552" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="100" language="java" name="items" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="3188" y="115"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="101" language="java" name="physics.ColliderHandler" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/physics/ColliderHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="310" x="1628" y="1599"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="102" language="java" name="gui.PauseScreen" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gui/PauseScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="101" x="3350" y="534"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="103" language="java" name="graphics.ImageLibrary" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/graphics/ImageLibrary.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="316" x="164" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="104" language="java" name="gameObjects.DemonPlague" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/gameObjects/DemonPlague.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="164" x="3726" y="3628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="105" language="java" name="items.BladeOfWar" project="JourneyThroughHellLibGDX-core" 
+    file="/JourneyThroughHellLibGDX-core/src/items/BladeOfWar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="158" x="2821" y="4073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="106">    
+    <end type="SOURCE" refId="79"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <association id="107">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="108" name="enemyHandlerSingleton"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="62" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="110">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="111" name="gameObjectHandlerSingleton"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="97" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="114" name="things"/>      
+      <multiplicity id="115" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="117" name="killList"/>      
+      <multiplicity id="118" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="119">    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="120">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="121" name="gc"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="123">    
+    <end type="SOURCE" refId="74"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="124">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="125" name="levelToLoad"/>      
+      <multiplicity id="126" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="127">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <nesting id="128">    
+    <bendpoint x="5354" y="534"/>    
+    <bendpoint x="5354" y="835"/>    
+    <bendpoint x="5354" y="1244"/>    
+    <end type="SOURCE" refId="69"/>    
+    <end type="TARGET" refId="38"/>  
+  </nesting>  
+  <association id="129">    
+    <bendpoint x="2994" y="534"/>    
+    <bendpoint x="2994" y="835"/>    
+    <bendpoint x="2994" y="1244"/>    
+    <bendpoint x="3229" y="1599"/>    
+    <bendpoint x="3521" y="2152"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="130" name="notification"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="132">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="133">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="134" name="layer"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="136">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <generalization id="137">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="138">    
+    <bendpoint x="2941" y="2152"/>    
+    <bendpoint x="3474" y="2633"/>    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="139" name="gc"/>      
+      <multiplicity id="140" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="141">    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="142">    
+    <bendpoint x="3479" y="1599"/>    
+    <bendpoint x="3690" y="2152"/>    
+    <bendpoint x="3901" y="2633"/>    
+    <end type="SOURCE" refId="56" navigable="false">      
+      <attribute id="143" name="selected"/>      
+      <multiplicity id="144" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="145">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="146">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="147" name="killList"/>      
+      <multiplicity id="148" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="150" name="animations"/>      
+      <multiplicity id="151" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="152">    
+    <end type="SOURCE" refId="90" navigable="false">      
+      <attribute id="153" name="sounds"/>      
+      <multiplicity id="154" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="155">    
+    <end type="SOURCE" refId="105"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <generalization id="156">    
+    <end type="SOURCE" refId="65"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="157">    
+    <bendpoint x="3036" y="835"/>    
+    <bendpoint x="2973" y="1244"/>    
+    <bendpoint x="2973" y="1599"/>    
+    <bendpoint x="2701" y="2152"/>    
+    <bendpoint x="2504" y="2633"/>    
+    <bendpoint x="2363" y="3628"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="158" name="relicInfoFlavor"/>      
+      <multiplicity id="159" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="160">    
+    <end type="SOURCE" refId="90" navigable="false">      
+      <attribute id="161" name="backgroundMusic"/>      
+      <multiplicity id="162" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="163">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="164" name="buildings"/>      
+      <multiplicity id="165" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="166">    
+    <bendpoint x="3479" y="1244"/>    
+    <bendpoint x="3521" y="1599"/>    
+    <bendpoint x="3732" y="2152"/>    
+    <bendpoint x="3943" y="2633"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="167" name="buttonGC"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="169">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="170" name="buildingHandlerSingleton"/>      
+      <multiplicity id="171" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="172">    
+    <end type="SOURCE" refId="82" navigable="false">      
+      <attribute id="173" name="enemies"/>      
+      <multiplicity id="174" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="175">    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="75"/>  
+  </nesting>  
+  <generalization id="176">    
+    <end type="SOURCE" refId="102"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="177">    
+    <end type="SOURCE" refId="99"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="178">    
+    <bendpoint x="3542" y="835"/>    
+    <bendpoint x="3458" y="1244"/>    
+    <bendpoint x="3069" y="1599"/>    
+    <bendpoint x="2680" y="2152"/>    
+    <bendpoint x="2133" y="2633"/>    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="179" name="lastRelic"/>      
+      <multiplicity id="180" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="181">    
+    <end type="SOURCE" refId="63"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="182">    
+    <bendpoint x="3985" y="1599"/>    
+    <bendpoint x="3985" y="2152"/>    
+    <bendpoint x="3985" y="2633"/>    
+    <end type="SOURCE" refId="96" navigable="false">      
+      <attribute id="183" name="explosion"/>      
+      <multiplicity id="184" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="185">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="186" name="boss"/>      
+      <multiplicity id="187" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="188">    
+    <bendpoint x="3154" y="2633"/>    
+    <bendpoint x="2878" y="2152"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="189">    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="190">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="191" name="playerObjectSingleton"/>      
+      <multiplicity id="192" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="80" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="193">    
+    <end type="SOURCE" refId="70"/>    
+    <end type="TARGET" refId="53"/>  
+  </generalization>  
+  <association id="194">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="195" name="deltaTimeSingleton"/>      
+      <multiplicity id="196" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="197">    
+    <bendpoint x="4617" y="1599"/>    
+    <bendpoint x="4617" y="2152"/>    
+    <bendpoint x="4617" y="2633"/>    
+    <end type="SOURCE" refId="74" navigable="false">      
+      <attribute id="198" name="flame"/>      
+      <multiplicity id="199" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="200">    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="201" name="ih"/>      
+      <multiplicity id="202" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="203">    
+    <bendpoint x="4006" y="835"/>    
+    <bendpoint x="4006" y="1244"/>    
+    <bendpoint x="4006" y="1599"/>    
+    <bendpoint x="4006" y="2152"/>    
+    <bendpoint x="4006" y="2633"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="204" name="background"/>      
+      <multiplicity id="205" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="206">    
+    <bendpoint x="4277" y="835"/>    
+    <bendpoint x="4277" y="1244"/>    
+    <bendpoint x="4277" y="1599"/>    
+    <bendpoint x="4277" y="2152"/>    
+    <bendpoint x="4277" y="2633"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="207" name="onHandInfoPic"/>      
+      <multiplicity id="208" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="209">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <generalization id="210">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="53"/>  
+  </generalization>  
+  <association id="211">    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="212" name="m"/>      
+      <multiplicity id="213" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="69" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="214">    
+    <bendpoint x="5312" y="534"/>    
+    <bendpoint x="5291" y="835"/>    
+    <bendpoint x="5291" y="1244"/>    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="215" name="nextLevel"/>      
+      <multiplicity id="216" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="217">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="218" name="prayerBar"/>      
+      <multiplicity id="219" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="91" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="220">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="221">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <association id="222">    
+    <end type="SOURCE" refId="90" navigable="false">      
+      <attribute id="223" name="audioLibrarySingleton"/>      
+      <multiplicity id="224" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="90" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="225">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="226" name="prayers"/>      
+      <multiplicity id="227" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="228">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="229" name="damageListeners"/>      
+      <multiplicity id="230" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="89" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="231">    
+    <end type="SOURCE" refId="104"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="232">    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="233" name="colliderHandlerSingleton"/>      
+      <multiplicity id="234" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="101" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="235">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="236" name="owner"/>      
+      <multiplicity id="237" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="238">    
+    <bendpoint x="2962" y="2152"/>    
+    <bendpoint x="3516" y="2633"/>    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="239" name="labelList"/>      
+      <multiplicity id="240" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="241">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <generalization id="242">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="243">    
+    <end type="SOURCE" refId="90" navigable="false">      
+      <attribute id="244" name="music"/>      
+      <multiplicity id="245" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="246">    
+    <end type="SOURCE" refId="64"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <association id="247">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="248" name="currentRelic"/>      
+      <multiplicity id="249" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="250">    
+    <end type="SOURCE" refId="91" navigable="false">      
+      <attribute id="251" name="playerPrayers"/>      
+      <multiplicity id="252" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="253">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="254" name="pauseScreen"/>      
+      <multiplicity id="255" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="102" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="256">    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="257" name="colliders"/>      
+      <multiplicity id="258" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="259">    
+    <bendpoint x="5291" y="534"/>    
+    <bendpoint x="5312" y="835"/>    
+    <bendpoint x="5375" y="1244"/>    
+    <bendpoint x="5375" y="1599"/>    
+    <bendpoint x="5375" y="2152"/>    
+    <bendpoint x="5375" y="2633"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="260" name="graphicComponents"/>      
+      <multiplicity id="261" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="262">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="263" name="currentAction"/>      
+      <multiplicity id="264" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="75" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="265">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="266" name="guiHandlerSingleton"/>      
+      <multiplicity id="267" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="268">    
+    <bendpoint x="4298" y="835"/>    
+    <bendpoint x="4298" y="1244"/>    
+    <bendpoint x="4298" y="1599"/>    
+    <bendpoint x="4298" y="2152"/>    
+    <bendpoint x="4298" y="2633"/>    
+    <end type="SOURCE" refId="63" navigable="false">      
+      <attribute id="269" name="health"/>      
+      <multiplicity id="270" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="271">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <nesting id="272">    
+    <end type="SOURCE" refId="69"/>    
+    <end type="TARGET" refId="35"/>  
+  </nesting>  
+  <association id="273">    
+    <end type="SOURCE" refId="96" navigable="false">      
+      <attribute id="274" name="hitEnemies"/>      
+      <multiplicity id="275" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="276">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="277" name="handledEnemies"/>      
+      <multiplicity id="278" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="279">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="280" name="owner"/>      
+      <multiplicity id="281" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="282">    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <generalization id="283">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="284">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <association id="285">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="286" name="healthSigns"/>      
+      <multiplicity id="287" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="288">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="289">    
+    <end type="SOURCE" refId="103" navigable="false">      
+      <attribute id="290" name="imageLibrarySingleton"/>      
+      <multiplicity id="291" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="103" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="292">    
+    <end type="SOURCE" refId="86"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <realization id="293">    
+    <bendpoint x="3542" y="1599"/>    
+    <bendpoint x="2983" y="2152"/>    
+    <bendpoint x="2546" y="2633"/>    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="89"/>  
+  </realization>  
+  <realization id="294">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <association id="295">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="296" name="inventory"/>      
+      <multiplicity id="297" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="298">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="299" name="layers"/>      
+      <multiplicity id="300" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="57" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="301">    
+    <end type="SOURCE" refId="71"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <association id="302">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="303" name="c"/>      
+      <multiplicity id="304" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="305">    
+    <end type="SOURCE" refId="96"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <generalization id="306">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="307">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="308" name="compass"/>      
+      <multiplicity id="309" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="310">    
+    <end type="SOURCE" refId="51" navigable="false">      
+      <attribute id="311" name="debugger"/>      
+      <multiplicity id="312" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="81" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="313">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="314" name="guiComponents"/>      
+      <multiplicity id="315" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="316">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="53"/>  
+  </generalization>  
+  <generalization id="317">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="318">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="319" name="onHandWeapon"/>      
+      <multiplicity id="320" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="59" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="321">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="322">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="84"/>  
+  </generalization>  
+  <association id="323">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="324" name="enemies"/>      
+      <multiplicity id="325" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="326">    
+    <bendpoint x="2908" y="835"/>    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <association id="327">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="328" name="hl"/>      
+      <multiplicity id="329" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="95" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="330">    
+    <bendpoint x="3500" y="835"/>    
+    <bendpoint x="3500" y="1244"/>    
+    <bendpoint x="3500" y="1599"/>    
+    <bendpoint x="3500" y="2152"/>    
+    <bendpoint x="3495" y="2633"/>    
+    <bendpoint x="4197" y="3628"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="331" name="onHandName"/>      
+      <multiplicity id="332" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="333">    
+    <bendpoint x="3584" y="835"/>    
+    <bendpoint x="3521" y="1244"/>    
+    <bendpoint x="3250" y="1599"/>    
+    <bendpoint x="2920" y="2152"/>    
+    <bendpoint x="2154" y="2633"/>    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="334" name="lastWeapon"/>      
+      <multiplicity id="335" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="59" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="336">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="337" name="questHandlerSingleton"/>      
+      <multiplicity id="338" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="94" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="339">    
+    <bendpoint x="5707" y="2633"/>    
+    <bendpoint x="5707" y="3628"/>    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="76"/>  
+  </nesting>  
+  <association id="340">    
+    <end type="SOURCE" refId="57" navigable="false">      
+      <attribute id="341" name="killList"/>      
+      <multiplicity id="342" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="343">    
+    <end type="SOURCE" refId="70"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <association id="344">    
+    <end type="SOURCE" refId="57" navigable="false">      
+      <attribute id="345" name="graphicComponents"/>      
+      <multiplicity id="346" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="347">    
+    <end type="SOURCE" refId="103" navigable="false">      
+      <attribute id="348" name="animations"/>      
+      <multiplicity id="349" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="350">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="351">    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="352" name="gd"/>      
+      <multiplicity id="353" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="354">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="355" name="associatedItem"/>      
+      <multiplicity id="356" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="357">    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="358">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="359" name="choices"/>      
+      <multiplicity id="360" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="361">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="362" name="cameraSingleton"/>      
+      <multiplicity id="363" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="364">    
+    <end type="SOURCE" refId="91"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="365">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="366">    
+    <bendpoint x="3479" y="835"/>    
+    <bendpoint x="3437" y="1244"/>    
+    <bendpoint x="3168" y="1599"/>    
+    <bendpoint x="2899" y="2152"/>    
+    <bendpoint x="2525" y="2633"/>    
+    <bendpoint x="2384" y="3628"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="367" name="onHandInfoFlavor"/>      
+      <multiplicity id="368" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="369">    
+    <bendpoint x="3521" y="835"/>    
+    <bendpoint x="3542" y="1244"/>    
+    <bendpoint x="3668" y="1599"/>    
+    <bendpoint x="3795" y="2152"/>    
+    <bendpoint x="3922" y="2633"/>    
+    <bendpoint x="4218" y="3628"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="370" name="relicName"/>      
+      <multiplicity id="371" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="372">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="373">    
+    <bendpoint x="3301" y="534"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="374" name="interactableObjects"/>      
+      <multiplicity id="375" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="376">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="53"/>  
+  </generalization>  
+  <association id="377">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="378" name="canvasSingleton"/>      
+      <multiplicity id="379" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="83" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="380">    
+    <bendpoint x="5095" y="835"/>    
+    <bendpoint x="5270" y="1244"/>    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="381" name="lastCheckpoint"/>      
+      <multiplicity id="382" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="383">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="384">    
+    <bendpoint x="914" y="3628"/>    
+    <bendpoint x="914" y="4073"/>    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="385" name="listeners"/>      
+      <multiplicity id="386" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="387">    
+    <end type="SOURCE" refId="98"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="388">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="389" name="clearDoors"/>      
+      <multiplicity id="390" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="68" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="391">    
+    <bendpoint x="3563" y="835"/>    
+    <bendpoint x="3563" y="1244"/>    
+    <bendpoint x="3696" y="1599"/>    
+    <bendpoint x="3830" y="2152"/>    
+    <bendpoint x="3964" y="2633"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="392" name="relicInfoPic"/>      
+      <multiplicity id="393" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="394">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <generalization id="395">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="396">    
+    <bendpoint x="3015" y="835"/>    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="397" name="lastSelected"/>      
+      <multiplicity id="398" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="56" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="399">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="59"/>  
+  </generalization>  
+  <generalization id="400">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="401">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="402" name="health"/>      
+      <multiplicity id="403" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="63" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="404">    
+    <bendpoint x="3537" y="2633"/>    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="405" name="bossLair"/>      
+      <multiplicity id="406" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="407">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="408" name="minimize"/>      
+      <multiplicity id="409" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="410">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="411">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="412" name="owner"/>      
+      <multiplicity id="413" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="414">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="415">    
+    <bendpoint x="5116" y="835"/>    
+    <bendpoint x="5312" y="1244"/>    
+    <bendpoint x="5312" y="1599"/>    
+    <bendpoint x="5312" y="2152"/>    
+    <bendpoint x="5312" y="2633"/>    
+    <end type="SOURCE" refId="91" navigable="false">      
+      <attribute id="416" name="transparents"/>      
+      <multiplicity id="417" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="418">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="419">    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <association id="420">    
+    <bendpoint x="5333" y="534"/>    
+    <bendpoint x="5333" y="835"/>    
+    <bendpoint x="5333" y="1244"/>    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="421" name="currentLevel"/>      
+      <multiplicity id="422" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="423">    
+    <bendpoint x="3481" y="534"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="424">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="425">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="84"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
