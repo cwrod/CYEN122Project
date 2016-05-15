@@ -10,7 +10,7 @@ public class RustySword extends OnHand
 	public static final String FLAVOR = "The sword version of a Tyler Perry movie.";
 	
 	public static final int ATTACK_RANGE = 30;
-	public static final int DAMAGE = 50;
+	public static final int DAMAGE = 25;
 	
 	
 	

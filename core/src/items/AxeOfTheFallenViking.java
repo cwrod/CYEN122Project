@@ -9,7 +9,7 @@ public class AxeOfTheFallenViking extends OnHand
 	public static final String FLAVOR = "The name says it all.";
 	
 	public static final int ATTACK_RANGE = 25;
-	public static final int DAMAGE = 50;
+	public static final int DAMAGE = 55;
 	
 	public AxeOfTheFallenViking(int x, int y, Building owner)
 	{

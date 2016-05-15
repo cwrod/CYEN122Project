@@ -60,6 +60,10 @@ public class GUIHandler
 		inventory = new Inventory(Canvas.WIDTH - 150, 100, 140, 300);
 		prayerBar = new PrayerBar(0, Canvas.HEIGHT-50, 50);
 		}
+		else if(l.getLevelNumber()<-1)
+		{
+			levelIntro(l.getLevelNumber()+6);
+		}
 		else
 		{
 			switch(l)
@@ -124,6 +128,12 @@ public class GUIHandler
 		}
 	}
 	
+	private void levelIntro(int levelNumber)
+	{
+		new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "intro" + levelNumber, LayerType.GUI);
+		interactableObjects.add(new LevelLoadButton(200,0));
+	}
+
 	private void makePrayerChoices(String prayer1,  int width1, int height1,String prayer2, int width2, int height2, int level)
 	{
 		new GraphicComponent(0, 0, Canvas.WIDTH, Canvas.HEIGHT, "prayerChoiceScreen", LayerType.GUI);

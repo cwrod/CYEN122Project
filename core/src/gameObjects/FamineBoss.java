@@ -14,7 +14,7 @@ public class FamineBoss extends Boss implements PlayerListener
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "famineBoss";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 20;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;

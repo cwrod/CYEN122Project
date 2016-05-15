@@ -9,11 +9,11 @@ public class DemonWar extends EnemyObject
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "demonWar";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 15;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;
-	public static final int HEALTH = 100;
+	public static final int HEALTH = 120;
 	
 	
 	

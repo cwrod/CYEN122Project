@@ -154,15 +154,19 @@ public class MainGame extends ApplicationAdapter
 	public enum Level
 	{
 		MAIN_MENU,
+		FAMINE_INTRO(-5),
 		FIRST_PRAYER,
 		FAMINE(1),
 		FAMINE_WON,
+		PLAGUE_INTRO(-4),
 		SECOND_PRAYER,
 		PLAGUE(2),
 		PLAGUE_WON,
+		WAR_INTRO(-3),
 		THIRD_PRAYER,
 		WAR(3),
 		WAR_WON,
+		DEATH_INTRO(-2),
 		FOURTH_PRAYER,
 		DEATH(4),
 		DEATH_WON,
@@ -173,7 +177,7 @@ public class MainGame extends ApplicationAdapter
 		private static ArrayList<Level> playableLevels;
 		Level(int levelNumber)
 		{
-			this.playable = true;
+			this.playable = levelNumber>0;
 			this.levelNumber = levelNumber;
 		}
 		public static Level getLevel(int levelToGet)
@@ -218,24 +222,32 @@ public class MainGame extends ApplicationAdapter
 			switch(this)
 			{
 			case MAIN_MENU:
+				return FAMINE_INTRO;
+			case FAMINE_INTRO:
 				return FIRST_PRAYER;
 			case FIRST_PRAYER:
 				return FAMINE;
 			case FAMINE:
 				return FAMINE_WON;
 			case FAMINE_WON:
+				return PLAGUE_INTRO;
+			case PLAGUE_INTRO:
 				return SECOND_PRAYER;
 			case SECOND_PRAYER:
 				return PLAGUE;
 			case PLAGUE:
 				return PLAGUE_WON;
 			case PLAGUE_WON:
+				return WAR_INTRO;
+			case WAR_INTRO:
 				return THIRD_PRAYER;
 			case THIRD_PRAYER:
 				return WAR;
 			case WAR:
 				return WAR_WON;
 			case WAR_WON:
+				return DEATH_INTRO;
+			case DEATH_INTRO:
 				return FOURTH_PRAYER;
 			case FOURTH_PRAYER:
 				return DEATH;

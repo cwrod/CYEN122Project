@@ -36,7 +36,7 @@ public class Inventory extends GUIComponent
 		
 		onHandName = new TextComponent(x, y + ySize - 60, xSize, 0,
 				PlayerObject.getPlayerObject().getOnHand().getName(), LayerType.GUI);
-		onHandInfoFlavor = new TextComponent(x, y + ySize - 80, xSize, 0,
+		onHandInfoFlavor = new TextComponent(x, y + ySize - 90, xSize, 0,
 				PlayerObject.getPlayerObject().getOnHand().getFlavorText(), LayerType.GUI);
 		
 

@@ -15,11 +15,11 @@ public class WarBoss extends Boss
 	public static final int SIZE = 25;
 	public static final String TEXTURE = "warBoss";
 	public static final double SPEED = 50;
-	public static final int DAMAGE = 10;
+	public static final int DAMAGE = 25;
 	public static final int MAX_RANGE = 40;
 	public static final int MIN_RANGE = 30;
 	public static final int ALERT_DISTANCE = 400;
-	public static final int HEALTH = 150;
+	public static final int HEALTH = 300;
 	
 
 	public static final float IDLE_PENALTY = 5;

@@ -14,4 +14,9 @@ public class AngelicBlade extends OnHand {
 	{
 		super(DAMAGE, ATTACK_RANGE, ID, TYPE, FLAVOR, x, y);
 	}
+	public AngelicBlade()
+	{
+		super(DAMAGE, ATTACK_RANGE, ID, TYPE, FLAVOR);
+	}
+
 }

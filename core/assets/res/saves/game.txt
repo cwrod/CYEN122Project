@@ -1,4 +1,6 @@
-1
-rustySword
+3
+axeOfTheFallenViking
 holyWater
-ourFather
+gloryBe
+deusVult
+slowTheUnholy
